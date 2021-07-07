@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:powerflix/app/screens/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (BuildContext context) => HomeScreen()
+      },
     );
   }
 }
