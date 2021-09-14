@@ -43,7 +43,7 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
   bool get useMaterial => widget.useMaterial;
 
   void _log(String methodName, {String? message}) {
-    print("[ Provider | $methodName] ${message ?? ""}");
+    print("(${this.hashCode}-${controller.hashCode}-${screen.hashCode}) [ Provider | $methodName ] ${message ?? ""}");
   }
 
   @override
