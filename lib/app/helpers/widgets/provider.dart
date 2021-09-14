@@ -48,6 +48,7 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
 
   @override
   void initState() {
+    _log("initState");
     // The initState method is only executed once, after the widget object instantiation. 
     // It can be user to do pre-configuration for the screen.
     super.initState();
@@ -57,6 +58,7 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
     WidgetsBinding.instance!.addObserver(this);
 
     WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) {
+      _log("addPostFrameCallback", message: "timeStamp: $timeStamp");
       // After the first build
       controller.mounted();
     });
@@ -64,11 +66,13 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    _log("didChangeAppLifecycleState", message: "state: $state");
     super.didChangeAppLifecycleState(state);
   }
 
   @override
   Widget build(BuildContext context) {
+    _log("build");
     // Send build signal to the controller
     controller.build();
     // Check if is to use material widget
@@ -78,6 +82,7 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
 
   @override
   void dispose() {
+    _log("dispose");
     // Remove all listtener from this provider
     WidgetsBinding.instance!.removeObserver(this);
     // Deposing controller
