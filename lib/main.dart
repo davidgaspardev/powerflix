@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 import 'package:powerflix/app/screens/home/home_screen.dart';
+// import 'package:powerflix/app/screens/home/widgets/cardflix.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,9 +26,20 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: HomeScreen.routeName,
-      routes: {
-        HomeScreen.routeName: (BuildContext context) => HomeScreen()
+      initialRoute: "/home",
+      onGenerateRoute: (RouteSettings settings) {
+        print("routing: ${settings.name}");
+        switch(settings.name) {
+
+          case HomeScreen.routeName: 
+            return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
+
+          case CardflixScreen.routeName: 
+            var data = settings.arguments as CardData;
+            return MaterialPageRoute(builder: (BuildContext context) => CardflixScreen(data: data));
+          
+          // default: throw Exception("Unmapped route: ${settings.name}");
+        }
       },
     );
   }
