@@ -6,6 +6,7 @@ import 'package:powerflix/app/helpers/abstraction/model.dart';
 /// Card Data [Model]
 class CardData extends Model {
 
+  final String id;
   final String name;
   final String description;
   final String cover;
@@ -15,6 +16,7 @@ class CardData extends Model {
   ///
   /// Data input to [CardData]
   const CardData({
+    required this.id,
     required this.name,
     required this.description,
     required this.cover,
@@ -25,6 +27,7 @@ class CardData extends Model {
   static CardData fromMap(Map<String, dynamic> map) {
     try {
       return CardData(
+        id: map['id'],
         name: map['name'],
         description: map['description'],
         cover: map['cover'],
