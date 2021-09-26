@@ -1,3 +1,5 @@
+/// Standard package
+import 'dart:math' show Random;
 /// External package
 import 'package:flutter/material.dart';
 /// Internal package
@@ -21,6 +23,7 @@ class HomeController extends Controller {
   /// the cards from the server are downloaded and updated on the local device.
   Future<void> loadCards() async {
     for(int i = 0; i < 20; i++) _cards.add(CardData.fromMap({
+      "id": Random().nextInt(1000).toString(),
       "name": "Bumbum na lua",
       "description": "Para voçê que busca massa muscular no bumbum.",
       "cover": "https://m.media-amazon.com/images/M/MV5BZjBkOTAxZDItYzQ1My00OWM1LWFjMmYtZTg4ODliMzE0OTBkXkEyXkFqcGdeQXVyMTIzNTI5NTM1._V1_.jpg",
