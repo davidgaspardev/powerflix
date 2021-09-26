@@ -21,10 +21,11 @@ class CardflixScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return Center(
+                print("Building cardflix screen - index: $index");
+                if(index ==  0) return Center(
                   // alignment: Alignment.center,
                   child: Hero(
-                    tag: "cardflix-cover", 
+                    tag: controller.data.id, 
                     child: Container(
                       width: 335,
                       height: 496,
@@ -39,6 +40,8 @@ class CardflixScreen extends StatelessWidget {
                     ),
                   ),
                 );
+
+                return Container();
               },
               childCount: 1
             )

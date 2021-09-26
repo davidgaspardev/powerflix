@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
@@ -29,7 +31,7 @@ class Cardflix extends StatelessWidget {
         controller.navigateCardflix(data);
       },
       child: Hero(
-        tag: "cardflix-cover",
+        tag: this.data.id,
         child: Container(
           width: double.infinity,
           height: double.infinity,

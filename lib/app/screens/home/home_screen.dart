@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
 import 'package:powerflix/app/screens/home/widgets/cardflix.dart';
+import 'package:powerflix/app/screens/home/widgets/loading.dart';
 
 /// Home Screen
 class HomeScreen extends StatelessWidget {
@@ -16,8 +17,7 @@ class HomeScreen extends StatelessWidget {
     print("[ HomeScreen | $widgetName ] $message");
   }
 
-  /// Function to create the screen
-  Widget screen() {
+  Widget content() {
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
@@ -42,14 +42,28 @@ class HomeScreen extends StatelessWidget {
               _log("SliverGrid", message: "widget $index builded");
               return Padding(
                 padding: index.isEven ? EdgeInsets.only(left: 10, top: 10) : EdgeInsets.only(right: 10, top: 10),
-                child: Cardflix(data: controller.cards[0]),
+                child: Cardflix(data: controller.cards[index]),
               );
             },
-            childCount: 50
+            childCount: controller.cards.length
           ),
         ),
 
       ],
+    );
+  }
+
+  /// Function to create the screen
+  Widget screen() {
+    return FutureBuilder(
+      future: controller.loadCards(),
+      builder: (BuildContext context, AsyncSnapshot<void> asyncSnapshot) {
+        switch(asyncSnapshot.connectionState) {
+          case ConnectionState.done: return content();
+          
+          default: return Loading();
+        }
+      },
     );
   }
 
