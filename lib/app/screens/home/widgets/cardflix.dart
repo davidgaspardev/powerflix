@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
+import 'package:powerflix/app/screens/home/widgets/loading.dart';
 
 /// Cardflix widget
 /// 
@@ -35,12 +34,23 @@ class Cardflix extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          // decoration: BoxDecoration(
+          //   borderRadius: BorderRadius.circular(5),
+          //   color: Colors.red,
+          //   image: DecorationImage(
+          //     image: NetworkImage(data.cover),
+          //     fit: BoxFit.cover
+          //   ),
+          // ),
+          child: ClipRRect(
             borderRadius: BorderRadius.circular(5),
-            color: Colors.red,
-            image: DecorationImage(
-              image: NetworkImage(data.cover),
-              fit: BoxFit.cover
+            child: Image.network(
+              data.cover,
+              fit: BoxFit.fill,
+              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? chunk) {
+                if(chunk == null) return child;
+                return Loading();
+              },
             ),
           ),
         ),

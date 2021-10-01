@@ -1,5 +1,6 @@
 /// External package
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 /// Internal packages
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
@@ -24,7 +25,10 @@ class HomeScreen extends StatelessWidget {
 
         SliverAppBar(
           title: Center(
-            child: Text("Powerflix", style: TextStyle(color: Colors.black,)),
+            child: Image.asset(
+              "lib/app/assets/image/logo.png",
+              height: 45,
+            )
           ),
           backgroundColor: Colors.white,
           // floating: true,
@@ -33,8 +37,8 @@ class HomeScreen extends StatelessWidget {
         SliverGrid(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 472.5/700,
-            mainAxisSpacing: 10,
+            childAspectRatio: 1417/2008,
+            // mainAxisSpacing: 5,
             crossAxisSpacing: 10
           ),
           delegate: SliverChildBuilderDelegate(
