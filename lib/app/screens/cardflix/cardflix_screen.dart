@@ -28,12 +28,12 @@ class CardflixScreen extends StatelessWidget {
               child: Container(
                 width: 335,
                 height: 496,
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 25),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
                     image: NetworkImage(controller.data.cover),
-                    fit: BoxFit.cover
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -52,6 +52,7 @@ class CardflixScreen extends StatelessWidget {
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
                     padding: EdgeInsets.only(top: 25),
+                    color: Colors.black,
                   ),
 
                   // Description
