@@ -11,6 +11,15 @@ class Module extends StatelessWidget {
     required this.data
   }): super(key: key);
 
+  Color getTheme(String name) {
+    switch(name) {
+      case "LIGHT": return Color(0xFF37DF1C);
+      case "SOFT": return Color(0xFFE8DE00);
+      case "HARD": return Color(0xFFEF4040);
+      default: throw Exception("Name invalid");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +32,7 @@ class Module extends StatelessWidget {
               width: 5,
               margin: EdgeInsets.only(right: 5),
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: getTheme(data.level),
                 borderRadius: BorderRadius.circular(2.5)
               ),
             ),
@@ -38,7 +47,7 @@ class Module extends StatelessWidget {
                     // Level
                     Label(
                       data.level, 
-                      color: Colors.black,
+                      color: getTheme(data.level),
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       padding: EdgeInsets.only(left: 5),
@@ -55,13 +64,15 @@ class Module extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Label(
-                          "${data.frequency.series}x${data.frequency.repetition}",
+                          "${data.frequency.series}x${data.frequency.repetition > 0 ?
+                          data.frequency.repetition : "FALHAR"}",
                           padding: EdgeInsets.only(left: 5),
-                          color: Colors.black,
+                          color: getTheme(data.level),
                           fontWeight: FontWeight.bold,
                         ),
                         Label(
-                          "${data.frequency.series} series de ${data.frequency.repetition} repetições",
+                          "${data.frequency.series} series de ${data.frequency.repetition > 0 ?
+                          "${data.frequency.repetition} repetições" : " até a falha"}",
                           fontSize: 12,
                         ),
                       ],
@@ -70,11 +81,11 @@ class Module extends StatelessWidget {
                     // Line
                     Container(
                       width: double.infinity,
-                      height: 2,
+                      height: 1.5,
                       margin: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(1),
-                        color: Colors.grey,
+                        color: Colors.grey.withOpacity(.5),
                       ),
                     ),
 
@@ -86,12 +97,12 @@ class Module extends StatelessWidget {
                           LabelSpan(
                             "${exercise.order} ",
                             fontWeight: FontWeight.bold,
-                            color: Colors.black
+                            color: getTheme(data.level)
                           ),
                           LabelSpan(exercise.name)
                         ]
                       ),
-                      padding: EdgeInsets.only(top: 10, left: 5),
+                      padding: EdgeInsets.only(top: 15, left: 5),
                     );
                   }).toList(),
                 ),
