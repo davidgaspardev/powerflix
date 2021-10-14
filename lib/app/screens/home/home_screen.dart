@@ -1,6 +1,5 @@
 /// External package
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 /// Internal packages
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
