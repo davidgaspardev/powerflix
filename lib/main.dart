@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 import 'package:powerflix/app/screens/home/home_screen.dart';
@@ -6,6 +7,11 @@ import 'package:powerflix/app/screens/video/video_screen.dart';
 // import 'package:powerflix/app/screens/home/widgets/cardflix.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]);
   runApp(MyApp());
 }
 
