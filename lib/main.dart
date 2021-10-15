@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 import 'package:powerflix/app/screens/home/home_screen.dart';
+import 'package:powerflix/app/screens/video/video_screen.dart';
 // import 'package:powerflix/app/screens/home/widgets/cardflix.dart';
 
 void main() {
@@ -37,6 +38,10 @@ class MyApp extends StatelessWidget {
           case CardflixScreen.routeName: 
             var data = settings.arguments as CardData;
             return MaterialPageRoute(builder: (BuildContext context) => CardflixScreen(data: data));
+
+          case VideoScreen.routeName:
+            var data = settings.arguments as String;
+            return MaterialPageRoute(builder: (BuildContext context) => VideoScreen(link: data));
           
           // default: throw Exception("Unmapped route: ${settings.name}");
         }
