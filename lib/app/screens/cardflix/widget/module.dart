@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
+import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 
 class Module extends StatelessWidget {
 
@@ -22,6 +24,8 @@ class Module extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Provider.of<CardflixController>(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: IntrinsicHeight(
@@ -90,19 +94,22 @@ class Module extends StatelessWidget {
                     ),
 
                   ] + data.exercises.map<Widget>((ExerciseData exercise) {
-                    return Label.rich(
-                      LabelSpan(
-                        "",
-                        children: [
-                          LabelSpan(
-                            "${exercise.order} ",
-                            fontWeight: FontWeight.bold,
-                            color: getTheme(data.level)
-                          ),
-                          LabelSpan(exercise.name)
-                        ]
+                    return GestureDetector(
+                      onTap: controller.toVideoPage,
+                      child: Label.rich(
+                        LabelSpan(
+                          "",
+                          children: [
+                            LabelSpan(
+                              "${exercise.order} ",
+                              fontWeight: FontWeight.bold,
+                              color: getTheme(data.level)
+                            ),
+                            LabelSpan(exercise.name)
+                          ]
+                        ),
+                        padding: EdgeInsets.only(top: 15, left: 5),
                       ),
-                      padding: EdgeInsets.only(top: 15, left: 5),
                     );
                   }).toList(),
                 ),
