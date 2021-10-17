@@ -174,13 +174,15 @@ class ExerciseData extends Model {
 
   final int order;
   final String name;
+  final String? link;
 
   /// Constructor
   ///
   /// Data input to [ExerciseData]
   const ExerciseData({
     required this.order,
-    required this.name
+    required this.name,
+    this.link
   });
 
   /// Method to initilize [ExerciseData] with [Map]
@@ -189,6 +191,7 @@ class ExerciseData extends Model {
       return ExerciseData(
         order: map['order'] as int,
         name: map['name'] as String,
+        link: map['link']
       );
     } catch(e) {
       throw Exception(e);
@@ -208,9 +211,13 @@ class ExerciseData extends Model {
   /// Data output from [ExerciseData]
   @override
   Map<String, dynamic> toMap() {
-    return {
+    var map = <String, dynamic>{
       "order": this.order,
       "name": this.name
     };
+
+    if(this.link != null) map["link"] = this.link;
+
+    return map;
   }
 }
