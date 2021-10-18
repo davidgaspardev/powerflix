@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' show BuildContext;
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:powerflix/app/helpers/abstraction/controller.dart';
 import 'package:video_player/video_player.dart';
@@ -42,10 +43,16 @@ class VideoController extends Controller {
   @override
   void init(BuildContext context) {
     _context = context;
+
+    // Hide status bar and naviation bar
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   }
 
   @override
   void dispose() {
     player.dispose();
+
+    // Show status bar and naviation bar
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
   }
 }
