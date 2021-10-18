@@ -5,13 +5,13 @@ import 'package:powerflix/app/screens/video/video_screen.dart';
 
 class CardflixController extends Controller {
 
-  late final BuildContext _context;
+  late final BuildContext context;
   final CardData data;
 
   CardflixController({ required this.data });
 
   void toVideoPage() {
-    Navigator.of(_context).pushNamed(
+    Navigator.of(context).pushNamed(
       VideoScreen.routeName,
       arguments: "https://firebasestorage.googleapis.com/v0/b/tfr-card-1f68c.appspot.com/o/VID_20211013_221039.mp4?alt=media&token=82383645-8fe4-4331-8507-bd8fda6662ce",
     );
@@ -20,7 +20,7 @@ class CardflixController extends Controller {
 
   @override
   void init(BuildContext context) {
-    _context = context;
+    this.context = context;
   }
   
   @override

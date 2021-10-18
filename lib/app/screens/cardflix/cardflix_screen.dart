@@ -26,9 +26,8 @@ class CardflixScreen extends StatelessWidget {
             child: Hero(
               tag: controller.data.id, 
               child: Container(
-                width: 335,
-                height: 496,
-                margin: EdgeInsets.only(top: 25),
+                margin: const EdgeInsets.all(16),
+                height: (MediaQuery.of(controller.context).size.width - 32) * 1.48,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
@@ -42,16 +41,16 @@ class CardflixScreen extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Container(
-              width: 335,
+              margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   // Name
                   Label(
                     controller.data.name,
-                    fontSize: 26,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    padding: EdgeInsets.only(top: 25),
+                    padding: EdgeInsets.only(top: 25, bottom: 5),
                     color: Colors.black,
                   ),
 
