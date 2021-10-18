@@ -64,7 +64,13 @@ class HomeController extends Controller {
           "exercises": [
             {
               "order": 1,
-              "name": "Agachamento no smith + agachamento unilateral no simith (bi-set) 4x9+9"
+              "name": "Agachamento no smith + agachamento unilateral no simith",
+              "features": [
+                {
+                  "name": "BI-SET 4x9 + 9",
+                  "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+                }
+              ]
             },
             {
               "order": 2,
@@ -90,7 +96,13 @@ class HomeController extends Controller {
           "exercises": [
             {
               "order": 1,
-              "name": "Agachamento no smith + agachamento sumô com halteres (bi-set) 4x9 + falha"
+              "name": "Agachamento no smith + agachamento sumô com halteres",
+              "features": [
+                {
+                  "name": "BI-SET 4x9 + falha",
+                  "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+                }
+              ]
             },
             {
               "order": 2,
@@ -98,7 +110,13 @@ class HomeController extends Controller {
             },
             {
               "order": 3,
-              "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia (bi-set) 4x9+9"
+              "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia",
+              "features": [
+                {
+                  "name": "BI-SET 4x9 + 9",
+                  "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+                }
+              ]
             },
             {
               "order": 4,
@@ -151,7 +169,13 @@ class HomeController extends Controller {
           "exercises": [
             {
               "order": 1,
-              "name": "Bíceps com barra na polia + bíceps martelo com halters (bi-set) 4x9+9"
+              "name": "Bíceps com barra na polia + bíceps martelo com halters",
+              "features": [
+                {
+                  "name": "BI-SET 4x9 + 9",
+                  "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+                }
+              ]
             },
             {
               "order": 2,
@@ -181,7 +205,13 @@ class HomeController extends Controller {
             },
             {
               "order": 3,
-              "name": "Bíceps com barra reta rest pause 4x6+falha"
+              "name": "Bíceps com barra reta rest pause",
+              "features": [
+                {
+                  "name": "BI-SET 4x6 + falha",
+                  "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+                }
+              ]
             },
             {
               "order": 4,
@@ -238,7 +268,13 @@ class HomeController extends Controller {
             },
             {
               "order": 2,
-              "name": "Abd escalador em colchonete 3x15"
+              "name": "Abd escalador em colchonete",
+              "features": [
+                {
+                  "name": "3x15",
+                  "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+                }
+              ]
             },
             {
               "order": 3,
@@ -246,7 +282,13 @@ class HomeController extends Controller {
             },
             {
               "order": 4,
-              "name": "Abd canoa isométrica 3x15"
+              "name": "Abd canoa isométrica",
+              "features": [
+                {
+                  "name": "3x15",
+                  "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+                }
+              ]
             },
             {
               "order": 5,
