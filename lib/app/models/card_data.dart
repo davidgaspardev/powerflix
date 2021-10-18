@@ -90,9 +90,11 @@ class ModuleData extends Model {
         level: map['level'],
         description: map['description'],
         frequency: FrequencyData.fromMap(map['frequency']),
-        exercises: List<Map<String, dynamic>>.from(map['exercises']).map<ExerciseData>((Map<String, dynamic> data) {
-          return ExerciseData.fromMap(data);
-        }).toList(),
+        exercises: List<Map<String, dynamic>>.from(map['exercises'])
+          .map<ExerciseData>((Map<String, dynamic> data) {
+            return ExerciseData.fromMap(data);
+          })
+          .toList(),
       );
     } catch(e) {
       throw Exception(e);
@@ -174,6 +176,7 @@ class ExerciseData extends Model {
 
   final int order;
   final String name;
+  final List<FeatureData> features;
   final String? link;
 
   /// Constructor
@@ -182,6 +185,7 @@ class ExerciseData extends Model {
   const ExerciseData({
     required this.order,
     required this.name,
+    this.features = const [],
     this.link
   });
 
@@ -191,6 +195,12 @@ class ExerciseData extends Model {
       return ExerciseData(
         order: map['order'] as int,
         name: map['name'] as String,
+        features: map['features'] != null
+        ? List<Map<String, String>>.from(map['features'])
+          .map<FeatureData>((Map<String, String> map) {
+            return FeatureData.fromMap(map);
+          }).toList()
+        : [],
         link: map['link']
       );
     } catch(e) {
@@ -213,11 +223,60 @@ class ExerciseData extends Model {
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
       "order": this.order,
-      "name": this.name
+      "name": this.name,
     };
 
     if(this.link != null) map["link"] = this.link;
+    if(this.features.length > 0) map["features"] = this.features
+      .map<Map<String, String>>((FeatureData data) => data.toMap())
+      .toList();
 
     return map;
+  }
+}
+
+/// Exercise Data [Model]
+class FeatureData extends Model {
+
+  final String name;
+  final String description;
+
+  /// Constructor
+  ///
+  /// Data input to [FeatureData]
+  const FeatureData({
+    required this.name,
+    required this.description
+  });
+
+  /// Method to initilize [FeatureData] with [Map]
+  static FeatureData fromMap(Map<String, String> map) {
+    try {
+      return FeatureData(
+        name: map['name'] as String,
+        description: map['description'] as String,
+      );
+    } catch(e) {
+      throw Exception(e);
+    }
+  }
+
+  /// To json
+  ///
+  /// Data output from [FeatureData]
+  @override
+  String toJson() {
+    return jsonEncode(this.toMap());
+  }
+
+  /// To map
+  ///
+  /// Data output from [FeatureData]
+  @override
+  Map<String, String> toMap() {
+    return {
+      "name": this.name,
+      "description": this.description
+    };
   }
 }
