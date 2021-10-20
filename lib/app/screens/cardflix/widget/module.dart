@@ -103,7 +103,7 @@ class Module extends StatelessWidget {
   /// Exercise widget
   Widget buidExercise(ExerciseData data) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 5),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -112,16 +112,46 @@ class Module extends StatelessWidget {
             color: color,
             fontSize: 26,
             fontWeight: FontWeight.bold,
-            padding: EdgeInsets.only(right: 10),
+            padding: EdgeInsets.only(right: 6),
           ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Label(
+                data.link == null
+                /* Exercide name without video */
+                ? Label(
                   data.name,
                   fontSize: 20,
                   padding: const EdgeInsets.only(top: 4),
+                )
+                /* Exercide name with video */
+                : Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: color.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(4)
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Label(
+                          data.name,
+                          fontSize: 20,
+                          padding: const EdgeInsets.only(top: 4),
+                        )
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        padding: const EdgeInsets.all(6),
+                        child: Icon(
+                          Icons.play_arrow_rounded,
+                          size: 20,
+                          color: color,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 Row(
                   children: data.features.map<Widget>((FeatureData feture) {
