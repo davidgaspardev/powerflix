@@ -1,4 +1,7 @@
+/// External package
 import 'package:flutter/material.dart';
+
+/// Internal package
 import 'package:powerflix/app/helpers/abstraction/controller.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/video/video_screen.dart';

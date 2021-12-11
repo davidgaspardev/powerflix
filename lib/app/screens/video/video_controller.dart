@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart' show BuildContext;
+/// External package
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:powerflix/app/helpers/abstraction/controller.dart';
 import 'package:video_player/video_player.dart';
+
+/// Internal package
+import 'package:powerflix/app/helpers/abstraction/controller.dart';
 
 class VideoController extends Controller {
 
@@ -11,17 +13,6 @@ class VideoController extends Controller {
 
   VideoController({ required this.link }):
   player = VideoPlayerController.network(link);
-
-  bool _videoEneded() {
-    return player.value.position.inSeconds >= player.value.duration.inSeconds;
-  }
-
-  // void _onVideoProgress() {
-  //   if(_videoEneded()) {
-  //     player.removeListener(_onVideoProgress);
-  //     _toBack();
-  //   }
-  // }
 
   void back() {
     Navigator.of(context).pop();
@@ -32,8 +23,6 @@ class VideoController extends Controller {
       await player.initialize();
       player.setLooping(true);
       player.play();
-
-      // player.addListener(_onVideoProgress);
     } catch(e) {
       print(e);
       back();
