@@ -64,14 +64,14 @@ class CardflixScreen extends StatelessWidget {
                         controller.data.name,
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
-                        padding: EdgeInsets.only(top: 25, bottom: 5),
+                        padding: EdgeInsets.only(top: 25, bottom: 5, left: 16),
                         color: Colors.black,
                       ),
 
                       // Description
                       Label(
                         controller.data.description,
-                        padding: EdgeInsets.only(bottom: 25),
+                        padding: EdgeInsets.only(bottom: 25, left: 16),
                       ),
                     ] +
                     buildModules(),
@@ -86,7 +86,13 @@ class CardflixScreen extends StatelessWidget {
   List<Widget> buildModules() {
     return [
       Container(
-        child: ValueListenableBuilder<int>(
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Label("Modulos de exercícios"),
+            ValueListenableBuilder<int>(
           valueListenable: controller.modulePositionNotifier,
           builder: (context, currentPosition, child) => Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -104,6 +110,8 @@ class CardflixScreen extends StatelessWidget {
                     ))
                 .toList(),
           ),
+        ),
+          ],
         ),
       ),
       Container(
