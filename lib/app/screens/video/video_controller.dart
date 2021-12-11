@@ -16,26 +16,27 @@ class VideoController extends Controller {
     return player.value.position.inSeconds >= player.value.duration.inSeconds;
   }
 
-  void _onVideoProgress() {
-    if(_videoEneded()) {
-      player.removeListener(_onVideoProgress);
-      _toBack();
-    }
-  }
+  // void _onVideoProgress() {
+  //   if(_videoEneded()) {
+  //     player.removeListener(_onVideoProgress);
+  //     _toBack();
+  //   }
+  // }
 
-  void _toBack() {
+  void back() {
     Navigator.of(context).pop();
   }
 
   Future<void> loadVideo() async {
     try {
       await player.initialize();
+      player.setLooping(true);
       player.play();
 
-      player.addListener(_onVideoProgress);
+      // player.addListener(_onVideoProgress);
     } catch(e) {
       print(e);
-      _toBack();
+      back();
     }
   }
 
