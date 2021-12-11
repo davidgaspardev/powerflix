@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 /// Controller to the Provider widget
 abstract class Controller {
+  late final BuildContext context;
   /// initilize controller
-  void init(BuildContext context);
+  void init();
   /// [Provider] mounted
   void mounted() /** optional */ {}
   /// Build [Provider]

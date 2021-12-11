@@ -53,6 +53,7 @@ class Label extends Text {
   Label.rich(LabelSpan labelSpan, {
     Key? key,
     int? maxLines,
+    double? letterSpacing,
     TextOverflow? overflow,
     // Arguments with default values
     double height = 1, /** fontSize * 1 */
@@ -77,6 +78,7 @@ class Label extends Text {
       fontFamily: fontFamily,
       fontStyle: fontStyle,
       fontWeight: fontWeight,
+      letterSpacing: letterSpacing
     ),
   );
 
