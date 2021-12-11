@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:powerflix/app/helpers/color.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 import 'package:powerflix/app/screens/cardflix/widget/module.dart';
+import 'package:powerflix/app/screens/cardflix/widget/module_v2.dart';
+
+
 
 /// Cardflix Screen
 class CardflixScreen extends StatelessWidget {
@@ -41,7 +46,7 @@ class CardflixScreen extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
+              // margin: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -61,9 +66,36 @@ class CardflixScreen extends StatelessWidget {
                   ),
 
                   // Modules
-                ] + controller.data.modules.map<Widget>((ModuleData module) {
-                  return Module(data: module);
-                }).toList(),
+                // ] + controller.data.modules.map<Widget>((ModuleData module) {
+                //   return ModuleV2(data: module);
+                // }).toList(),
+                  Container(
+                    child: ValueListenableBuilder<int>(
+                      valueListenable: controller.modulePositionNotifier,
+                      builder: (context, currentPosition, child) => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [ 0, 1, 2].map((position) => Container(
+                          width: 16,
+                          height: 8,
+                          margin: EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: position == currentPosition ? appColors[position] : Colors.grey
+                          ),
+                        )).toList(),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 500,
+                    child: PageView(
+                      onPageChanged: controller.onPageChanged,
+                      children: controller.data.modules.map<Widget>((ModuleData module) {
+                        return ModuleV2(data: module);
+                      }).toList(),
+                    ),
+                  ),
+                ]
               ),
             ),
           ),
