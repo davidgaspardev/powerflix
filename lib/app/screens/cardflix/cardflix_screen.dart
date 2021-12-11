@@ -1,26 +1,34 @@
+/// External package
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+/// Internal package
 import 'package:powerflix/app/helpers/color.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
-import 'package:powerflix/app/screens/cardflix/widget/module.dart';
 import 'package:powerflix/app/screens/cardflix/widget/module_v2.dart';
-
-
 
 /// Cardflix Screen
 class CardflixScreen extends StatelessWidget {
-
   static const routeName = "/cardflix";
 
   final CardflixController controller;
-  CardflixScreen({ Key? key, required CardData data }):
-  controller = Provider.createController(() => CardflixController(data: data)),
-  super(key: key);
+  CardflixScreen({Key? key, required CardData data})
+      : controller =
+            Provider.createController(() => CardflixController(data: data)),
+        super(key: key);
 
-  Widget screen() {
+  @override
+  Widget build(BuildContext context) {
+    return Provider(
+      controller: controller,
+      screen: buildScreen,
+    );
+  }
+
+  Widget buildScreen() {
     return Container(
       color: Colors.white,
       child: ListView(
@@ -29,10 +37,11 @@ class CardflixScreen extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Hero(
-              tag: controller.data.id, 
+              tag: controller.data.id,
               child: Container(
                 margin: const EdgeInsets.all(16),
-                height: (MediaQuery.of(controller.context).size.width - 32) * 1.48,
+                height:
+                    (MediaQuery.of(controller.context).size.width - 32) * 1.48,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   image: DecorationImage(
@@ -50,52 +59,22 @@ class CardflixScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  // Name
-                  Label(
-                    controller.data.name,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    padding: EdgeInsets.only(top: 25, bottom: 5),
-                    color: Colors.black,
-                  ),
-
-                  // Description
-                  Label(
-                    controller.data.description,
-                    padding: EdgeInsets.only(bottom: 25),
-                  ),
-
-                  // Modules
-                // ] + controller.data.modules.map<Widget>((ModuleData module) {
-                //   return ModuleV2(data: module);
-                // }).toList(),
-                  Container(
-                    child: ValueListenableBuilder<int>(
-                      valueListenable: controller.modulePositionNotifier,
-                      builder: (context, currentPosition, child) => Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [ 0, 1, 2].map((position) => Container(
-                          width: 16,
-                          height: 8,
-                          margin: EdgeInsets.all(4),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            color: position == currentPosition ? appColors[position] : Colors.grey
-                          ),
-                        )).toList(),
+                      // Name
+                      Label(
+                        controller.data.name,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        padding: EdgeInsets.only(top: 25, bottom: 5),
+                        color: Colors.black,
                       ),
-                    ),
-                  ),
-                  Container(
-                    height: 500,
-                    child: PageView(
-                      onPageChanged: controller.onPageChanged,
-                      children: controller.data.modules.map<Widget>((ModuleData module) {
-                        return ModuleV2(data: module);
-                      }).toList(),
-                    ),
-                  ),
-                ]
+
+                      // Description
+                      Label(
+                        controller.data.description,
+                        padding: EdgeInsets.only(bottom: 25),
+                      ),
+                    ] +
+                    buildModules(),
               ),
             ),
           ),
@@ -104,11 +83,39 @@ class CardflixScreen extends StatelessWidget {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Provider(
-      controller: controller, 
-      screen: screen,
-    );
+  List<Widget> buildModules() {
+    return [
+      Container(
+        child: ValueListenableBuilder<int>(
+          valueListenable: controller.modulePositionNotifier,
+          builder: (context, currentPosition, child) => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [0, 1, 2]
+                .map((position) => Container(
+                      width: 16,
+                      height: 8,
+                      margin: EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: position == currentPosition
+                            ? appColors[position]
+                            : Colors.grey,
+                      ),
+                    ))
+                .toList(),
+          ),
+        ),
+      ),
+      Container(
+        height: 500,
+        child: PageView(
+          physics: BouncingScrollPhysics(),
+          onPageChanged: controller.onPageChanged,
+          children: controller.data.modules.map<Widget>((ModuleData module) {
+            return ModuleV2(data: module);
+          }).toList(),
+        ),
+      ),
+    ];
   }
 }
