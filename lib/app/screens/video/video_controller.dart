@@ -8,7 +8,6 @@ class VideoController extends Controller {
 
   late final VideoPlayerController player;
   late final String link;
-  late final BuildContext _context;
 
   VideoController({ required this.link }):
   player = VideoPlayerController.network(link);
@@ -25,7 +24,7 @@ class VideoController extends Controller {
   }
 
   void _toBack() {
-    Navigator.of(_context).pop();
+    Navigator.of(context).pop();
   }
 
   Future<void> loadVideo() async {
@@ -41,9 +40,7 @@ class VideoController extends Controller {
   }
 
   @override
-  void init(BuildContext context) {
-    _context = context;
-
+  void init() {
     // Hide status bar and naviation bar
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
   }

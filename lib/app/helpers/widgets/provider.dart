@@ -19,6 +19,24 @@ class Provider<T extends Controller> extends StatefulWidget {
     return provider.controller;
   }
 
+  static final _cache = <Type, Object?>{};
+
+  static T createController<T extends Controller>(T Function() create) {
+    if(_cache[T] != null) {
+      return _cache[T] as T;
+    }
+    _cache[T] = create();
+    return _cache[T]! as T;
+  }
+
+  static getControllerByType<T extends Controller>() {
+    return _cache[T] as T;
+  }
+
+  static destroyController(Type type) {
+    _cache[type] = null;
+  }
+
   /// Constant constructor (optional)
   /// 
   /// If your class produces objects that never change, you can make these objects 
@@ -52,8 +70,9 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
     // The initState method is only executed once, after the widget object instantiation. 
     // It can be user to do pre-configuration for the screen.
     super.initState();
+    controller.context = context;
     // Initializing screen controller
-    controller.init(context);
+    controller.init();
     // Listener state change 
     WidgetsBinding.instance!.addObserver(this);
 
@@ -88,5 +107,6 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
     // Deposing controller
     controller.dispose();
     super.dispose();
+    Provider.destroyController(controller.runtimeType);
   }
 }

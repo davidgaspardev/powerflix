@@ -6,11 +6,11 @@ import 'package:video_player/video_player.dart';
 class VideoScreen extends StatelessWidget {
   /// Location of the page in the [MaterialApp] route engine
   static const routeName = "/video";
-  late final VideoController controller;
 
   /// Receive link to video by constructor parameter
+  final VideoController controller;
   VideoScreen({ Key? key, required String link }):
-  controller = VideoController(link: link),
+  controller = Provider.createController(() => VideoController(link: link)),
   super(key: key);
 
   Widget screen() {

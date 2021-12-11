@@ -10,8 +10,11 @@ import 'package:powerflix/app/screens/home/widgets/loading.dart';
 class HomeScreen extends StatelessWidget {
   /// Location of the page in the [MaterialApp] route engine
   static const routeName = "/home";
-  /// Initialize [HomeController] along with instantiation 
-  final controller = HomeController();
+
+  final HomeController controller;
+  HomeScreen({ Key? key }):
+  controller = Provider.createController(() => HomeController()),
+  super(key: key);
 
   void _log(String widgetName, { String? message }) {
     print("[ HomeScreen | $widgetName ] $message");

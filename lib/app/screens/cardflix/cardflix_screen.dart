@@ -8,11 +8,11 @@ import 'package:powerflix/app/screens/cardflix/widget/module.dart';
 /// Cardflix Screen
 class CardflixScreen extends StatelessWidget {
 
-  final CardflixController controller;
   static const routeName = "/cardflix";
 
-  CardflixScreen({ Key? key, required CardData data }): 
-  controller = CardflixController(data: data), 
+  final CardflixController controller;
+  CardflixScreen({ Key? key, required CardData data }):
+  controller = Provider.createController(() => CardflixController(data: data)),
   super(key: key);
 
   Widget screen() {

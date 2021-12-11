@@ -10,7 +10,6 @@ import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 /// Home controller
 class HomeController extends Controller {
   /// Reference to the location in the tree structure
-  late final BuildContext context;
   List<CardData> _cards = [];
   List<CardData> get cards => _cards;
 
@@ -331,8 +330,7 @@ class HomeController extends Controller {
   // ========================== OVERRIDE ========================== //
 
   @override
-  void init(BuildContext context) {
-    this.context = context;
+  void init() {
   }
 
   @override
