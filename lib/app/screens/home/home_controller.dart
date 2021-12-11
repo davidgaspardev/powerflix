@@ -38,7 +38,7 @@ class HomeController extends Controller {
             {
               "order": 1,
               "name": "Agachamento com peso corporal",
-              "link": "https://firebasestorage.googleapis.com/v0/b/tfr-card-1f68c.appspot.com/o/VID_20211013_221039.mp4?alt=media&token=82383645-8fe4-4331-8507-bd8fda6662ce"
+              "link": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
             },
             {
               "order": 2,
@@ -47,7 +47,7 @@ class HomeController extends Controller {
             {
               "order": 3,
               "name": "Eleveção pélvica em colchonete",
-              "link": "https://firebasestorage.googleapis.com/v0/b/tfr-card-1f68c.appspot.com/o/VID_20211013_221039.mp4?alt=media&token=82383645-8fe4-4331-8507-bd8fda6662ce"
+              "link": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
             },
             {
               "order": 4,
@@ -75,7 +75,8 @@ class HomeController extends Controller {
             },
             {
               "order": 2,
-              "name": "Glúteo em 4 apoios com caneleira"
+              "name": "Glúteo em 4 apoios com caneleira",
+              "link": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
             },
             {
               "order": 3,
