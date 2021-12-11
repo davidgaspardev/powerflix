@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 abstract class Controller {
   late final BuildContext context;
   /// initilize controller
-  void init();
+  void init() /** optional */ {}
   /// [Provider] mounted
   void mounted() /** optional */ {}
   /// Build [Provider]
   void build() /** optional */ {}
   /// Clean data from Android/iOS
-  void dispose();
+  void dispose() /** optional */ {}
 }
