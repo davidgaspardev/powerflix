@@ -27,6 +27,9 @@ class VideoScreen extends StatelessWidget {
   }
 
   Widget buildVideo() {
+    final width = MediaQuery.of(controller.context).size.width;
+    final height = MediaQuery.of(controller.context).size.height;
+
     return Container(
       child: FutureBuilder(
         future: controller.loadVideo(),
@@ -40,8 +43,8 @@ class VideoScreen extends StatelessWidget {
               return FittedBox(
                 fit: BoxFit.cover,
                 child: SizedBox(
-                  width: controller.player.value.size.width,
-                  height: controller.player.value.size.height,
+                  width: width,
+                  height: height,
                   child: VideoPlayer(controller.player),
                 ),
               );
@@ -84,10 +87,10 @@ class VideoScreen extends StatelessWidget {
               child: GestureDetector(
                 onTap: controller.back,
                 child: Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-                size: 25,
-              ),
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                  size: 25,
+                ),
               ),
             ),
             Expanded(
