@@ -1,5 +1,6 @@
 /// External package
 import 'package:flutter/material.dart';
+
 /// Internal packages
 import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
@@ -12,11 +13,11 @@ class HomeScreen extends StatelessWidget {
   static const routeName = "/home";
 
   final HomeController controller;
-  HomeScreen({ Key? key }):
-  controller = Provider.createController(() => HomeController()),
-  super(key: key);
+  HomeScreen({Key? key})
+      : controller = Provider.createController(() => HomeController()),
+        super(key: key);
 
-  void _log(String widgetName, { String? message }) {
+  void _log(String widgetName, {String? message}) {
     print("[ HomeScreen | $widgetName ] $message");
   }
 
@@ -24,37 +25,31 @@ class HomeScreen extends StatelessWidget {
     return CustomScrollView(
       physics: BouncingScrollPhysics(),
       slivers: [
-
         SliverAppBar(
           title: Center(
-            child: Image.asset(
-              "lib/app/assets/image/logo.png",
-              height: 45,
-            )
-          ),
+              child: Image.asset(
+            "lib/app/assets/image/logo.png",
+            height: 45,
+          )),
           backgroundColor: Colors.white,
           // floating: true,
         ),
-
         SliverGrid(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1417/2008,
-            // mainAxisSpacing: 5,
-            crossAxisSpacing: 10
-          ),
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              _log("SliverGrid", message: "widget $index builded");
-              return Padding(
-                padding: index.isEven ? EdgeInsets.only(left: 10, top: 10) : EdgeInsets.only(right: 10, top: 10),
-                child: Cardflix(data: controller.cards[index]),
-              );
-            },
-            childCount: controller.cards.length
-          ),
+              crossAxisCount: 2,
+              childAspectRatio: 1417 / 2008,
+              // mainAxisSpacing: 5,
+              crossAxisSpacing: 10),
+          delegate: SliverChildBuilderDelegate((_, int index) {
+            _log("SliverGrid", message: "widget $index builded");
+            return Padding(
+              padding: index.isEven
+                  ? EdgeInsets.only(left: 10, top: 10)
+                  : EdgeInsets.only(right: 10, top: 10),
+              child: Cardflix(data: controller.cards[index]),
+            );
+          }, childCount: controller.cards.length),
         ),
-
       ],
     );
   }
@@ -64,10 +59,12 @@ class HomeScreen extends StatelessWidget {
     return FutureBuilder(
       future: controller.loadCards(),
       builder: (BuildContext context, AsyncSnapshot<void> asyncSnapshot) {
-        switch(asyncSnapshot.connectionState) {
-          case ConnectionState.done: return content();
-          
-          default: return Loading();
+        switch (asyncSnapshot.connectionState) {
+          case ConnectionState.done:
+            return content();
+
+          default:
+            return Loading();
         }
       },
     );
