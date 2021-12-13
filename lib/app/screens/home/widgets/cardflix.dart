@@ -5,19 +5,15 @@ import 'package:powerflix/app/screens/home/home_controller.dart';
 import 'package:powerflix/app/screens/home/widgets/loading.dart';
 
 /// Cardflix widget
-/// 
+///
 /// This widget is using in the present home screen grid list.
 class Cardflix extends StatelessWidget {
-
-  /// Strutucture data present in widget to be 
-  /// rendered on screen 
+  /// Strutucture data present in widget to be
+  /// rendered on screen
   final CardData data;
 
   /// Constructor
-  const Cardflix({ 
-    Key? key,
-    required this.data
-  }): super(key: key);
+  const Cardflix({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +43,31 @@ class Cardflix extends StatelessWidget {
             child: Image.network(
               data.cover,
               fit: BoxFit.fill,
-              loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? chunk) {
-                if(chunk == null) return child;
-                return Loading();
-              },
+              loadingBuilder: loadingImage,
+              errorBuilder: loadingError,
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget loadingImage(
+    BuildContext context,
+    Widget child,
+    ImageChunkEvent? chunk,
+  ) {
+    if (chunk == null) return child;
+    return Loading();
+  }
+
+  Widget loadingError(
+    BuildContext context,
+    Object error,
+    StackTrace? stackTrace,
+  ) {
+    return LoadingError(
+      message: error.toString(),
     );
   }
 }

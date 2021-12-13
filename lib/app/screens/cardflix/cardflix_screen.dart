@@ -9,6 +9,7 @@ import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/card_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 import 'package:powerflix/app/screens/cardflix/widget/module_v2.dart';
+import 'package:powerflix/app/screens/home/widgets/loading.dart';
 
 /// Cardflix Screen
 class CardflixScreen extends StatelessWidget {
@@ -29,6 +30,7 @@ class CardflixScreen extends StatelessWidget {
   }
 
   Widget buildScreen() {
+    final height = (MediaQuery.of(controller.context).size.width - 32) * 1.48;
     return Container(
       color: Colors.white,
       child: ListView(
@@ -40,15 +42,23 @@ class CardflixScreen extends StatelessWidget {
               tag: controller.data.id,
               child: Container(
                 margin: const EdgeInsets.all(16),
-                height:
-                    (MediaQuery.of(controller.context).size.width - 32) * 1.48,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  image: DecorationImage(
-                    image: NetworkImage(controller.data.cover),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                height: height,
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(5),
+                //   image: DecorationImage(
+                //     image: NetworkImage(controller.data.cover),
+                //     fit: BoxFit.cover,
+                //   ),
+                // ),
+                child: ClipRRect(
+            borderRadius: BorderRadius.circular(5),
+            child: Image.network(
+              controller.data.cover,
+              fit: BoxFit.fill,
+              loadingBuilder: loadingImage,
+              errorBuilder: loadingError,
+            ),
+          ),
               ),
             ),
           ),
@@ -80,6 +90,25 @@ class CardflixScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget loadingImage(
+    BuildContext context,
+    Widget child,
+    ImageChunkEvent? chunk,
+  ) {
+    if (chunk == null) return child;
+    return Loading();
+  }
+
+  Widget loadingError(
+    BuildContext context,
+    Object error,
+    StackTrace? stackTrace,
+  ) {
+    return LoadingError(
+      message: error.toString(),
     );
   }
 
