@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 import 'package:powerflix/app/screens/home/home_screen.dart';
 import 'package:powerflix/app/screens/video/video_screen.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
 
           case CardflixScreen.routeName: 
-            var data = settings.arguments as CardData;
+            var data = settings.arguments as CardflixData;
             return MaterialPageRoute(builder: (BuildContext context) => CardflixScreen(data: data));
 
           case VideoScreen.routeName:

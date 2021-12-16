@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:powerflix/app/helpers/abstraction/model.dart';
 
 /// Card Data [Model]
-class CardData extends Model {
+class CardflixData extends Model {
 
   final String id;
   final String name;
@@ -14,8 +14,8 @@ class CardData extends Model {
 
   /// Constructor
   ///
-  /// Data input to [CardData]
-  const CardData({
+  /// Data input to [CardflixData]
+  const CardflixData({
     required this.id,
     required this.name,
     required this.description,
@@ -23,10 +23,10 @@ class CardData extends Model {
     required this.modules
   });
 
-  /// Method to initilize [CardData] with [Map]
-  static CardData fromMap(Map<String, dynamic> map) {
+  /// Method to initilize [CardflixData] with [Map]
+  static CardflixData fromMap(Map<String, dynamic> map) {
     try {
-      return CardData(
+      return CardflixData(
         id: map['id'],
         name: map['name'],
         description: map['description'],
@@ -42,7 +42,7 @@ class CardData extends Model {
 
   /// To json
   ///
-  /// Data output from [CardData]
+  /// Data output from [CardflixData]
   @override
   String toJson() {
     return jsonEncode(this.toMap());
@@ -50,7 +50,7 @@ class CardData extends Model {
 
   /// To Map
   ///
-  /// Data output from [CardData]
+  /// Data output from [CardflixData]
   @override
   Map<String, dynamic> toMap() {
     return {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/home/home_controller.dart';
 import 'package:powerflix/app/screens/home/widgets/loading.dart';
 
@@ -10,7 +10,7 @@ import 'package:powerflix/app/screens/home/widgets/loading.dart';
 class Cardflix extends StatelessWidget {
   /// Strutucture data present in widget to be
   /// rendered on screen
-  final CardData data;
+  final CardflixData data;
 
   /// Constructor
   const Cardflix({Key? key, required this.data}) : super(key: key);

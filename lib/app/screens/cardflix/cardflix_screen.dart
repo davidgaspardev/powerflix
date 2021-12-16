@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/color.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 import 'package:powerflix/app/screens/cardflix/widget/module_v2.dart';
 import 'package:powerflix/app/screens/cardflix/widget/backdrop.dart';
@@ -16,7 +16,7 @@ class CardflixScreen extends StatelessWidget {
   static const routeName = "/cardflix";
 
   final CardflixController controller;
-  CardflixScreen({Key? key, required CardData data})
+  CardflixScreen({Key? key, required CardflixData data})
       : controller =
             Provider.createController(() => CardflixController(data: data)),
         super(key: key);
