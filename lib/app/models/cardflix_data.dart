@@ -31,8 +31,8 @@ class CardflixData extends Model {
         name: map['name'],
         description: map['description'],
         cover: map['cover'],
-        modules: List<Map<String, dynamic>>.from(map['modules']).map<ModuleData>((Map<String, dynamic> data) {
-          return ModuleData.fromMap(data);
+        modules: (map['modules'] as List).map<ModuleData>((data) {
+          return ModuleData.fromMap(Map<String, dynamic>.from(data));
         }).toList()
       );
     } catch(e) {
@@ -54,6 +54,7 @@ class CardflixData extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
+      "id": this.id,
       "name": this.name,
       "description": this.description,
       "cover": this.cover,
@@ -89,10 +90,10 @@ class ModuleData extends Model {
       return ModuleData(
         level: map['level'],
         description: map['description'],
-        frequency: FrequencyData.fromMap(map['frequency']),
-        exercises: List<Map<String, dynamic>>.from(map['exercises'])
-          .map<ExerciseData>((Map<String, dynamic> data) {
-            return ExerciseData.fromMap(data);
+        frequency: FrequencyData.fromMap(Map<String, int>.from(map['frequency'])),
+        exercises: (map['exercises'] as List)
+          .map<ExerciseData>((data) {
+            return ExerciseData.fromMap(Map<String, dynamic>.from(data));
           })
           .toList(),
       );
@@ -196,9 +197,9 @@ class ExerciseData extends Model {
         order: map['order'] as int,
         name: map['name'] as String,
         features: map['features'] != null
-        ? List<Map<String, String>>.from(map['features'])
-          .map<FeatureData>((Map<String, String> map) {
-            return FeatureData.fromMap(map);
+        ? (map['features'] as List)
+          .map<FeatureData>((map) {
+            return FeatureData.fromMap(Map<String, String>.from(map));
           }).toList()
         : [],
         link: map['link']
