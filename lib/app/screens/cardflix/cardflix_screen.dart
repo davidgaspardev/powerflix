@@ -1,6 +1,5 @@
 /// External package
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 /// Internal package
 import 'package:powerflix/app/helpers/color.dart';
