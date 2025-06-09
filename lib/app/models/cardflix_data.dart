@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:powerflix/app/helpers/abstraction/model.dart';
 
 /// Card Data [Model]
-class CardData extends Model {
+class CardflixData extends Model {
 
   final String id;
   final String name;
@@ -14,8 +14,8 @@ class CardData extends Model {
 
   /// Constructor
   ///
-  /// Data input to [CardData]
-  const CardData({
+  /// Data input to [CardflixData]
+  const CardflixData({
     required this.id,
     required this.name,
     required this.description,
@@ -23,16 +23,16 @@ class CardData extends Model {
     required this.modules
   });
 
-  /// Method to initilize [CardData] with [Map]
-  static CardData fromMap(Map<String, dynamic> map) {
+  /// Method to initilize [CardflixData] with [Map]
+  static CardflixData fromMap(Map<String, dynamic> map) {
     try {
-      return CardData(
+      return CardflixData(
         id: map['id'],
         name: map['name'],
         description: map['description'],
         cover: map['cover'],
-        modules: List<Map<String, dynamic>>.from(map['modules']).map<ModuleData>((Map<String, dynamic> data) {
-          return ModuleData.fromMap(data);
+        modules: (map['modules'] as List).map<ModuleData>((data) {
+          return ModuleData.fromMap(Map<String, dynamic>.from(data));
         }).toList()
       );
     } catch(e) {
@@ -42,7 +42,7 @@ class CardData extends Model {
 
   /// To json
   ///
-  /// Data output from [CardData]
+  /// Data output from [CardflixData]
   @override
   String toJson() {
     return jsonEncode(this.toMap());
@@ -50,10 +50,11 @@ class CardData extends Model {
 
   /// To Map
   ///
-  /// Data output from [CardData]
+  /// Data output from [CardflixData]
   @override
   Map<String, dynamic> toMap() {
     return {
+      "id": this.id,
       "name": this.name,
       "description": this.description,
       "cover": this.cover,
@@ -89,10 +90,10 @@ class ModuleData extends Model {
       return ModuleData(
         level: map['level'],
         description: map['description'],
-        frequency: FrequencyData.fromMap(map['frequency']),
-        exercises: List<Map<String, dynamic>>.from(map['exercises'])
-          .map<ExerciseData>((Map<String, dynamic> data) {
-            return ExerciseData.fromMap(data);
+        frequency: FrequencyData.fromMap(Map<String, int>.from(map['frequency'])),
+        exercises: (map['exercises'] as List)
+          .map<ExerciseData>((data) {
+            return ExerciseData.fromMap(Map<String, dynamic>.from(data));
           })
           .toList(),
       );
@@ -196,9 +197,9 @@ class ExerciseData extends Model {
         order: map['order'] as int,
         name: map['name'] as String,
         features: map['features'] != null
-        ? List<Map<String, String>>.from(map['features'])
-          .map<FeatureData>((Map<String, String> map) {
-            return FeatureData.fromMap(map);
+        ? (map['features'] as List)
+          .map<FeatureData>((map) {
+            return FeatureData.fromMap(Map<String, String>.from(map));
           }).toList()
         : [],
         link: map['link']

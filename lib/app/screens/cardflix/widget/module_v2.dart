@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/color.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
 import 'package:powerflix/app/helpers/widgets/provider.dart';
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 
 class ModuleV2 extends StatelessWidget {

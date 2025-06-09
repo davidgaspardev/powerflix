@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 
 /// Internal package
 import 'package:powerflix/app/helpers/abstraction/controller.dart';
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/video/video_screen.dart';
 
 class CardflixController extends Controller {
 
-  final CardData data;
+  final CardflixData data;
   final modulePositionNotifier = ValueNotifier<int>(0);
+  final favoriteNotifier = ValueNotifier<bool>(false);
 
   CardflixController({ required this.data });
 
@@ -20,6 +21,10 @@ class CardflixController extends Controller {
     );
   }
 
+  void switchFavorite() {
+    favoriteNotifier.value = !favoriteNotifier.value;
+  }
+
   void onPageChanged(int position) {
     modulePositionNotifier.value = position;
   }
@@ -27,5 +32,6 @@ class CardflixController extends Controller {
   @override
   void dispose() {
     modulePositionNotifier.dispose();
+    favoriteNotifier.dispose();
   }
 }

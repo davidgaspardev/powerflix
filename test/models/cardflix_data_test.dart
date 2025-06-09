@@ -1,7 +1,7 @@
 /// External package
 import 'package:flutter_test/flutter_test.dart';
 /// Internal package
-import 'package:powerflix/app/models/card_data.dart';
+import 'package:powerflix/app/models/cardflix_data.dart';
 
 void main() {
   group("Testing Card Data Model", () {
@@ -264,16 +264,16 @@ void main() {
     ];
 
     test("Initializing a card", () {
-      CardData card = CardData.fromMap(data);
+      CardflixData card = CardflixData.fromMap(data);
 
       expect(card.toMap(), data);
     });
 
     test("Initializing cards", () {
-      List<CardData> cards = [];
+      List<CardflixData> cards = [];
 
       for(int i = 0; i < testData.length; i++) {
-        cards.add(CardData.fromMap(testData[i]));
+        cards.add(CardflixData.fromMap(testData[i]));
 
         print("\nCard $i: ${cards[i].toJson()}");
       }
