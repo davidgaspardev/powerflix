@@ -5,19 +5,18 @@ import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 class WorkoutPlanCard extends StatelessWidget {
   final WorkoutPlan data;
+  final VoidCallback? onTap;
 
   const WorkoutPlanCard({
     Key? key,
     required this.data,
+    this.onTap,
   }) : super(key: key);
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print("Hello");
-      },
+      onTap: onTap,
       child: Hero(
         tag: data.id,
         child: Container(

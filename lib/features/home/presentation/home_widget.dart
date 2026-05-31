@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/top_drawer.dart';
 import 'package:powerflix/app/screens/home/widgets/loading.dart';
+import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
 import 'package:powerflix/features/home/presentation/widget/header.dart';
 import 'package:powerflix/features/home/presentation/widget/workout_plan_card.dart';
@@ -49,7 +50,13 @@ class _HomeWidgetState extends State<HomeWidget> {
               mainAxisSpacing: 10,
             ),
             delegate: SliverChildBuilderDelegate(
-              (_, int index) => WorkoutPlanCard(data: _viewModel.workouts[index]),
+              (context, int index) => WorkoutPlanCard(
+                data: _viewModel.workouts[index],
+                onTap: () => Navigator.of(context).pushNamed(
+                  WorkoutDetailWidget.routeName,
+                  arguments: _viewModel.workouts[index],
+                ),
+              ),
               childCount: _viewModel.workouts.length,
             ),
           ),
