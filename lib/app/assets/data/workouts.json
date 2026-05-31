@@ -8,18 +8,40 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de caminhada leve ou bicicleta ergométrica. Faça 10 rotações circulares de quadril por lado e 15 elevações pélvicas no colchonete sem carga para ativar o glúteo antes de iniciar.",
         "exercises": [
-          { "order": 1, "name": "Agachamento com peso corporal" },
-          { "order": 2, "name": "Cadeira abdutora" },
-          { "order": 3, "name": "Elevação pélvica em colchonete" },
-          { "order": 4, "name": "Glúteo máquina" }
+          {
+            "order": 1,
+            "name": "Agachamento com peso corporal"
+          },
+          {
+            "order": 2,
+            "name": "Cadeira abdutora"
+          },
+          {
+            "order": 3,
+            "name": "Elevação pélvica em colchonete"
+          },
+          {
+            "order": 4,
+            "name": "Glúteo máquina"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 7 minutos de esteira em ritmo moderado. Execute 1 série de aquecimento do agachamento com 40% da carga prevista e 15 elevações pélvicas para ativar o glúteo antes de iniciar os bi-sets.",
         "exercises": [
           {
             "order": 1,
@@ -31,15 +53,29 @@
               }
             ]
           },
-          { "order": 2, "name": "Glúteo em 4 apoios com caneleira" },
-          { "order": 3, "name": "Agachamento em polia" },
-          { "order": 4, "name": "Elevação pélvica na máquina 4x até a falha" }
+          {
+            "order": 2,
+            "name": "Glúteo em 4 apoios com caneleira"
+          },
+          {
+            "order": 3,
+            "name": "Agachamento em polia"
+          },
+          {
+            "order": 4,
+            "name": "Elevação pélvica na máquina 4x até a falha"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 11 },
+        "volume": {
+          "sets": 4,
+          "reps": 11,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute 2 séries de agachamento no smith com 50% e 70% da carga antes de iniciar. Não pule esta etapa — cargas elevadas com glúteo frio aumentam risco de lesão no quadril e lombar.",
         "exercises": [
           {
             "order": 1,
@@ -51,7 +87,10 @@
               }
             ]
           },
-          { "order": 2, "name": "Glúteo em apoios com caneleira" },
+          {
+            "order": 2,
+            "name": "Glúteo em apoios com caneleira"
+          },
           {
             "order": 3,
             "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia",
@@ -62,7 +101,10 @@
               }
             ]
           },
-          { "order": 4, "name": "Agachamento búlgaro 4x até a falha" }
+          {
+            "order": 4,
+            "name": "Agachamento búlgaro 4x até a falha"
+          }
         ]
       }
     ]
@@ -76,18 +118,40 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça 10 rotações lentas de ombro para frente e para trás e 1 série de rosca com haltere leve (30% da carga) para lubrificar a articulação do cotovelo.",
         "exercises": [
-          { "order": 1, "name": "Bíceps com barra na polia" },
-          { "order": 2, "name": "Bíceps direto com halteres sentado" },
-          { "order": 3, "name": "Bíceps martelo com halteres" },
-          { "order": 4, "name": "Bíceps scott" }
+          {
+            "order": 1,
+            "name": "Bíceps com barra na polia"
+          },
+          {
+            "order": 2,
+            "name": "Bíceps direto com halteres sentado"
+          },
+          {
+            "order": 3,
+            "name": "Bíceps martelo com halteres"
+          },
+          {
+            "order": 4,
+            "name": "Bíceps scott"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 1 série leve de rosca direta na polia e 1 série leve de bíceps martelo antes de iniciar os bi-sets — articulações de cotovelo e punho devem estar aquecidas.",
         "exercises": [
           {
             "order": 1,
@@ -99,17 +163,34 @@
               }
             ]
           },
-          { "order": 2, "name": "Bíceps alternado com halteres sentado" },
-          { "order": 3, "name": "Bíceps concentrado com halteres" }
+          {
+            "order": 2,
+            "name": "Bíceps alternado com halteres sentado"
+          },
+          {
+            "order": 3,
+            "name": "Bíceps concentrado com halteres"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 6 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 2 séries progressivas de rosca com barra reta (50% e 70% da carga) antes de iniciar. Bíceps é um músculo curto e articulação do cotovelo sob carga pesada sem aquecimento é causa frequente de tendinite.",
         "exercises": [
-          { "order": 1, "name": "Bíceps martelo com corda na polia" },
-          { "order": 2, "name": "Bíceps alternado com isometria" },
+          {
+            "order": 1,
+            "name": "Bíceps martelo com corda na polia"
+          },
+          {
+            "order": 2,
+            "name": "Bíceps alternado com isometria"
+          },
           {
             "order": 3,
             "name": "Bíceps com barra reta rest pause",
@@ -120,7 +201,10 @@
               }
             ]
           },
-          { "order": 4, "name": "Bíceps 21 com barra w" }
+          {
+            "order": 4,
+            "name": "Bíceps 21 com barra w"
+          }
         ]
       }
     ]
@@ -134,20 +218,45 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 45
+        },
+        "warmupNote": "Realize mobilidade de coluna: posição de gato-vaca por 1 minuto (10 repetições lentas). Faça 10 respirações diafragmáticas profundas ativando o core antes de iniciar — estabilização lombar é fundamental para abdômen seguro.",
         "exercises": [
-          { "order": 1, "name": "Abd supra" },
-          { "order": 2, "name": "Abd infra no chão" },
-          { "order": 3, "name": "Abd supra com pé alto" },
-          { "order": 4, "name": "Abd tesoura em colchonete" }
+          {
+            "order": 1,
+            "name": "Abd supra"
+          },
+          {
+            "order": 2,
+            "name": "Abd infra no chão"
+          },
+          {
+            "order": 3,
+            "name": "Abd supra com pé alto"
+          },
+          {
+            "order": 4,
+            "name": "Abd tesoura em colchonete"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize mobilidade de coluna lombar e torácica: gato-vaca por 1 minuto e rotação de tronco deitado por 30 segundos cada lado. Core deve estar ativado antes de qualquer movimento de abdômen em velocidade.",
         "exercises": [
-          { "order": 1, "name": "Abd bicicleta em colchonete" },
+          {
+            "order": 1,
+            "name": "Abd bicicleta em colchonete"
+          },
           {
             "order": 2,
             "name": "Abd escalador em colchonete",
@@ -158,7 +267,10 @@
               }
             ]
           },
-          { "order": 3, "name": "Abd canivete" },
+          {
+            "order": 3,
+            "name": "Abd canivete"
+          },
           {
             "order": 4,
             "name": "Abd canoa isométrica",
@@ -169,18 +281,37 @@
               }
             ]
           },
-          { "order": 5, "name": "Abd infra + quadril em colchonete" }
+          {
+            "order": 5,
+            "name": "Abd infra + quadril em colchonete"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4 },
+        "volume": {
+          "sets": 4,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve seguido de mobilidade completa de coluna. Para prancha e isométricos: ative conscientemente o transverso abdominal (barriga para dentro) antes de cada série — sem isso, a lombar assume a carga e o risco de lesão é alto.",
         "exercises": [
-          { "order": 1, "name": "Abd prancha lateral em colchonete" },
-          { "order": 2, "name": "Abd prancha ventral isométrica" },
-          { "order": 3, "name": "Abd tapa calcanhar" },
-          { "order": 4, "name": "Abd remador em colchonete" }
+          {
+            "order": 1,
+            "name": "Abd prancha lateral em colchonete"
+          },
+          {
+            "order": 2,
+            "name": "Abd prancha ventral isométrica"
+          },
+          {
+            "order": 3,
+            "name": "Abd tapa calcanhar"
+          },
+          {
+            "order": 4,
+            "name": "Abd remador em colchonete"
+          }
         ]
       }
     ]
@@ -194,19 +325,41 @@
       {
         "difficulty": "LIGHT",
         "description": "Carga leves e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 75
+        },
+        "warmupNote": "Realize 5 minutos de remada ergométrica leve ou elíptico. Faça 10 rotações de ombro e 1 série de puxada na polia com carga mínima para ativar o grande dorsal antes de iniciar — costas é um grupo muscular grande e exige ativação prévia.",
         "exercises": [
-          { "order": 1, "name": "Puxada frente aberta" },
-          { "order": 2, "name": "Remada baixa" },
-          { "order": 3, "name": "Puxada fechada com triângulo" }
+          {
+            "order": 1,
+            "name": "Puxada frente aberta"
+          },
+          {
+            "order": 2,
+            "name": "Remada baixa"
+          },
+          {
+            "order": 3,
+            "name": "Puxada fechada com triângulo"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 13 },
+        "volume": {
+          "sets": 3,
+          "reps": 13,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 7 minutos de aquecimento aeróbico em remada ergométrica. Execute mobilidade torácica: rotação de tronco sentado 10x por lado. Faça 1 série leve de puxada e 1 série leve de remada antes de iniciar os bi-sets.",
         "exercises": [
-          { "order": 1, "name": "Remada baixa pegada neutra" },
+          {
+            "order": 1,
+            "name": "Remada baixa pegada neutra"
+          },
           {
             "order": 2,
             "name": "Puxada frente aberta + puxada frente supinada",
@@ -217,13 +370,21 @@
               }
             ]
           },
-          { "order": 3, "name": "Remada curvada p/ supinada na polia" }
+          {
+            "order": 3,
+            "name": "Remada curvada p/ supinada na polia"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 6 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 180
+        },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute 2 séries progressivas de remada (50% e 70% da carga) e 1 série leve de puxada. Costas sob cargas pesadas sem aquecimento adequado é a principal causa de hérnia de disco — não negocie esta etapa.",
         "exercises": [
           {
             "order": 1,
@@ -255,7 +416,10 @@
               }
             ]
           },
-          { "order": 4, "name": "Barra fixa p/ neutra 4x até a falha" }
+          {
+            "order": 4,
+            "name": "Barra fixa p/ neutra 4x até a falha"
+          }
         ]
       }
     ]
@@ -269,24 +433,61 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 7 minutos de bicicleta ergométrica ou caminhada com inclinação leve. Faça 10 rotações de joelho por lado e 15 agachamentos livres sem carga antes de iniciar — perna é o maior grupo muscular do corpo e exige aquecimento mais longo.",
         "exercises": [
-          { "order": 1, "name": "Agachamento hack" },
-          { "order": 2, "name": "Cadeira adutora" },
-          { "order": 3, "name": "Cadeira extensora" },
-          { "order": 4, "name": "Agachamento com peso corporal" },
-          { "order": 5, "name": "Leg press 45°" }
+          {
+            "order": 1,
+            "name": "Agachamento hack"
+          },
+          {
+            "order": 2,
+            "name": "Cadeira adutora"
+          },
+          {
+            "order": 3,
+            "name": "Cadeira extensora"
+          },
+          {
+            "order": 4,
+            "name": "Agachamento com peso corporal"
+          },
+          {
+            "order": 5,
+            "name": "Leg press 45°"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 10 minutos de bicicleta ergométrica com intensidade progressiva. Execute 1 série leve de agachamento hack e 1 série leve de leg press antes de iniciar. Quadríceps e glúteo em bi-sets exigem articulação de joelho completamente aquecida.",
         "exercises": [
-          { "order": 1, "name": "Agachamento hack" },
-          { "order": 2, "name": "Afundo com barra livre" },
-          { "order": 3, "name": "Cadeira extensora - pico de contração" },
-          { "order": 4, "name": "Leg 45" },
+          {
+            "order": 1,
+            "name": "Agachamento hack"
+          },
+          {
+            "order": 2,
+            "name": "Afundo com barra livre"
+          },
+          {
+            "order": 3,
+            "name": "Cadeira extensora - pico de contração"
+          },
+          {
+            "order": 4,
+            "name": "Leg 45"
+          },
           {
             "order": 5,
             "name": "Agachamento smith + agachamento sumô no smith",
@@ -302,9 +503,17 @@
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 11 },
+        "volume": {
+          "sets": 4,
+          "reps": 11,
+          "restSeconds": 180
+        },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo (bicicleta ou esteira com inclinação). Execute 2 séries de agachamento livre com 50% e 70% da carga antes de iniciar. Treino HARD de perna é o de maior risco do programa — joelho frio sob carga máxima é lesão garantida.",
         "exercises": [
-          { "order": 1, "name": "Agachamento livre" },
+          {
+            "order": 1,
+            "name": "Agachamento livre"
+          },
           {
             "order": 2,
             "name": "Cadeira extensora drop set",
@@ -358,20 +567,45 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça ativação do manguito rotador: 15 rotações externas com elástico ou haltere leve por lado. Ombro é a articulação mais instável do corpo — nunca inicie sem ativar o manguito rotador.",
         "exercises": [
-          { "order": 1, "name": "Desenvolvimento com halteres sentado" },
-          { "order": 2, "name": "Elevação lateral com halteres" },
-          { "order": 3, "name": "Elevação frontal alternada com halteres" },
-          { "order": 4, "name": "Crucifixo invertido" }
+          {
+            "order": 1,
+            "name": "Desenvolvimento com halteres sentado"
+          },
+          {
+            "order": 2,
+            "name": "Elevação lateral com halteres"
+          },
+          {
+            "order": 3,
+            "name": "Elevação frontal alternada com halteres"
+          },
+          {
+            "order": 4,
+            "name": "Crucifixo invertido"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 7 minutos de aquecimento aeróbico. Execute ativação do manguito: 15 rotações externas e internas com elástico por lado. Faça 1 série leve de desenvolvimento com halteres antes de iniciar — ombro sob carga moderada sem aquecimento é causa frequente de impacto subacromial.",
         "exercises": [
-          { "order": 1, "name": "Desenvolvimento Arnold" },
+          {
+            "order": 1,
+            "name": "Desenvolvimento Arnold"
+          },
           {
             "order": 2,
             "name": "Elevação lateral na polia baixa + elevação frontal com halteres",
@@ -382,16 +616,30 @@
               }
             ]
           },
-          { "order": 3, "name": "Face pull na polia" },
-          { "order": 4, "name": "Desenvolvimento na máquina" }
+          {
+            "order": 3,
+            "name": "Face pull na polia"
+          },
+          {
+            "order": 4,
+            "name": "Desenvolvimento na máquina"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 6 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute ativação completa do manguito rotador com elástico (rotação interna e externa, 15x por lado). Faça 2 séries de desenvolvimento com barra (50% e 70% da carga) antes de iniciar. Desenvolvimento pesado com ombro frio é a principal causa de ruptura do supraespinhoso.",
         "exercises": [
-          { "order": 1, "name": "Desenvolvimento com barra" },
+          {
+            "order": 1,
+            "name": "Desenvolvimento com barra"
+          },
           {
             "order": 2,
             "name": "Elevação lateral rest pause",
@@ -435,18 +683,40 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça 10 extensões de cotovelo sem carga e 10 rotações de ombro por lado. Execute 1 série leve de tríceps na polia com corda (30% da carga) para lubrificar a articulação do cotovelo antes de iniciar.",
         "exercises": [
-          { "order": 1, "name": "Tríceps na polia com corda" },
-          { "order": 2, "name": "Tríceps francês com halteres deitado" },
-          { "order": 3, "name": "Tríceps coice com halteres" },
-          { "order": 4, "name": "Tríceps testa com barra w" }
+          {
+            "order": 1,
+            "name": "Tríceps na polia com corda"
+          },
+          {
+            "order": 2,
+            "name": "Tríceps francês com halteres deitado"
+          },
+          {
+            "order": 3,
+            "name": "Tríceps coice com halteres"
+          },
+          {
+            "order": 4,
+            "name": "Tríceps testa com barra w"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 1 série leve de tríceps na polia com corda e 1 série leve de francês antes de iniciar os bi-sets — cotovelo sob carga moderada sem aquecimento causa tendinite na inserção do tríceps.",
         "exercises": [
           {
             "order": 1,
@@ -458,14 +728,25 @@
               }
             ]
           },
-          { "order": 2, "name": "Tríceps francês com barra w" },
-          { "order": 3, "name": "Mergulho entre bancos com peso" }
+          {
+            "order": 2,
+            "name": "Tríceps francês com barra w"
+          },
+          {
+            "order": 3,
+            "name": "Mergulho entre bancos com peso"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 6 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 2 séries progressivas de tríceps testa (50% e 70% da carga) antes de iniciar. Tríceps testa com barra reta pesado é o exercício de maior estresse no cotovelo do programa — aquecimento obrigatório.",
         "exercises": [
           {
             "order": 1,
@@ -487,7 +768,10 @@
               }
             ]
           },
-          { "order": 3, "name": "Mergulho nas paralelas 4x até a falha" },
+          {
+            "order": 3,
+            "name": "Mergulho nas paralelas 4x até a falha"
+          },
           {
             "order": 4,
             "name": "Tríceps coice drop set",
@@ -511,18 +795,40 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 3, "reps": 11 },
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 75
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça 10 rotações lentas de ombro e 15 flexões de braço sem carga antes de iniciar — peito e ombro compartilham estruturas tendíneas e ambos precisam estar aquecidos antes do supino.",
         "exercises": [
-          { "order": 1, "name": "Supino reto com halteres" },
-          { "order": 2, "name": "Crucifixo com halteres" },
-          { "order": 3, "name": "Supino inclinado com halteres" },
-          { "order": 4, "name": "Peck deck" }
+          {
+            "order": 1,
+            "name": "Supino reto com halteres"
+          },
+          {
+            "order": 2,
+            "name": "Crucifixo com halteres"
+          },
+          {
+            "order": 3,
+            "name": "Supino inclinado com halteres"
+          },
+          {
+            "order": 4,
+            "name": "Peck deck"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": { "sets": 4, "reps": 9 },
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 7 minutos de aquecimento aeróbico. Execute ativação de manguito rotador com elástico (15x por lado) e 1 série leve de supino com halteres antes de iniciar os bi-sets. Peito em bi-set com alta repetição exige ombro completamente preparado.",
         "exercises": [
           {
             "order": 1,
@@ -534,15 +840,29 @@
               }
             ]
           },
-          { "order": 2, "name": "Supino inclinado na máquina" },
-          { "order": 3, "name": "Crossover na polia" },
-          { "order": 4, "name": "Flexão de braço" }
+          {
+            "order": 2,
+            "name": "Supino inclinado na máquina"
+          },
+          {
+            "order": 3,
+            "name": "Crossover na polia"
+          },
+          {
+            "order": 4,
+            "name": "Flexão de braço"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": { "sets": 4, "reps": 6 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 150
+        },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute ativação de manguito rotador e 2 séries de supino com barra (50% e 70% da carga) antes de iniciar. Supino com barra pesado sem aquecimento adequado é uma das causas mais comuns de lesão no peitoral maior e no tendão do bíceps.",
         "exercises": [
           {
             "order": 1,
@@ -574,7 +894,10 @@
               }
             ]
           },
-          { "order": 4, "name": "Mergulho nas paralelas 4x até a falha" }
+          {
+            "order": 4,
+            "name": "Mergulho nas paralelas 4x até a falha"
+          }
         ]
       }
     ]
