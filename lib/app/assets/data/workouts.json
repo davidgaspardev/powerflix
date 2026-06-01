@@ -182,120 +182,60 @@
     ]
   },
   {
-    "id": "egywe8gfs87gf7",
-    "name": "Abdômen Chapado",
-    "description": "Para voçê que busca abdômen top.",
-    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=b0fb9970-d6d7-4b34-ba92-df7f55059984",
+    "id": "postura_guerreiro_01",
+    "name": "Postura de Guerreiro",
+    "description": "Para você que busca ombros abertos, escápulas retraídas e a postura de quem domina o ambiente.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpostura_de_guerreiro.png?alt=media&token=9511eb0c-2e09-4300-bd41-61b7955374cb",
     "levels": [
       {
         "difficulty": "LIGHT",
-        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": {
-          "sets": 3,
-          "reps": 11,
-          "restSeconds": 45
-        },
-        "warmupNote": "Realize mobilidade de coluna: posição de gato-vaca por 1 minuto (10 repetições lentas). Faça 10 respirações diafragmáticas profundas ativando o core antes de iniciar — estabilização lombar é fundamental para abdômen seguro.",
+        "description": "Ativação dos romboides e trapézio médio para reverter o arredondamento de ombros",
+        "volume": { "sets": 3, "reps": 15, "restSeconds": 60 },
+        "warmupNote": "Realize 10 retrações escapulares lentas sem carga (junte as escápulas e segure 3 segundos). Faça 10 rotações de ombro para frente e para trás. Músculos posturais são principalmente fibras de resistência — eles respondem melhor ao volume e à consciência corporal do que à carga.",
         "exercises": [
-          {
-            "order": 1,
-            "name": "Abd supra",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 2,
-            "name": "Abd infra no chão",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 3,
-            "name": "Abd supra com pé alto",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 4,
-            "name": "Abd tesoura em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          }
+          { "order": 1, "name": "Retração escapular com elástico" },
+          { "order": 2, "name": "Face pull com elástico" },
+          { "order": 3, "name": "Remada curvada com halteres pegada pronada" },
+          { "order": 4, "name": "Elevação posterior com halteres sentado" }
         ]
       },
       {
         "difficulty": "SOFT",
-        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": {
-          "sets": 4,
-          "reps": 9,
-          "restSeconds": 60
-        },
-        "warmupNote": "Realize mobilidade de coluna lombar e torácica: gato-vaca por 1 minuto e rotação de tronco deitado por 30 segundos cada lado. Core deve estar ativado antes de qualquer movimento de abdômen em velocidade.",
+        "description": "Carga moderada para fortalecer trapézio médio, romboides e deltóide posterior com volume adequado",
+        "volume": { "sets": 4, "reps": 12, "restSeconds": 75 },
+        "warmupNote": "Realize 7 minutos de aquecimento aeróbico leve. Execute 15 retrações escapulares e 15 face pulls com elástico antes de iniciar. Ative conscientemente os romboides durante cada repetição — sem ativação consciente o trapézio superior compensa e a postura piora.",
         "exercises": [
           {
             "order": 1,
-            "name": "Abd bicicleta em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Remada pronada na polia + face pull",
+            "techniques": [{ "title": "BI-SET 4x12 + 12", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
           },
-          {
-            "order": 2,
-            "name": "Abd escalador em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
-            "techniques": [
-              {
-                "title": "3x15",
-                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
-              }
-            ]
-          },
-          {
-            "order": 3,
-            "name": "Abd canivete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 4,
-            "name": "Abd canoa isométrica",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
-            "techniques": [
-              {
-                "title": "3x15",
-                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
-              }
-            ]
-          },
-          {
-            "order": 5,
-            "name": "Abd infra + quadril em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          }
+          { "order": 2, "name": "Remada serrote com halter" },
+          { "order": 3, "name": "Encolhimento com halteres" },
+          { "order": 4, "name": "Band pull-apart com elástico" }
         ]
       },
       {
         "difficulty": "HARD",
-        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": {
-          "sets": 4,
-          "restSeconds": 60
-        },
-        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve seguido de mobilidade completa de coluna. Para prancha e isométricos: ative conscientemente o transverso abdominal (barriga para dentro) antes de cada série — sem isso, a lombar assume a carga e o risco de lesão é alto.",
+        "description": "Volume e carga elevados para trapézio, romboides e deltóide posterior com técnicas avançadas",
+        "volume": { "sets": 4, "reps": 8, "restSeconds": 120 },
+        "warmupNote": "Realize 7 minutos de aquecimento aeróbico. Execute ativação escapular completa: retrações, face pull e band pull-apart antes de iniciar. Faça 1 série leve de remada pronada pesada antes de iniciar — romboides sob carga pesada sem ativação prévia causam tensão no trapézio superior e piora postural.",
         "exercises": [
           {
             "order": 1,
-            "name": "Abd prancha lateral em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Remada pronada pesada + face pull drop set",
+            "techniques": [{ "title": "BI-SET 4x8 + falha", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
           },
           {
             "order": 2,
-            "name": "Abd prancha ventral isométrica",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Power shrug com barra rest pause",
+            "techniques": [{ "title": "4x8 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
           },
-          {
-            "order": 3,
-            "name": "Abd tapa calcanhar",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
+          { "order": 3, "name": "Remada cavaleiro (t-bar) 4x até a falha" },
           {
             "order": 4,
-            "name": "Abd remador em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Encolhimento com barra rest pause",
+            "techniques": [{ "title": "4x8 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
           }
         ]
       }
@@ -1108,6 +1048,126 @@
           {
             "order": 4,
             "name": "Bíceps 21 com barra w",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "egywe8gfs87gf7",
+    "name": "Abdômen Chapado",
+    "description": "Para voçê que busca abdômen top.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=b0fb9970-d6d7-4b34-ba92-df7f55059984",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 45
+        },
+        "warmupNote": "Realize mobilidade de coluna: posição de gato-vaca por 1 minuto (10 repetições lentas). Faça 10 respirações diafragmáticas profundas ativando o core antes de iniciar — estabilização lombar é fundamental para abdômen seguro.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Abd supra",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Abd infra no chão",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Abd supra com pé alto",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Abd tesoura em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize mobilidade de coluna lombar e torácica: gato-vaca por 1 minuto e rotação de tronco deitado por 30 segundos cada lado. Core deve estar ativado antes de qualquer movimento de abdômen em velocidade.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Abd bicicleta em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Abd escalador em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "techniques": [
+              {
+                "title": "3x15",
+                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "name": "Abd canivete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Abd canoa isométrica",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "techniques": [
+              {
+                "title": "3x15",
+                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+              }
+            ]
+          },
+          {
+            "order": 5,
+            "name": "Abd infra + quadril em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": {
+          "sets": 4,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve seguido de mobilidade completa de coluna. Para prancha e isométricos: ative conscientemente o transverso abdominal (barriga para dentro) antes de cada série — sem isso, a lombar assume a carga e o risco de lesão é alto.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Abd prancha lateral em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Abd prancha ventral isométrica",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Abd tapa calcanhar",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Abd remador em colchonete",
             "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
