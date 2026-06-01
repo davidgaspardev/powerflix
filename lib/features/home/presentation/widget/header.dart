@@ -5,7 +5,7 @@ class Header extends StatelessWidget {
 
   final VoidCallback onTap;
 
-  const Header({required this.onTap, Key? key}) : super(key: key);
+  const Header({required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

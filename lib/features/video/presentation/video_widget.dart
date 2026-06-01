@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/app/helpers/widgets/label.dart';
+import 'package:powerflix/shared/widgets/label.dart';
 import 'package:powerflix/features/video/presentation/video_viewmodel.dart';
 import 'package:video_player/video_player.dart';
 
@@ -8,7 +8,7 @@ class VideoWidget extends StatefulWidget {
 
   final String link;
 
-  const VideoWidget({Key? key, required this.link}) : super(key: key);
+  const VideoWidget({super.key, required this.link});
 
   @override
   State<VideoWidget> createState() => _VideoWidgetState();

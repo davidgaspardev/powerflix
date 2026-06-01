@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/app/helpers/widgets/top_drawer.dart';
-import 'package:powerflix/app/screens/home/widgets/loading.dart';
+import 'package:powerflix/shared/widgets/loading.dart';
+import 'package:powerflix/shared/widgets/top_drawer.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
 import 'package:powerflix/features/home/presentation/widget/header.dart';
@@ -9,7 +9,7 @@ import 'package:powerflix/features/home/presentation/widget/workout_plan_card.da
 class HomeWidget extends StatefulWidget {
   static const routeName = '/home';
 
-  const HomeWidget({Key? key}) : super(key: key);
+  const HomeWidget({super.key});
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
