@@ -20,8 +20,8 @@ void main() {
   });
 
   group('WorkoutPlan serialization', () {
-    test('loads all 8 plans from JSON fixture', () {
-      expect(fixture.length, 8);
+    test('loads all 11 plans from JSON fixture', () {
+      expect(fixture.length, 11);
     });
 
     test('fromMap → toMap round-trip for each plan', () {

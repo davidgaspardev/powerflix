@@ -88,7 +88,7 @@ class _BackdropState extends State<Backdrop> {
     currentTop = top;
     lastTop = top;
 
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       final childHeight = globalKey.currentContext!.size!.height;
       endPosition = MediaQuery.of(context).size.height - childHeight;
     });

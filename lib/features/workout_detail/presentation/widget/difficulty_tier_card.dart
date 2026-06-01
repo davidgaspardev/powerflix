@@ -83,7 +83,7 @@ class DifficultyTierCard extends StatelessWidget {
                     ),
                     LabelSpan(
                       ' series de ',
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                     LabelSpan(
                       data.volume.reps?.toString() ?? 'falha',
@@ -91,7 +91,7 @@ class DifficultyTierCard extends StatelessWidget {
                     ),
                     LabelSpan(
                       data.volume.reps != null ? ' repetições' : '',
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ],
                 ),
@@ -105,7 +105,7 @@ class DifficultyTierCard extends StatelessWidget {
           height: 4,
           margin: const EdgeInsets.only(right: 8, bottom: 8, left: 8),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(.5),
+            color: Colors.white.withValues(alpha: 0.5),
             borderRadius: BorderRadius.circular(2),
           ),
         ),
@@ -164,7 +164,7 @@ class DifficultyTierCard extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(4),
-          color: Colors.white.withOpacity(0.25),
+          color: Colors.white.withValues(alpha: 0.25),
         ),
         child: Label.rich(
           LabelSpan(

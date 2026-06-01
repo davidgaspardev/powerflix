@@ -79,7 +79,7 @@ class ModuleV2 extends StatelessWidget {
                       ),
                       LabelSpan(
                         " series de ",
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                       ),
                       LabelSpan(
                         data.frequency.repetition.toString(),
@@ -87,7 +87,7 @@ class ModuleV2 extends StatelessWidget {
                       ),
                       LabelSpan(
                         " repetições",
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                       ),
                     ],
                   ),
@@ -105,7 +105,7 @@ class ModuleV2 extends StatelessWidget {
               left: 8,
             ),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.5),
+              color: Colors.white.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -154,8 +154,7 @@ class ModuleV2 extends StatelessWidget {
                   ] +
                   () {
                     List<Widget> widgets = [];
-                    if (exercise.features != null &&
-                        exercise.features.length > 0) {
+                    if (exercise.features.isNotEmpty) {
                       widgets.add(buildFeatures(exercise.features));
                     }
                     if (exercise.link != null) {
@@ -205,7 +204,7 @@ class ModuleV2 extends StatelessWidget {
               color: Colors.white,
             ),
             borderRadius: BorderRadius.circular(4),
-            color: Colors.white.withOpacity(0.25)),
+            color: Colors.white.withValues(alpha: 0.25)),
         child: Label.rich(
           LabelSpan(
             "ASSISTIR",

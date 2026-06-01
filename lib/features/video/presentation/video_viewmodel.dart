@@ -15,7 +15,7 @@ class VideoViewModel extends ChangeNotifier {
   String? get error => _error;
 
   VideoViewModel({required this.link}) {
-    player = VideoPlayerController.network(link);
+    player = VideoPlayerController.networkUrl(Uri.parse(link));
   }
 
   Future<void> init() async {
