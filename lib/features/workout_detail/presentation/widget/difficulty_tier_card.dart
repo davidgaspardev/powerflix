@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/app/helpers/color.dart';
-import 'package:powerflix/app/helpers/widgets/label.dart';
+import 'package:powerflix/shared/theme/colors.dart';
+import 'package:powerflix/shared/widgets/label.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 class DifficultyTierCard extends StatelessWidget {
@@ -8,19 +8,19 @@ class DifficultyTierCard extends StatelessWidget {
   final void Function(String videoUrl)? onVideoTap;
 
   const DifficultyTierCard({
-    Key? key,
+    super.key,
     required this.data,
     this.onVideoTap,
-  }) : super(key: key);
+  });
 
   Color get color {
     switch (data.difficulty) {
       case Difficulty.light:
-        return appColors[0];
+        return difficultyColors[0];
       case Difficulty.soft:
-        return appColors[1];
+        return difficultyColors[1];
       case Difficulty.hard:
-        return appColors[2];
+        return difficultyColors[2];
     }
   }
 

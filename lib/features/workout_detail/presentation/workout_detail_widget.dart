@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/app/helpers/color.dart';
-import 'package:powerflix/app/helpers/widgets/label.dart';
-import 'package:powerflix/app/screens/home/widgets/loading.dart';
+import 'package:powerflix/shared/theme/colors.dart';
+import 'package:powerflix/shared/widgets/label.dart';
+import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
@@ -13,7 +13,7 @@ class WorkoutDetailWidget extends StatefulWidget {
 
   final WorkoutPlan plan;
 
-  const WorkoutDetailWidget({Key? key, required this.plan}) : super(key: key);
+  const WorkoutDetailWidget({super.key, required this.plan});
 
   @override
   State<WorkoutDetailWidget> createState() => _WorkoutDetailWidgetState();
@@ -70,42 +70,40 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
     final size = MediaQuery.of(context).size;
     final coverHeight = (size.width - 32) * 1.48;
 
-    return Container(
-      child: Stack(
-        children: [
-          Hero(
-            tag: widget.plan.id,
-            child: Container(
-              margin: const EdgeInsets.all(16),
-              height: coverHeight,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Image.network(
-                  widget.plan.coverUrl,
-                  fit: BoxFit.fill,
-                  loadingBuilder: _loadingImage,
-                  errorBuilder: _loadingError,
-                ),
+    return Stack(
+      children: [
+        Hero(
+          tag: widget.plan.id,
+          child: Container(
+            margin: const EdgeInsets.all(16),
+            height: coverHeight,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(5),
+              child: Image.network(
+                widget.plan.coverUrl,
+                fit: BoxFit.fill,
+                loadingBuilder: _loadingImage,
+                errorBuilder: _loadingError,
               ),
             ),
           ),
-          Positioned(
-            top: 32,
-            right: 32,
-            child: ValueListenableBuilder<bool>(
-              valueListenable: _viewModel.isFavoriteNotifier,
-              builder: (_, isFavorite, __) => GestureDetector(
-                onTap: _viewModel.toggleFavorite,
-                child: Icon(
-                  isFavorite ? Icons.star : Icons.star_border,
-                  color: isFavorite ? Colors.yellow : Colors.white,
-                  size: 32,
-                ),
+        ),
+        Positioned(
+          top: 32,
+          right: 32,
+          child: ValueListenableBuilder<bool>(
+            valueListenable: _viewModel.isFavoriteNotifier,
+            builder: (_, isFavorite, __) => GestureDetector(
+              onTap: _viewModel.toggleFavorite,
+              child: Icon(
+                isFavorite ? Icons.star : Icons.star_border,
+                color: isFavorite ? Colors.yellow : Colors.white,
+                size: 32,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -179,7 +177,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: i == currentLevel
-                            ? appColors[i % appColors.length]
+                            ? difficultyColors[i % difficultyColors.length]
                             : Colors.grey,
                       ),
                     ),

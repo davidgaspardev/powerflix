@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
-import 'package:powerflix/app/screens/home/widgets/loading.dart';
+import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 class WorkoutPlanCard extends StatelessWidget {
@@ -8,10 +8,10 @@ class WorkoutPlanCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const WorkoutPlanCard({
-    Key? key,
+    super.key,
     required this.data,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class WorkoutPlanCard extends StatelessWidget {
       onTap: onTap,
       child: Hero(
         tag: data.id,
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: ClipRRect(

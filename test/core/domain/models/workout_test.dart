@@ -11,7 +11,7 @@ List<Map<String, dynamic>> _loadFixture() {
 }
 
 void main() {
-  const _biSet = 'Significa realizar dois movimentos seguidos sem intervalos á cada repetição';
+  const biSet = 'Significa realizar dois movimentos seguidos sem intervalos á cada repetição';
 
   late List<Map<String, dynamic>> fixture;
 
@@ -27,7 +27,6 @@ void main() {
     test('fromMap → toMap round-trip for each plan', () {
       for (int i = 0; i < fixture.length; i++) {
         final plan = WorkoutPlan.fromMap(fixture[i]);
-        print('\nPlan $i (${plan.name}): ${plan.toJson()}');
         expect(plan.toMap(), fixture[i]);
       }
     });
@@ -55,7 +54,7 @@ void main() {
       final exercise = softTier.exercises[0];
       expect(exercise.techniques.length, 1);
       expect(exercise.techniques[0].title, 'BI-SET 4x9 + 9');
-      expect(exercise.techniques[0].description, _biSet);
+      expect(exercise.techniques[0].description, biSet);
     });
 
     test('Difficulty enum round-trips through toValue / fromValue', () {
