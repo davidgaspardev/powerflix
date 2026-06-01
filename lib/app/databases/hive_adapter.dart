@@ -1,15 +1,14 @@
 import 'package:hive/hive.dart';
-import 'package:powerflix/app/models/cardflix_data.dart';
+import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 void loadTypeAdapters() {
-  _CardflixTypeAdapter.registerTypeAdatper();
+  _WorkoutPlanTypeAdapter.registerTypeAdapter();
 }
 
-class _CardflixTypeAdapter extends TypeAdapter<CardflixData> {
-  static void registerTypeAdatper() {
+class _WorkoutPlanTypeAdapter extends TypeAdapter<WorkoutPlan> {
+  static void registerTypeAdapter() {
     if (!Hive.isAdapterRegistered(0)) {
-      final typeAdapter = _CardflixTypeAdapter();
-      Hive.registerAdapter(typeAdapter);
+      Hive.registerAdapter(_WorkoutPlanTypeAdapter());
     }
   }
 
@@ -17,13 +16,13 @@ class _CardflixTypeAdapter extends TypeAdapter<CardflixData> {
   int get typeId => 0;
 
   @override
-  CardflixData read(BinaryReader binaryReader) {
-    return CardflixData.fromMap(
+  WorkoutPlan read(BinaryReader binaryReader) {
+    return WorkoutPlan.fromMap(
         Map<String, dynamic>.from(binaryReader.readMap()));
   }
 
   @override
-  void write(BinaryWriter binaryWriter, CardflixData data) {
+  void write(BinaryWriter binaryWriter, WorkoutPlan data) {
     binaryWriter.writeMap(data.toMap());
   }
 }

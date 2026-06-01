@@ -6,28 +6,18 @@ import 'package:flutter/material.dart';
 /// When opened, the full panel — safe area + [menu] + [footer] — slides down
 /// over [child], with a dim barrier covering the rest of the screen.
 class TopDrawer extends StatefulWidget {
-  /// Height of the collapsible menu area (excludes safe area and footer).
   final double menuHeight;
-
-  /// Height of the always-visible footer (acts as the open/close handle).
   final double footerHeight;
-
-  /// Builds the menu content. Called once and kept alive.
   final WidgetBuilder menuBuilder;
-
-  /// Builds the footer. Receives [toggle] so the footer can open/close the drawer.
   final Widget Function(BuildContext context, VoidCallback toggle) footerBuilder;
-
-  /// The main content rendered behind the drawer.
   final Widget child;
-
   final Duration duration;
   final Curve curve;
   final Color barrierColor;
   final Color panelColor;
 
   const TopDrawer({
-    Key? key,
+    super.key,
     required this.menuHeight,
     required this.footerHeight,
     required this.menuBuilder,
@@ -37,7 +27,7 @@ class TopDrawer extends StatefulWidget {
     this.curve = Curves.easeInOut,
     this.barrierColor = Colors.black54,
     this.panelColor = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   State<TopDrawer> createState() => _TopDrawerState();
@@ -55,10 +45,7 @@ class _TopDrawerState extends State<TopDrawer> {
 
     return Stack(
       children: [
-        // ── Main content ──────────────────────────────────────────────
         widget.child,
-
-        // ── Dim barrier — tapping closes the drawer ───────────────────
         if (_isOpen)
           Positioned(
             top: 0,
@@ -71,10 +58,6 @@ class _TopDrawerState extends State<TopDrawer> {
               child: ColoredBox(color: widget.barrierColor),
             ),
           ),
-
-        // ── Sliding panel ─────────────────────────────────────────────
-        // Closed: top = -menuHeight  → only footer peeks out below status bar
-        // Open:   top = 0            → full panel visible
         AnimatedPositioned(
           duration: widget.duration,
           curve: widget.curve,

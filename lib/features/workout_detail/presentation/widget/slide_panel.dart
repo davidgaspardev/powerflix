@@ -5,13 +5,13 @@ class SlidePanel extends StatefulWidget {
   final double topDistance;
 
   const SlidePanel({
-    Key? key,
+    super.key,
     required this.child,
     required this.topDistance,
-  }) : super(key: key);
+  });
 
   @override
-  _SlidePanelState createState() => _SlidePanelState();
+  State<SlidePanel> createState() => _SlidePanelState();
 }
 
 class _SlidePanelState extends State<SlidePanel>

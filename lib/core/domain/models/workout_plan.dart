@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:powerflix/app/helpers/abstraction/model.dart';
+import 'package:powerflix/core/domain/model.dart';
 
 // ── enums ──────────────────────────────────────────────────────────────────
 
