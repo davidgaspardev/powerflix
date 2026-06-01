@@ -74,9 +74,9 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
     // Initializing screen controller
     controller.init();
     // Listener state change 
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
 
-    WidgetsBinding.instance!.addPostFrameCallback((Duration timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((Duration timeStamp) {
       _log("addPostFrameCallback", message: "timeStamp: $timeStamp");
       // After the first build
       controller.mounted();

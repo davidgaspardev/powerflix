@@ -1,0 +1,582 @@
+[
+  {
+    "id": "4y73y475y3884y3",
+    "name": "Bumbum na lua",
+    "description": "Para voçê que busca massa muscular no bumbum.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbumbum_na_lua.jpg?alt=media&token=49eb1a02-4554-450a-9c9e-24357a6135ff",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Agachamento com peso corporal" },
+          { "order": 2, "name": "Cadeira abdutora" },
+          { "order": 3, "name": "Elevação pélvica em colchonete" },
+          { "order": 4, "name": "Glúteo máquina" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Agachamento no smith + agachamento unilateral no smith",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 2, "name": "Glúteo em 4 apoios com caneleira" },
+          { "order": 3, "name": "Agachamento em polia" },
+          { "order": 4, "name": "Elevação pélvica na máquina 4x até a falha" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 11 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Agachamento no smith + agachamento sumô com halteres",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + falha",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 2, "name": "Glúteo em apoios com caneleira" },
+          {
+            "order": 3,
+            "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 4, "name": "Agachamento búlgaro 4x até a falha" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ret3459i39",
+    "name": "Bíceps de pedra",
+    "description": "Para voçê que busca bíceps tão duro quanto uma pedra.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=d1989712-5e43-4970-8191-d506d165b8b8",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Bíceps com barra na polia" },
+          { "order": 2, "name": "Bíceps direto com halteres sentado" },
+          { "order": 3, "name": "Bíceps martelo com halteres" },
+          { "order": 4, "name": "Bíceps scott" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Bíceps com barra na polia + bíceps martelo com halteres",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 2, "name": "Bíceps alternado com halteres sentado" },
+          { "order": 3, "name": "Bíceps concentrado com halteres" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 6 },
+        "exercises": [
+          { "order": 1, "name": "Bíceps martelo com corda na polia" },
+          { "order": 2, "name": "Bíceps alternado com isometria" },
+          {
+            "order": 3,
+            "name": "Bíceps com barra reta rest pause",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + falha",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 4, "name": "Bíceps 21 com barra w" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "egywe8gfs87gf7",
+    "name": "Abdômen Chapado",
+    "description": "Para voçê que busca abdômen top.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=b0fb9970-d6d7-4b34-ba92-df7f55059984",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Abd supra" },
+          { "order": 2, "name": "Abd infra no chão" },
+          { "order": 3, "name": "Abd supra com pé alto" },
+          { "order": 4, "name": "Abd tesoura em colchonete" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          { "order": 1, "name": "Abd bicicleta em colchonete" },
+          {
+            "order": 2,
+            "name": "Abd escalador em colchonete",
+            "techniques": [
+              {
+                "title": "3x15",
+                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+              }
+            ]
+          },
+          { "order": 3, "name": "Abd canivete" },
+          {
+            "order": 4,
+            "name": "Abd canoa isométrica",
+            "techniques": [
+              {
+                "title": "3x15",
+                "description": "Para esse exercício especifico fazer 3 series de 15 repetições."
+              }
+            ]
+          },
+          { "order": 5, "name": "Abd infra + quadril em colchonete" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4 },
+        "exercises": [
+          { "order": 1, "name": "Abd prancha lateral em colchonete" },
+          { "order": 2, "name": "Abd prancha ventral isométrica" },
+          { "order": 3, "name": "Abd tapa calcanhar" },
+          { "order": 4, "name": "Abd remador em colchonete" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "costas_asas_morcego_01",
+    "name": "Costas Asas de Morcego",
+    "description": "Para você que busca costas largas e definidas.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2FCostas%20Asas%20de%20Morcego.jpg?alt=media&token=63cc8ba7-7114-4065-aa3d-f05dd25b003e",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Carga leves e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Puxada frente aberta" },
+          { "order": 2, "name": "Remada baixa" },
+          { "order": 3, "name": "Puxada fechada com triângulo" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 13 },
+        "exercises": [
+          { "order": 1, "name": "Remada baixa pegada neutra" },
+          {
+            "order": 2,
+            "name": "Puxada frente aberta + puxada frente supinada",
+            "techniques": [
+              {
+                "title": "BI-SET 3x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 3, "name": "Remada curvada p/ supinada na polia" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 6 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Remada cavalo + remada serrote",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + 6",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "name": "Pulldown c/ corda rest pause",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "name": "Puxada frente aberta drop set",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
+          },
+          { "order": 4, "name": "Barra fixa p/ neutra 4x até a falha" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "coxa_dos_sonhos_01",
+    "name": "Coxa dos Sonhos",
+    "description": "Para você que busca coxas torneadas e fortes.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2FCoxa%20dos%20Sonhos.jpg?alt=media&token=4c4f83c0-9490-4b72-accc-0158cd6bb595",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Agachamento hack" },
+          { "order": 2, "name": "Cadeira adutora" },
+          { "order": 3, "name": "Cadeira extensora" },
+          { "order": 4, "name": "Agachamento com peso corporal" },
+          { "order": 5, "name": "Leg press 45°" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          { "order": 1, "name": "Agachamento hack" },
+          { "order": 2, "name": "Afundo com barra livre" },
+          { "order": 3, "name": "Cadeira extensora - pico de contração" },
+          { "order": 4, "name": "Leg 45" },
+          {
+            "order": 5,
+            "name": "Agachamento smith + agachamento sumô no smith",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Agachamento livre" },
+          {
+            "order": 2,
+            "name": "Cadeira extensora drop set",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "name": "Leg 45 rest pause",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 4,
+            "name": "Adutora rest pause",
+            "techniques": [
+              {
+                "title": "4x11 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 5,
+            "name": "Agachamento sumô com halteres + passada com barra",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ombros_guerreiro_01",
+    "name": "Ombros de Guerreiro",
+    "description": "Para você que busca ombros largos e definidos nas três cabeças do deltóide.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fombros_de_guerreiro.png?alt=media&token=ec629232-b123-4490-835c-ad7f8a15e5c9",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Desenvolvimento com halteres sentado" },
+          { "order": 2, "name": "Elevação lateral com halteres" },
+          { "order": 3, "name": "Elevação frontal alternada com halteres" },
+          { "order": 4, "name": "Crucifixo invertido" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          { "order": 1, "name": "Desenvolvimento Arnold" },
+          {
+            "order": 2,
+            "name": "Elevação lateral na polia baixa + elevação frontal com halteres",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 3, "name": "Face pull na polia" },
+          { "order": 4, "name": "Desenvolvimento na máquina" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 6 },
+        "exercises": [
+          { "order": 1, "name": "Desenvolvimento com barra" },
+          {
+            "order": 2,
+            "name": "Elevação lateral rest pause",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "name": "Face pull na polia drop set",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 4,
+            "name": "Crucifixo invertido + elevação lateral",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + 6",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "triceps_ferradura_01",
+    "name": "Tríceps Ferradura",
+    "description": "Para você que busca tríceps em forma de ferradura com as três cabeças trabalhadas.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Ftriceps_ferradura.png?alt=media&token=47200420-2a3a-4564-9e9a-3288e78a8325",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Tríceps na polia com corda" },
+          { "order": 2, "name": "Tríceps francês com halteres deitado" },
+          { "order": 3, "name": "Tríceps coice com halteres" },
+          { "order": 4, "name": "Tríceps testa com barra w" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Tríceps na polia com corda + tríceps na polia supinado",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 2, "name": "Tríceps francês com barra w" },
+          { "order": 3, "name": "Mergulho entre bancos com peso" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 6 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Tríceps testa com barra reta + supino fechado",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + 6",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "name": "Tríceps na polia corda rest pause",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          { "order": 3, "name": "Mergulho nas paralelas 4x até a falha" },
+          {
+            "order": 4,
+            "name": "Tríceps coice drop set",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peito_aco_01",
+    "name": "Peito de Aço",
+    "description": "Para você que busca peitoral forte e definido em toda sua extensão.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpeito_de_aco.png?alt=media&token=51ddd717-fbe1-4789-8615-56c4350c285b",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 3, "reps": 11 },
+        "exercises": [
+          { "order": 1, "name": "Supino reto com halteres" },
+          { "order": 2, "name": "Crucifixo com halteres" },
+          { "order": 3, "name": "Supino inclinado com halteres" },
+          { "order": 4, "name": "Peck deck" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": { "sets": 4, "reps": 9 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Supino reto com halteres + crucifixo com halteres",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          { "order": 2, "name": "Supino inclinado na máquina" },
+          { "order": 3, "name": "Crossover na polia" },
+          { "order": 4, "name": "Flexão de braço" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": { "sets": 4, "reps": 6 },
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Supino reto com barra rest pause",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "name": "Supino inclinado com barra + crucifixo inclinado",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + 6",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "name": "Crossover na polia drop set",
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
+          },
+          { "order": 4, "name": "Mergulho nas paralelas 4x até a falha" }
+        ]
+      }
+    ]
+  }
+]

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:powerflix/app/models/cardflix_data.dart';
 import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
-import 'package:powerflix/app/screens/home/home_screen.dart';
+import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/app/screens/video/video_screen.dart';
-// import 'package:powerflix/app/screens/home/widgets/cardflix.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,15 +21,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PowerFlix',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.red,
+        scaffoldBackgroundColor: Colors.black,
       ),
       initialRoute: "/home",
       onGenerateRoute: (RouteSettings settings) {
         print("routing: ${settings.name}");
         switch(settings.name) {
 
-          case HomeScreen.routeName: 
-            return MaterialPageRoute(builder: (BuildContext context) => HomeScreen());
+          case HomeWidget.routeName:
+            return MaterialPageRoute(builder: (BuildContext context) => const HomeWidget());
 
           case CardflixScreen.routeName: 
             var data = settings.arguments as CardflixData;
@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
             var data = settings.arguments as String;
             return MaterialPageRoute(builder: (BuildContext context) => VideoScreen(link: data));
           
-          // default: throw Exception("Unmapped route: ${settings.name}");
+          default:
+            return null;
         }
       },
     );
