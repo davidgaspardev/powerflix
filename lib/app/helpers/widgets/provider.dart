@@ -103,7 +103,7 @@ class _ProviderState extends State<Provider> with WidgetsBindingObserver {
   void dispose() {
     _log("dispose");
     // Remove all listtener from this provider
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     // Deposing controller
     controller.dispose();
     super.dispose();

@@ -4,7 +4,7 @@ class CardflixExamples {
     "name": "Bumbum na lua",
     "description": "Para voçê que busca massa muscular no bumbum.",
     "cover":
-        "https://firebasestorage.googleapis.com/v0/b/tfr-system.appspot.com/o/powerflix%2Fbumbum_na_lua.jpg?alt=media&token=6cb1af2f-af4c-450c-95ca-fdb4412b6e8f",
+        "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbumbum_na_lua.jpg?alt=media&token=49eb1a02-4554-450a-9c9e-24357a6135ff",
     "modules": [
       {
         "level": "LIGHT",
@@ -96,7 +96,7 @@ class CardflixExamples {
     "name": "Bíceps de pedra",
     "description": "Para voçê que busca bíceps tão duro quanto uma pedra.",
     "cover":
-        "https://firebasestorage.googleapis.com/v0/b/tfr-system.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=b454789c-2adf-4238-bd03-c4ae37584de4",
+        "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=d1989712-5e43-4970-8191-d506d165b8b8",
     "modules": [
       {
         "level": "LIGHT",
@@ -161,7 +161,7 @@ class CardflixExamples {
     "name": "Abdômen Chapado",
     "description": "Para voçê que busca abdômen top.",
     "cover":
-        "https://firebasestorage.googleapis.com/v0/b/tfr-system.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=aa2def56-1e83-4909-8761-fed11249bf59",
+        "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=b0fb9970-d6d7-4b34-ba92-df7f55059984",
     "modules": [
       {
         "level": "LIGHT",

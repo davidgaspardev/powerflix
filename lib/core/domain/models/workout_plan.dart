@@ -61,11 +61,13 @@ class Technique extends Model {
 class Exercise extends Model {
   final int order;
   final String name;
+  final String? videoUrl;
   final List<Technique> techniques;
 
   const Exercise({
     required this.order,
     required this.name,
+    this.videoUrl,
     this.techniques = const [],
   });
 
@@ -74,6 +76,7 @@ class Exercise extends Model {
       return Exercise(
         order: map['order'] as int,
         name: map['name'] as String,
+        videoUrl: map['videoUrl'] as String?,
         techniques: map['techniques'] != null
             ? (map['techniques'] as List)
                 .map<Technique>(
@@ -90,6 +93,7 @@ class Exercise extends Model {
   @override
   Map<String, dynamic> toMap() {
     final map = <String, dynamic>{'order': order, 'name': name};
+    if (videoUrl != null) map['videoUrl'] = videoUrl;
     if (techniques.isNotEmpty) {
       map['techniques'] =
           techniques.map<Map<String, dynamic>>((t) => t.toMap()).toList();
@@ -104,14 +108,16 @@ class Exercise extends Model {
 class SetConfig extends Model {
   final int sets;
   final int? reps;
+  final int? restSeconds;
 
-  const SetConfig({required this.sets, this.reps});
+  const SetConfig({required this.sets, this.reps, this.restSeconds});
 
   static SetConfig fromMap(Map<String, dynamic> map) {
     try {
       return SetConfig(
         sets: map['sets'] as int,
         reps: map['reps'] as int?,
+        restSeconds: map['restSeconds'] as int?,
       );
     } catch (e) {
       throw Exception(e);
@@ -122,6 +128,7 @@ class SetConfig extends Model {
   Map<String, dynamic> toMap() {
     final map = <String, dynamic>{'sets': sets};
     if (reps != null) map['reps'] = reps;
+    if (restSeconds != null) map['restSeconds'] = restSeconds;
     return map;
   }
 
@@ -134,12 +141,14 @@ class DifficultyTier extends Model {
   final String description;
   final SetConfig volume;
   final List<Exercise> exercises;
+  final String? warmupNote;
 
   const DifficultyTier({
     required this.difficulty,
     required this.description,
     required this.volume,
     required this.exercises,
+    this.warmupNote,
   });
 
   static DifficultyTier fromMap(Map<String, dynamic> map) {
@@ -153,6 +162,7 @@ class DifficultyTier extends Model {
               (e) => Exercise.fromMap(Map<String, dynamic>.from(e)),
             )
             .toList(),
+        warmupNote: map['warmupNote'] as String?,
       );
     } catch (e) {
       throw Exception(e);
@@ -160,13 +170,16 @@ class DifficultyTier extends Model {
   }
 
   @override
-  Map<String, dynamic> toMap() => {
-        'difficulty': difficulty.toValue(),
-        'description': description,
-        'volume': volume.toMap(),
-        'exercises':
-            exercises.map<Map<String, dynamic>>((e) => e.toMap()).toList(),
-      };
+  Map<String, dynamic> toMap() {
+    final map = <String, dynamic>{
+      'difficulty': difficulty.toValue(),
+      'description': description,
+      'volume': volume.toMap(),
+      'exercises': exercises.map<Map<String, dynamic>>((e) => e.toMap()).toList(),
+    };
+    if (warmupNote != null) map['warmupNote'] = warmupNote;
+    return map;
+  }
 
   @override
   String toJson() => jsonEncode(toMap());

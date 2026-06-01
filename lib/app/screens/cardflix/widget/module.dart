@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
-import 'package:powerflix/app/helpers/widgets/provider.dart';
 import 'package:powerflix/app/models/cardflix_data.dart';
-import 'package:powerflix/app/screens/cardflix/cardflix_controller.dart';
 
 class Module extends StatelessWidget {
 

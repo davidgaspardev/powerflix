@@ -6,5 +6,5 @@ import 'package:powerflix/app/utils/result.dart';
  */
 abstract class Command<T> extends ChangeNotifier {
   bool running = false;
-  Result<T>? _result;
+  Result<T>? result;
 }

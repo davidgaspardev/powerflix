@@ -9,6 +9,13 @@ import 'package:powerflix/app/screens/cardflix/cardflix_screen.dart';
 
 /// Home controller
 class HomeController extends Controller {
+  final ValueNotifier<bool> _openMenu = ValueNotifier<bool>(false);
+  ValueNotifier<bool> get openMenu => _openMenu;
+
+  void toggleMenu() {
+    openMenu.value = !openMenu.value;
+  }
+
   /// Reference to the location in the tree structure
   List<CardflixData> _cards = [];
   List<CardflixData> get cards => _cards;
@@ -26,5 +33,10 @@ class HomeController extends Controller {
     _cards.add(CardflixData.fromMap(CardflixExamples.bicepsDePedra));
 
     _cards.add(CardflixData.fromMap(CardflixExamples.abdomenChapado));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }
