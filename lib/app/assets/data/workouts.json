@@ -640,7 +640,7 @@
     "id": "triceps_ferradura_01",
     "name": "Tríceps Ferradura",
     "description": "Para você que busca tríceps em forma de ferradura com as três cabeças trabalhadas.",
-    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Ftriceps_ferradura.png?alt=media&token=47200420-2a3a-4564-9e9a-3288e78a8325",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Ftriceps_ferradura.png?alt=media&token=169c0fe5-09f9-4b8e-907a-0d157cef8c93",
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -811,6 +811,64 @@
             "techniques": [{ "title": "4x5 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
           },
           { "order": 4, "name": "Hiperextensão com carga 4x até a falha" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "panturrilha_pedra_01",
+    "name": "Panturrilha de Pedra",
+    "description": "Para você que busca panturrilhas torneadas, circulação ativa e performance atlética completa.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpanturilha_de_pedra.png?alt=media&token=f9f99004-45b9-4644-8c43-8d8f7088f06a",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos com amplitude total para ativar gastrocnêmio e sóleo corretamente",
+        "volume": { "sets": 3, "reps": 15, "restSeconds": 45 },
+        "warmupNote": "Faça 10 rotações de tornozelo por lado e 20 elevações de ponta de pé no chão sem carga. Desça lentamente na fase excêntrica de cada repetição — é onde a panturrilha mais cresce e o tendão de Aquiles mais se fortalece.",
+        "exercises": [
+          { "order": 1, "name": "Elevação de panturrilha em pé no leg press" },
+          { "order": 2, "name": "Elevação de panturrilha sentado na máquina" },
+          { "order": 3, "name": "Elevação de panturrilha unilateral com halter" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada alternando estímulo do gastrocnêmio e sóleo para hipertrofia completa da panturrilha",
+        "volume": { "sets": 4, "reps": 12, "restSeconds": 60 },
+        "warmupNote": "Realize 20 elevações de ponta de pé sem carga e rotações de tornozelo. Execute 1 série leve de elevação em pé antes de iniciar os bi-sets. A panturrilha tem alta densidade de fibras de resistência — responde muito bem ao volume progressivo.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Elevação de panturrilha em pé com barra + elevação sentado",
+            "techniques": [{ "title": "BI-SET 4x12 + 12", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+          },
+          { "order": 2, "name": "Elevação de panturrilha no leg press com carga" },
+          { "order": 3, "name": "Elevação de panturrilha em degrau unilateral" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Técnicas de intensidade máxima para panturrilha, explorando drop set e rest pause até a falha completa",
+        "volume": { "sets": 4, "restSeconds": 90 },
+        "warmupNote": "Realize 30 elevações de ponta de pé sem carga, rotações de tornozelo e 1 série leve de cada exercício antes de iniciar. Panturrilha suporta bem o treino até a falha por ser um músculo de alta resistência — mas tendão de Aquiles frio sob carga máxima é risco de ruptura.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Elevação de panturrilha em pé drop set",
+            "techniques": [{ "title": "4x até a falha", "description": "Drop set: reduza a carga e continue até a falha completa" }]
+          },
+          {
+            "order": 2,
+            "name": "Elevação sentado rest pause",
+            "techniques": [{ "title": "4x até a falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+          },
+          {
+            "order": 3,
+            "name": "Elevação unilateral em degrau + isometria no topo",
+            "techniques": [{ "title": "BI-SET 4x até a falha", "description": "Segure 3 segundos no topo antes de descer" }]
+          },
+          { "order": 4, "name": "Donkey calf raise 4x até a falha" }
         ]
       }
     ]
