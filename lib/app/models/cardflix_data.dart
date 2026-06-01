@@ -27,7 +27,7 @@ class CardflixData extends Model {
   static CardflixData fromMap(Map<String, dynamic> map) {
     try {
       return CardflixData(
-        id: map['id'],
+        id: (map['id'] as String?) ?? '',
         name: map['name'],
         description: map['description'],
         cover: map['cover'],
@@ -53,8 +53,7 @@ class CardflixData extends Model {
   /// Data output from [CardflixData]
   @override
   Map<String, dynamic> toMap() {
-    return {
-      "id": this.id,
+    final map = <String, dynamic>{
       "name": this.name,
       "description": this.description,
       "cover": this.cover,
@@ -62,6 +61,8 @@ class CardflixData extends Model {
         return module.toMap();
       }).toList()
     };
+    if (id.isNotEmpty) map["id"] = id;
+    return map;
   }
 
 }

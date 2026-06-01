@@ -22,8 +22,6 @@ class _SlidePanelState extends State<SlidePanel>
   late Animation<double> _animation;
   late double endPosition;
   late double currentTop;
-  double _dragStartTop = 0;
-
   double get closedTop => widget.topDistance;
 
   bool get _isOpen => currentTop <= (closedTop + endPosition) / 2;
@@ -65,7 +63,6 @@ class _SlidePanelState extends State<SlidePanel>
 
   void onVerticalDragStart(DragStartDetails details) {
     _controller.stop();
-    _dragStartTop = currentTop;
   }
 
   void onVerticalDragUpdate(DragUpdateDetails details) {

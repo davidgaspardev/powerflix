@@ -12,7 +12,7 @@ class VideoController extends Controller {
   late final String link;
 
   VideoController({ required this.link }):
-  player = VideoPlayerController.network(link);
+  player = VideoPlayerController.networkUrl(Uri.parse(link));
 
   void back() {
     Navigator.of(context).pop();
