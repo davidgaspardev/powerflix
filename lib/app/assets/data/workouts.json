@@ -17,19 +17,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Agachamento com peso corporal"
+            "name": "Agachamento com peso corporal",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Cadeira abdutora"
+            "name": "Cadeira abdutora",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Elevação pélvica em colchonete"
+            "name": "Elevação pélvica em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Glúteo máquina"
+            "name": "Glúteo máquina",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -46,6 +50,7 @@
           {
             "order": 1,
             "name": "Agachamento no smith + agachamento unilateral no smith",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -55,15 +60,18 @@
           },
           {
             "order": 2,
-            "name": "Glúteo em 4 apoios com caneleira"
+            "name": "Glúteo em 4 apoios com caneleira",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Agachamento em polia"
+            "name": "Agachamento em polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Elevação pélvica na máquina 4x até a falha"
+            "name": "Elevação pélvica na máquina 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -80,6 +88,7 @@
           {
             "order": 1,
             "name": "Agachamento no smith + agachamento sumô com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + falha",
@@ -89,11 +98,13 @@
           },
           {
             "order": 2,
-            "name": "Glúteo em apoios com caneleira"
+            "name": "Glúteo em apoios com caneleira",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
             "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -103,7 +114,8 @@
           },
           {
             "order": 4,
-            "name": "Agachamento búlgaro 4x até a falha"
+            "name": "Agachamento búlgaro 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       }
@@ -127,19 +139,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps com barra na polia"
+            "name": "Bíceps com barra na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Bíceps direto com halteres sentado"
+            "name": "Bíceps direto com halteres sentado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Bíceps martelo com halteres"
+            "name": "Bíceps martelo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Bíceps scott"
+            "name": "Bíceps scott",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -156,6 +172,7 @@
           {
             "order": 1,
             "name": "Bíceps com barra na polia + bíceps martelo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -165,11 +182,13 @@
           },
           {
             "order": 2,
-            "name": "Bíceps alternado com halteres sentado"
+            "name": "Bíceps alternado com halteres sentado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Bíceps concentrado com halteres"
+            "name": "Bíceps concentrado com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -185,15 +204,18 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps martelo com corda na polia"
+            "name": "Bíceps martelo com corda na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Bíceps alternado com isometria"
+            "name": "Bíceps alternado com isometria",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
             "name": "Bíceps com barra reta rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + falha",
@@ -203,7 +225,8 @@
           },
           {
             "order": 4,
-            "name": "Bíceps 21 com barra w"
+            "name": "Bíceps 21 com barra w",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       }
@@ -227,19 +250,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Abd supra"
+            "name": "Abd supra",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Abd infra no chão"
+            "name": "Abd infra no chão",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Abd supra com pé alto"
+            "name": "Abd supra com pé alto",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Abd tesoura em colchonete"
+            "name": "Abd tesoura em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -255,11 +282,13 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Abd bicicleta em colchonete"
+            "name": "Abd bicicleta em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
             "name": "Abd escalador em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "3x15",
@@ -269,11 +298,13 @@
           },
           {
             "order": 3,
-            "name": "Abd canivete"
+            "name": "Abd canivete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
             "name": "Abd canoa isométrica",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "3x15",
@@ -283,7 +314,8 @@
           },
           {
             "order": 5,
-            "name": "Abd infra + quadril em colchonete"
+            "name": "Abd infra + quadril em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -298,19 +330,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Abd prancha lateral em colchonete"
+            "name": "Abd prancha lateral em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Abd prancha ventral isométrica"
+            "name": "Abd prancha ventral isométrica",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Abd tapa calcanhar"
+            "name": "Abd tapa calcanhar",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Abd remador em colchonete"
+            "name": "Abd remador em colchonete",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       }
@@ -334,15 +370,18 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Puxada frente aberta"
+            "name": "Puxada frente aberta",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Remada baixa"
+            "name": "Remada baixa",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Puxada fechada com triângulo"
+            "name": "Puxada fechada com triângulo",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -358,11 +397,13 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Remada baixa pegada neutra"
+            "name": "Remada baixa pegada neutra",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
             "name": "Puxada frente aberta + puxada frente supinada",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 3x9 + 9",
@@ -372,7 +413,8 @@
           },
           {
             "order": 3,
-            "name": "Remada curvada p/ supinada na polia"
+            "name": "Remada curvada p/ supinada na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -389,6 +431,7 @@
           {
             "order": 1,
             "name": "Remada cavalo + remada serrote",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -399,6 +442,7 @@
           {
             "order": 2,
             "name": "Pulldown c/ corda rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -409,6 +453,7 @@
           {
             "order": 3,
             "name": "Puxada frente aberta drop set",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -418,7 +463,8 @@
           },
           {
             "order": 4,
-            "name": "Barra fixa p/ neutra 4x até a falha"
+            "name": "Barra fixa p/ neutra 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       }
@@ -442,23 +488,28 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Agachamento hack"
+            "name": "Agachamento hack",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Cadeira adutora"
+            "name": "Cadeira adutora",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Cadeira extensora"
+            "name": "Cadeira extensora",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Agachamento com peso corporal"
+            "name": "Agachamento com peso corporal",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 5,
-            "name": "Leg press 45°"
+            "name": "Leg press 45°",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -474,23 +525,28 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Agachamento hack"
+            "name": "Agachamento hack",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Afundo com barra livre"
+            "name": "Afundo com barra livre",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Cadeira extensora - pico de contração"
+            "name": "Cadeira extensora - pico de contração",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Leg 45"
+            "name": "Leg 45",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 5,
             "name": "Agachamento smith + agachamento sumô no smith",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -512,11 +568,13 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Agachamento livre"
+            "name": "Agachamento livre",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
             "name": "Cadeira extensora drop set",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -527,6 +585,7 @@
           {
             "order": 3,
             "name": "Leg 45 rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -537,6 +596,7 @@
           {
             "order": 4,
             "name": "Adutora rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x11 + falha",
@@ -547,6 +607,7 @@
           {
             "order": 5,
             "name": "Agachamento sumô com halteres + passada com barra",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -576,19 +637,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Desenvolvimento com halteres sentado"
+            "name": "Desenvolvimento com halteres sentado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Elevação lateral com halteres"
+            "name": "Elevação lateral com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Elevação frontal alternada com halteres"
+            "name": "Elevação frontal alternada com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Crucifixo invertido"
+            "name": "Crucifixo invertido",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -604,11 +669,13 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Desenvolvimento Arnold"
+            "name": "Desenvolvimento Arnold",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
             "name": "Elevação lateral na polia baixa + elevação frontal com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -618,11 +685,13 @@
           },
           {
             "order": 3,
-            "name": "Face pull na polia"
+            "name": "Face pull na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Desenvolvimento na máquina"
+            "name": "Desenvolvimento na máquina",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -638,11 +707,13 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Desenvolvimento com barra"
+            "name": "Desenvolvimento com barra",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
             "name": "Elevação lateral rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -653,6 +724,7 @@
           {
             "order": 3,
             "name": "Face pull na polia drop set",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -663,6 +735,7 @@
           {
             "order": 4,
             "name": "Crucifixo invertido + elevação lateral",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -692,19 +765,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Tríceps na polia com corda"
+            "name": "Tríceps na polia com corda",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Tríceps francês com halteres deitado"
+            "name": "Tríceps francês com halteres deitado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Tríceps coice com halteres"
+            "name": "Tríceps coice com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Tríceps testa com barra w"
+            "name": "Tríceps testa com barra w",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -721,6 +798,7 @@
           {
             "order": 1,
             "name": "Tríceps na polia com corda + tríceps na polia supinado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -730,11 +808,13 @@
           },
           {
             "order": 2,
-            "name": "Tríceps francês com barra w"
+            "name": "Tríceps francês com barra w",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Mergulho entre bancos com peso"
+            "name": "Mergulho entre bancos com peso",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -751,6 +831,7 @@
           {
             "order": 1,
             "name": "Tríceps testa com barra reta + supino fechado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -761,6 +842,7 @@
           {
             "order": 2,
             "name": "Tríceps na polia corda rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -770,11 +852,13 @@
           },
           {
             "order": 3,
-            "name": "Mergulho nas paralelas 4x até a falha"
+            "name": "Mergulho nas paralelas 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
             "name": "Tríceps coice drop set",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -804,19 +888,23 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Supino reto com halteres"
+            "name": "Supino reto com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 2,
-            "name": "Crucifixo com halteres"
+            "name": "Crucifixo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Supino inclinado com halteres"
+            "name": "Supino inclinado com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Peck deck"
+            "name": "Peck deck",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -833,6 +921,7 @@
           {
             "order": 1,
             "name": "Supino reto com halteres + crucifixo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -842,15 +931,18 @@
           },
           {
             "order": 2,
-            "name": "Supino inclinado na máquina"
+            "name": "Supino inclinado na máquina",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 3,
-            "name": "Crossover na polia"
+            "name": "Crossover na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           },
           {
             "order": 4,
-            "name": "Flexão de braço"
+            "name": "Flexão de braço",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       },
@@ -867,6 +959,7 @@
           {
             "order": 1,
             "name": "Supino reto com barra rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -877,6 +970,7 @@
           {
             "order": 2,
             "name": "Supino inclinado com barra + crucifixo inclinado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -887,6 +981,7 @@
           {
             "order": 3,
             "name": "Crossover na polia drop set",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -896,7 +991,8 @@
           },
           {
             "order": 4,
-            "name": "Mergulho nas paralelas 4x até a falha"
+            "name": "Mergulho nas paralelas 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
       }

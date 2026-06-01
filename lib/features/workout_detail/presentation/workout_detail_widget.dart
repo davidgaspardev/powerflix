@@ -3,8 +3,9 @@ import 'package:powerflix/app/helpers/color.dart';
 import 'package:powerflix/app/helpers/widgets/label.dart';
 import 'package:powerflix/app/screens/home/widgets/loading.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/workout_detail/presentation/widget/slide_panel.dart';
+import 'package:powerflix/features/video/presentation/video_widget.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
+import 'package:powerflix/features/workout_detail/presentation/widget/slide_panel.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
 
 class WorkoutDetailWidget extends StatefulWidget {
@@ -149,14 +150,14 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
               widget.plan.description,
               padding: const EdgeInsets.only(bottom: 25, left: 16),
             ),
-            _buildLevels(),
+            _buildLevels(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildLevels() {
+  Widget _buildLevels(BuildContext context) {
     return ValueListenableBuilder<int>(
       valueListenable: _viewModel.currentLevelNotifier,
       builder: (_, currentLevel, __) => Column(
@@ -194,7 +195,13 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
               controller: _pageController,
               onPageChanged: _viewModel.onLevelChanged,
               children: widget.plan.levels
-                  .map<Widget>((level) => DifficultyTierCard(data: level))
+                  .map<Widget>((level) => DifficultyTierCard(
+                        data: level,
+                        onVideoTap: (url) => Navigator.of(context).pushNamed(
+                          VideoWidget.routeName,
+                          arguments: url,
+                        ),
+                      ))
                   .toList(),
             ),
           ),

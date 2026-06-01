@@ -5,8 +5,13 @@ import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 class DifficultyTierCard extends StatelessWidget {
   final DifficultyTier data;
+  final void Function(String videoUrl)? onVideoTap;
 
-  const DifficultyTierCard({Key? key, required this.data}) : super(key: key);
+  const DifficultyTierCard({
+    Key? key,
+    required this.data,
+    this.onVideoTap,
+  }) : super(key: key);
 
   Color get color {
     switch (data.difficulty) {
@@ -141,10 +146,38 @@ class DifficultyTierCard extends StatelessWidget {
                 Label(exercise.name, color: Colors.white),
                 if (exercise.techniques.isNotEmpty)
                   _buildTechniques(exercise.techniques),
+                if (exercise.videoUrl != null && onVideoTap != null)
+                  _buildVideoButton(exercise.videoUrl!),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildVideoButton(String videoUrl) {
+    return GestureDetector(
+      onTap: () => onVideoTap!(videoUrl),
+      child: Container(
+        margin: const EdgeInsets.only(top: 4),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white),
+          borderRadius: BorderRadius.circular(4),
+          color: Colors.white.withOpacity(0.25),
+        ),
+        child: Label.rich(
+          LabelSpan(
+            'ASSISTIR',
+            children: [
+              LabelSpan(' EXEMPLO', fontWeight: FontWeight.bold),
+            ],
+            color: Colors.white,
+            fontSize: 12,
+          ),
+          letterSpacing: -0.5,
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+        ),
       ),
     );
   }

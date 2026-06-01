@@ -61,11 +61,13 @@ class Technique extends Model {
 class Exercise extends Model {
   final int order;
   final String name;
+  final String? videoUrl;
   final List<Technique> techniques;
 
   const Exercise({
     required this.order,
     required this.name,
+    this.videoUrl,
     this.techniques = const [],
   });
 
@@ -74,6 +76,7 @@ class Exercise extends Model {
       return Exercise(
         order: map['order'] as int,
         name: map['name'] as String,
+        videoUrl: map['videoUrl'] as String?,
         techniques: map['techniques'] != null
             ? (map['techniques'] as List)
                 .map<Technique>(
@@ -90,6 +93,7 @@ class Exercise extends Model {
   @override
   Map<String, dynamic> toMap() {
     final map = <String, dynamic>{'order': order, 'name': name};
+    if (videoUrl != null) map['videoUrl'] = videoUrl;
     if (techniques.isNotEmpty) {
       map['techniques'] =
           techniques.map<Map<String, dynamic>>((t) => t.toMap()).toList();
