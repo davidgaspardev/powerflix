@@ -122,111 +122,60 @@
     ]
   },
   {
-    "id": "ret3459i39",
-    "name": "Bíceps de pedra",
-    "description": "Para voçê que busca bíceps tão duro quanto uma pedra.",
-    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=d1989712-5e43-4970-8191-d506d165b8b8",
+    "id": "posterior_coxa_blindada_01",
+    "name": "Posterior de Coxa Blindada",
+    "description": "Para você que busca isquiotibiais fortes, joelhos protegidos e equilíbrio muscular real nas pernas.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fposterior_de_coxa_blindada.png?alt=media&token=ec214bcb-3fc1-4a03-bb24-546bcb326e04",
     "levels": [
       {
         "difficulty": "LIGHT",
-        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": {
-          "sets": 3,
-          "reps": 11,
-          "restSeconds": 60
-        },
-        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça 10 rotações lentas de ombro para frente e para trás e 1 série de rosca com haltere leve (30% da carga) para lubrificar a articulação do cotovelo.",
+        "description": "Movimentos lentos e concentrados para aprender o padrão de ativação dos isquiotibiais e seus resultados",
+        "volume": { "sets": 3, "reps": 12, "restSeconds": 75 },
+        "warmupNote": "Realize 7 minutos de bicicleta ergométrica com cadência leve. Faça 10 alongamentos dinâmicos de isquiotibial em pé (perna estendida, tronco à frente) por lado. Isquiotibial é o músculo mais lesionado do corpo — ative-o conscientemente antes de qualquer carga.",
         "exercises": [
-          {
-            "order": 1,
-            "name": "Bíceps com barra na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 2,
-            "name": "Bíceps direto com halteres sentado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 3,
-            "name": "Bíceps martelo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 4,
-            "name": "Bíceps scott",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          }
+          { "order": 1, "name": "Leg curl deitado na máquina" },
+          { "order": 2, "name": "Stiff com halteres" },
+          { "order": 3, "name": "Cadeira flexora em pé com caneleira" },
+          { "order": 4, "name": "Ponte glútea unilateral no colchonete" }
         ]
       },
       {
         "difficulty": "SOFT",
-        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
-        "volume": {
-          "sets": 4,
-          "reps": 9,
-          "restSeconds": 90
-        },
-        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 1 série leve de rosca direta na polia e 1 série leve de bíceps martelo antes de iniciar os bi-sets — articulações de cotovelo e punho devem estar aquecidas.",
+        "description": "Carga moderada com foco na fase excêntrica para fortalecer o isquiotibial em toda a amplitude",
+        "volume": { "sets": 4, "reps": 10, "restSeconds": 90 },
+        "warmupNote": "Realize 7 minutos de bicicleta. Execute 1 série leve de stiff e 1 série leve de leg curl antes de iniciar. Fase excêntrica (descida lenta) deve durar 3 segundos — é onde o isquiotibial mais se fortalece e mais se lesiona sem preparo.",
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps com barra na polia + bíceps martelo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
-            "techniques": [
-              {
-                "title": "BI-SET 4x9 + 9",
-                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
-              }
-            ]
+            "name": "Stiff com barra + leg curl deitado",
+            "techniques": [{ "title": "BI-SET 4x10 + 10", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
           },
-          {
-            "order": 2,
-            "name": "Bíceps alternado com halteres sentado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          },
-          {
-            "order": 3,
-            "name": "Bíceps concentrado com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
-          }
+          { "order": 2, "name": "Mesa flexora" },
+          { "order": 3, "name": "Levantamento terra romeno com halteres" },
+          { "order": 4, "name": "Agachamento sumô com ênfase na descida lenta" }
         ]
       },
       {
         "difficulty": "HARD",
-        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
-        "volume": {
-          "sets": 4,
-          "reps": 6,
-          "restSeconds": 120
-        },
-        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 2 séries progressivas de rosca com barra reta (50% e 70% da carga) antes de iniciar. Bíceps é um músculo curto e articulação do cotovelo sob carga pesada sem aquecimento é causa frequente de tendinite.",
+        "description": "Cargas máximas e técnicas avançadas para isquiotibiais blindados contra lesões e com máxima hipertrofia",
+        "volume": { "sets": 4, "reps": 6, "restSeconds": 150 },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute 2 séries progressivas de stiff com barra (50% e 70% da carga). Nordic hamstring curl sem aquecimento é a forma mais rápida de romper isquiotibial — não negocie esta etapa.",
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps martelo com corda na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Levantamento terra romeno com barra + leg curl deitado",
+            "techniques": [{ "title": "BI-SET 4x6 + falha", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
           },
           {
             "order": 2,
-            "name": "Bíceps alternado com isometria",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Mesa flexora rest pause",
+            "techniques": [{ "title": "4x6 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
           },
-          {
-            "order": 3,
-            "name": "Bíceps com barra reta rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
-            "techniques": [
-              {
-                "title": "BI-SET 4x6 + falha",
-                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
-              }
-            ]
-          },
+          { "order": 3, "name": "Nordic hamstring curl 4x até a falha" },
           {
             "order": 4,
-            "name": "Bíceps 21 com barra w",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Stiff unilateral com halter drop set",
+            "techniques": [{ "title": "4x6 + falha", "description": "Drop set: reduza a carga e continue até a falha" }]
           }
         ]
       }
@@ -871,6 +820,62 @@
     ]
   },
   {
+    "id": "lombar_inabalavel_01",
+    "name": "Lombar Inabalável",
+    "description": "Para você que busca uma lombar forte, estável e livre de dores para sempre.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Flombar_inabalavel.png?alt=media&token=cce3b312-3a11-4b8b-b84f-3af00e5b3440",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos de ativação e controle motor para construir a base de uma lombar saudável",
+        "volume": { "sets": 3, "reps": 12, "restSeconds": 60 },
+        "warmupNote": "Realize mobilidade de coluna: gato-vaca por 2 minutos (15 repetições lentas). Faça rotação de tronco deitado 10x por lado. Nunca inicie treino de lombar com coluna fria — a maioria das hérnias de disco acontece justamente neste momento.",
+        "exercises": [
+          { "order": 1, "name": "Extensão lombar no banco romano" },
+          { "order": 2, "name": "Superman no colchonete" },
+          { "order": 3, "name": "Bird dog no colchonete" },
+          { "order": 4, "name": "Ponte glútea com ênfase na contração lombar" }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga progressiva para fortalecer os eretores da espinha e o multífido em toda a amplitude",
+        "volume": { "sets": 4, "reps": 10, "restSeconds": 90 },
+        "warmupNote": "Realize mobilidade completa de coluna: gato-vaca, rotação de tronco e extensão de quadril deitado. Execute 1 série leve de extensão lombar no banco romano antes de iniciar. Good morning sem aquecimento adequado é causa frequente de distensão lombar.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Extensão lombar no banco romano + hiperextensão reversa",
+            "techniques": [{ "title": "BI-SET 4x10 + 10", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+          },
+          { "order": 2, "name": "Good morning com barra leve" },
+          { "order": 3, "name": "Remada curvada com halteres" },
+          { "order": 4, "name": "Dead bug no colchonete" }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Levantamento terra e técnicas avançadas para uma lombar verdadeiramente inabalável",
+        "volume": { "sets": 4, "reps": 5, "restSeconds": 180 },
+        "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute mobilidade completa de coluna e quadril. Faça 3 séries progressivas de levantamento terra (40%, 60%, 80% da carga) antes de iniciar. Levantamento terra pesado sem aquecimento é a lesão mais grave que existe na musculação — trate com absoluto respeito.",
+        "exercises": [
+          { "order": 1, "name": "Levantamento terra convencional com barra" },
+          {
+            "order": 2,
+            "name": "Extensão lombar com carga + good morning",
+            "techniques": [{ "title": "BI-SET 4x5 + 5", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+          },
+          {
+            "order": 3,
+            "name": "Levantamento terra unilateral rest pause",
+            "techniques": [{ "title": "4x5 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+          },
+          { "order": 4, "name": "Hiperextensão com carga 4x até a falha" }
+        ]
+      }
+    ]
+  },
+  {
     "id": "peito_aco_01",
     "name": "Peito de Aço",
     "description": "Para você que busca peitoral forte e definido em toda sua extensão.",
@@ -992,6 +997,117 @@
           {
             "order": 4,
             "name": "Mergulho nas paralelas 4x até a falha",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ret3459i39",
+    "name": "Bíceps de pedra",
+    "description": "Para voçê que busca bíceps tão duro quanto uma pedra.",
+    "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=d1989712-5e43-4970-8191-d506d165b8b8",
+    "levels": [
+      {
+        "difficulty": "LIGHT",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": {
+          "sets": 3,
+          "reps": 11,
+          "restSeconds": 60
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico leve. Faça 10 rotações lentas de ombro para frente e para trás e 1 série de rosca com haltere leve (30% da carga) para lubrificar a articulação do cotovelo.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Bíceps com barra na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Bíceps direto com halteres sentado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Bíceps martelo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Bíceps scott",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      },
+      {
+        "difficulty": "SOFT",
+        "description": "Carga moderada e movimentos lentos e concentrados para otimizar o padrão de movimento e seus resultados",
+        "volume": {
+          "sets": 4,
+          "reps": 9,
+          "restSeconds": 90
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 1 série leve de rosca direta na polia e 1 série leve de bíceps martelo antes de iniciar os bi-sets — articulações de cotovelo e punho devem estar aquecidas.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Bíceps com barra na polia + bíceps martelo com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "techniques": [
+              {
+                "title": "BI-SET 4x9 + 9",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "name": "Bíceps alternado com halteres sentado",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Bíceps concentrado com halteres",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          }
+        ]
+      },
+      {
+        "difficulty": "HARD",
+        "description": "Movimentos lentos e concentrados para otimizar o padrão de movimentos e seus resultados",
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 120
+        },
+        "warmupNote": "Realize 5 minutos de aquecimento aeróbico. Execute 2 séries progressivas de rosca com barra reta (50% e 70% da carga) antes de iniciar. Bíceps é um músculo curto e articulação do cotovelo sob carga pesada sem aquecimento é causa frequente de tendinite.",
+        "exercises": [
+          {
+            "order": 1,
+            "name": "Bíceps martelo com corda na polia",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Bíceps alternado com isometria",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Bíceps com barra reta rest pause",
+            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + falha",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
+          },
+          {
+            "order": 4,
+            "name": "Bíceps 21 com barra w",
             "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
           }
         ]
