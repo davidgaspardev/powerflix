@@ -4,6 +4,7 @@ import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
+import 'package:powerflix/shared/theme/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,11 +22,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'PowerFlix',
-      theme: ThemeData(
-        primaryColor: Colors.red,
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       initialRoute: HomeWidget.routeName,
+      builder: (context, child) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        return AnnotatedRegion<SystemUiOverlayStyle>(
+          value: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+          child: child!,
+        );
+      },
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
           case HomeWidget.routeName:

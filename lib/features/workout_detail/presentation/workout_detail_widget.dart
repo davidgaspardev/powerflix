@@ -52,9 +52,8 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SafeArea(
+    return Scaffold(
+      body: SafeArea(
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -116,7 +115,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
         alignment: Alignment.center,
         padding: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
-          color: const Color(0xFFF8F8F8),
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(8),
             topRight: Radius.circular(8),
@@ -132,7 +131,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
                 width: 48,
                 margin: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF3F3F3),
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -142,7 +141,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
               fontSize: 28,
               fontWeight: FontWeight.bold,
               padding: const EdgeInsets.only(top: 25, bottom: 5, left: 16),
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             Label(
               widget.plan.description,
