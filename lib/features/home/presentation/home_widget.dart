@@ -73,7 +73,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       body: TopDrawer(
         menuHeight: _menuHeight,
         footerHeight: Header.height,
-        menuBuilder: (_) => Container(color: Colors.amber),
+        menuBuilder: (_) => Container(),
         footerBuilder: (_, toggle) => Header(onTap: toggle),
         child: ListenableBuilder(
           listenable: _viewModel,
