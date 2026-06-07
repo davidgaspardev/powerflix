@@ -7,6 +7,10 @@ import 'package:powerflix/core/domain/models/workout_plan.dart';
 class HomeViewModel extends ChangeNotifier {
   static const _workoutsAsset = 'lib/app/assets/data/workouts.json';
 
+  HomeViewModel({AssetBundle? bundle}) : _bundle = bundle ?? rootBundle;
+
+  final AssetBundle _bundle;
+
   List<WorkoutPlan> _workouts = [];
   List<WorkoutPlan> get workouts => _workouts;
 
@@ -23,7 +27,7 @@ class HomeViewModel extends ChangeNotifier {
 
   Future<void> loadWorkouts() async {
     try {
-      final raw = await rootBundle.loadString(_workoutsAsset);
+      final raw = await _bundle.loadString(_workoutsAsset);
       final list = jsonDecode(raw) as List;
       _workouts = list
           .map<WorkoutPlan>((e) => WorkoutPlan.fromMap(Map<String, dynamic>.from(e)))
