@@ -75,6 +75,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         footerHeight: Header.height,
         menuBuilder: (_) => Container(),
         footerBuilder: (_, toggle) => Header(onTap: toggle),
+        panelColor: Theme.of(context).colorScheme.surface,
         child: ListenableBuilder(
           listenable: _viewModel,
           builder: (context, _) {
