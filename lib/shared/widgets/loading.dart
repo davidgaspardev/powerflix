@@ -36,7 +36,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
       alignment: Alignment.center,
       child: Opacity(
         opacity: _animation.value,
-        child: Image.asset('lib/app/assets/image/logo.png'),
+        child: Image.asset('assets/image/logo.png'),
       ),
     );
   }

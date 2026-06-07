@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:powerflix/app/databases/hive.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
 import 'package:powerflix/shared/theme/app_theme.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await HiveDatabase().initilize();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

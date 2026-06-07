@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 
 List<Map<String, dynamic>> _loadFixture() {
-  final file = File('lib/app/assets/data/workouts.json');
+  final file = File('assets/data/workouts.json');
   final raw = jsonDecode(file.readAsStringSync()) as List;
   return raw.map<Map<String, dynamic>>((e) => Map<String, dynamic>.from(e)).toList();
 }

@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
       decoration: BoxDecoration(color: theme.colorScheme.surface),
       child: GestureDetector(
         onTap: onTap,
-        child: Image.asset('lib/app/assets/image/logo.png', height: 45),
+        child: Image.asset('assets/image/logo.png', height: 45),
       ),
     );
   }

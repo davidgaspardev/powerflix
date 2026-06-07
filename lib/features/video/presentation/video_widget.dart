@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/shared/widgets/label.dart';
+import 'package:powerflix/features/video/data/datasources/video_network_datasource.dart';
+import 'package:powerflix/features/video/data/repositories/video_repository_impl.dart';
 import 'package:powerflix/features/video/presentation/video_viewmodel.dart';
 import 'package:video_player/video_player.dart';
 
@@ -20,7 +22,10 @@ class _VideoWidgetState extends State<VideoWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = VideoViewModel(link: widget.link);
+    _viewModel = VideoViewModel(
+      link: widget.link,
+      repository: VideoRepositoryImpl(VideoNetworkDatasource()),
+    );
     _viewModel.init();
   }
 
