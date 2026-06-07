@@ -1,0 +1,25 @@
+name: Validate PR to develop
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  validate-source-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch name pattern
+        run: |
+          SOURCE="${{ github.head_ref }}"
+          if [[ ! "$SOURCE" =~ ^(feature|fix|refactor|chore|doc)/.+ ]]; then
+            echo "❌ Branch '$SOURCE' is not allowed to open a PR to develop."
+            echo "   Allowed patterns:"
+            echo "   - feature/xxx"
+            echo "   - fix/xxx"
+            echo "   - refactor/xxx"
+            echo "   - chore/xxx"
+            echo "   - doc/xxx"
+            exit 1
+          fi
+          echo "✅ Branch '$SOURCE' is valid for merging into develop."

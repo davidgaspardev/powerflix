@@ -55,6 +55,7 @@ gitGraph
    checkout develop
    merge release/v1.0.0 id: "back-merge v1.0.0"
 
+   checkout main
    branch hotfix/critical-crash
    checkout hotfix/critical-crash
    commit id: "patch crash"
