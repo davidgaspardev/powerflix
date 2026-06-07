@@ -1,0 +1,23 @@
+name: Validate PR to main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-source-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          SOURCE="${{ github.head_ref }}"
+          if [[ ! "$SOURCE" =~ ^release/v[0-9]+\.[0-9]+\.[0-9]+$ ]] && \
+             [[ ! "$SOURCE" =~ ^hotfix/.+ ]]; then
+            echo "❌ PRs to main are only allowed from:"
+            echo "   - release/vX.X.X"
+            echo "   - hotfix/xxx"
+            echo "   Source branch was: $SOURCE"
+            exit 1
+          fi
+          echo "✅ Branch '$SOURCE' is valid for merging into main."
