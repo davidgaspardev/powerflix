@@ -1,20 +1,3 @@
-# powerflix
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
 # 🌿 Gitflow Strategy
 
 This project follows a structured Gitflow to ensure safe, predictable releases.
@@ -79,13 +62,13 @@ gitGraph
    merge hotfix/critical-crash id: "v1.0.1" tag: "v1.0.1"
    checkout develop
    merge hotfix/critical-crash id: "back-merge hotfix"
-` `` `
+```
 
 ## Naming Conventions
 
 Branch names must follow these patterns:
 
-` ``
+```bash
 feature/short-description
 fix/short-description
 refactor/short-description
@@ -93,12 +76,7 @@ chore/short-description
 doc/short-description
 release/v1.2.3
 hotfix/short-description
-` ``
+```
 
 > ❌ Invalid: `my-branch`, `Feature-Login`, `fix_auth`
 > ✅ Valid: `feature/user-auth`, `fix/token-expiry`, `release/v2.1.0`
-```
-
----
-
-You can drop this directly into your `CONTRIBUTING.md` or `README.md`. The Mermaid diagram renders natively on GitHub — no plugins needed.
