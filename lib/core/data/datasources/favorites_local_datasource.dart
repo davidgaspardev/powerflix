@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:powerflix/features/workout_detail/data/datasources/favorites_datasource.dart';
+import 'package:powerflix/core/data/datasources/favorites_datasource.dart';
 
 class FavoritesLocalDatasource implements FavoritesDatasource {
   static const _boxName = 'favorites';
