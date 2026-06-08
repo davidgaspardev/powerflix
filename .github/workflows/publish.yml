@@ -1,0 +1,52 @@
+name: Publish to GitHub Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    name: Build & publish Android release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests
+        run: flutter test
+
+      - name: Extract version from pubspec.yaml
+        id: version
+        run: |
+          echo "value=$(grep '^version:' pubspec.yaml | sed 's/version: //' | cut -d'+' -f1)" >> $GITHUB_OUTPUT
+
+      - name: Build Android release APK
+        run: flutter build apk --release
+
+      - name: Publish to GitHub Packages
+        run: ./gradlew publish
+        working-directory: android
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
+          APP_VERSION: ${{ steps.version.outputs.value }}

@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android plugin.
     id("dev.flutter.flutter-gradle-plugin")
+    id("maven-publish")
 }
 
 android {
@@ -40,4 +41,29 @@ android {
 
 flutter {
     source = "../.."
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "team.squill"
+                artifactId = "powerflix"
+                version = System.getenv("APP_VERSION") ?: android.defaultConfig.versionName!!
+                artifact(rootProject.file("../build/app/outputs/flutter-apk/app-release.apk")) {
+                    extension = "apk"
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/squillteam/powerflix-native")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR") ?: ""
+                    password = System.getenv("GITHUB_TOKEN") ?: ""
+                }
+            }
+        }
+    }
 }
