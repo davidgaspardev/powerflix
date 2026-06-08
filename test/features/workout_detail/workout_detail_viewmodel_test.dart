@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/workout_detail/domain/repositories/favorites_repository.dart';
+import 'package:powerflix/core/domain/repositories/favorites_repository.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
 
 class _FakeFavoritesRepository implements FavoritesRepository {

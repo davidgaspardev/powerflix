@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/workout_detail/domain/repositories/favorites_repository.dart';
+import 'package:powerflix/core/domain/repositories/favorites_repository.dart';
 
 class WorkoutDetailViewModel extends ChangeNotifier {
   final WorkoutPlan plan;

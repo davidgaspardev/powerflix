@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/shared/widgets/top_drawer.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
+import 'package:powerflix/features/home/data/datasources/workout_hive_datasource.dart';
 import 'package:powerflix/features/home/data/datasources/workout_local_datasource.dart';
 import 'package:powerflix/features/home/data/repositories/workout_repository_impl.dart';
 import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
@@ -25,7 +26,9 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = HomeViewModel(WorkoutRepositoryImpl(WorkoutLocalDatasource()));
+    _viewModel = HomeViewModel(
+      WorkoutRepositoryImpl(WorkoutLocalDatasource(), WorkoutHiveDatasource()),
+    );
     _viewModel.init();
   }
 
