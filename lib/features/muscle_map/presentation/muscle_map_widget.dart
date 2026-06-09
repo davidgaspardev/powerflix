@@ -50,7 +50,7 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
       body: ListenableBuilder(
         listenable: _viewModel,
         builder: (context, _) {
-          if (_viewModel.isLoading) return Loading();
+          if (_viewModel.isLoading) return const Loading();
           if (_viewModel.hasError) {
             return const Center(child: Text('Failed to load muscle map.'));
           }
