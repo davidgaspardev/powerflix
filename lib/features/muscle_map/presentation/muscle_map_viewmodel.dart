@@ -9,7 +9,7 @@ class MuscleMapViewModel extends ChangeNotifier {
   MuscleMapViewModel(this._repository);
 
   List<MusclePathData> _paths = [];
-  List<MusclePathData> get paths => _paths;
+  List<MusclePathData> get paths => List.unmodifiable(_paths);
 
   final Map<String, MuscleStress> _stress = {};
   Map<String, MuscleStress> get stress => Map.unmodifiable(_stress);
