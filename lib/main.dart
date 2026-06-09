@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:powerflix/app/databases/hive.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
+import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
@@ -51,6 +52,11 @@ class MyApp extends StatelessWidget {
             final link = settings.arguments as String;
             return MaterialPageRoute(
               builder: (_) => VideoWidget(link: link),
+            );
+
+          case MuscleMapWidget.routeName:
+            return MaterialPageRoute(
+              builder: (_) => const MuscleMapWidget(),
             );
 
           default:

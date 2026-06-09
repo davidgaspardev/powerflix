@@ -226,6 +226,20 @@ Rules:
 
 The data layer sits between the ViewModel and the actual storage. Its job is to keep the ViewModel **testable** by hiding implementation details behind interfaces.
 
+### Domain vs Data
+
+`domain` defines **what** — contracts and models that are agnostic to any technology or framework.
+
+`data` is the **infrastructure layer**. It defines **how** — it implements the domain contracts using real technical code (HTTP clients, Hive, SQLite, asset bundles).
+
+The dependency is strictly one-directional:
+
+```
+presentation → domain ← data
+```
+
+`data` knows `domain` (it implements its interfaces), but `domain` never knows `data`. This isolation means you can replace Hive with SQLite, or swap a local datasource for a remote API, without touching the domain or presentation layers.
+
 ### Components
 
 ```mermaid
