@@ -8,4 +8,6 @@ class ServiceLocator {
   }
 
   static T get<T extends Object>() => _registry[T] as T;
+
+  static void reset() => _registry.clear();
 }
