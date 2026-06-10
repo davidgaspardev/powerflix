@@ -1,0 +1,4 @@
+enum BodySex {
+  male,
+  female,
+}

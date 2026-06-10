@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       title: 'PowerFlix',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      initialRoute: HomeWidget.routeName,
+      initialRoute: MuscleMapWidget.routeName,
       builder: (context, child) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         return AnnotatedRegion<SystemUiOverlayStyle>(
