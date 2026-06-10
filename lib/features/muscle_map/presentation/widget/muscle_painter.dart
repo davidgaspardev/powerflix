@@ -1,8 +1,9 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart' show Color, CustomPainter;
+import 'package:flutter/material.dart' show Color, CustomPainter, StrokeCap, StrokeJoin;
 import 'package:powerflix/core/domain/models/muscle_stress.dart';
-import 'package:powerflix/features/muscle_map/domain/models/muscle_path_data.dart';
+import 'package:powerflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
+import 'package:powerflix/features/muscle_map/domain/models/muscle_region_data.dart';
 
 // SVG viewBox dimensions — both maps share the same canvas size.
 const double kMuscleMapWidth = 661.0;
@@ -10,10 +11,15 @@ const double kMuscleMapHeight = 1207.0;
 const double kMuscleMapAspectRatio = kMuscleMapWidth / kMuscleMapHeight;
 
 class MusclePainter extends CustomPainter {
-  final List<MusclePathData> paths;
+  final List<MuscleRegionData> regions;
+  final FigureOutlinePathData? outline;
   final Map<String, MuscleStress> stress;
 
-  const MusclePainter({required this.paths, required this.stress});
+  const MusclePainter({
+    required this.regions,
+    required this.outline,
+    required this.stress,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -22,31 +28,46 @@ class MusclePainter extends CustomPainter {
     canvas.save();
     canvas.scale(scale);
 
-    for (final muscle in paths) {
-      final level = stress[muscle.id] ?? MuscleStress.none;
+    if (outline != null) {
+      canvas.drawPath(
+        outline!.path,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 3.46 / scale
+          ..color = const Color(0xFFFF0000)
+          ..strokeCap = StrokeCap.round
+          ..strokeJoin = StrokeJoin.round,
+      );
+    }
 
-      canvas.drawPath(muscle.path, Paint()
-        ..style = PaintingStyle.fill
-        ..color = _fillColor(level));
+    for (final region in regions) {
+      final level = stress[region.id] ?? MuscleStress.none;
 
-      canvas.drawPath(muscle.path, Paint()
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2 / scale
-        ..color = const Color(0x55000000));
+      canvas.drawPath(
+        region.path,
+        Paint()
+          ..style = PaintingStyle.fill
+          ..color = _fillColor(level),
+      );
+
+      canvas.drawPath(
+        region.path,
+        Paint()
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 1.2 / scale
+          ..color = const Color(0x55000000),
+      );
     }
 
     canvas.restore();
   }
 
-  // Returns the muscle hit at [tapPosition] in widget (scaled) coordinates,
-  // or null if no muscle was tapped.
   String? findMuscleAt(Offset tapPosition, Size canvasSize) {
     final scale = canvasSize.width / kMuscleMapWidth;
     final svgPoint = tapPosition / scale;
 
-    // Iterate in reverse so top-rendered paths (drawn last) take priority.
-    for (final muscle in paths.reversed) {
-      if (muscle.path.contains(svgPoint)) return muscle.id;
+    for (final region in regions.reversed) {
+      if (region.path.contains(svgPoint)) return region.id;
     }
     return null;
   }
@@ -64,5 +85,5 @@ class MusclePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(MusclePainter old) =>
-      old.paths != paths || old.stress != stress;
+      old.regions != regions || old.outline != outline || old.stress != stress;
 }
