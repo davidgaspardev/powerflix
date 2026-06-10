@@ -34,7 +34,7 @@ class MusclePainter extends CustomPainter {
         Paint()
           ..style = PaintingStyle.stroke
           ..strokeWidth = 3.46 / scale
-          ..color = const Color(0xFFFF0000)
+          ..color = const Color(0x32646464)
           ..strokeCap = StrokeCap.round
           ..strokeJoin = StrokeJoin.round,
       );
