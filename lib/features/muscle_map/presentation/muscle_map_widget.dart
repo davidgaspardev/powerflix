@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:powerflix/app/locator.dart';
 import 'package:powerflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
 import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
@@ -24,7 +25,7 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = MuscleMapViewModel(BodyMapRepositoryImpl());
+    _viewModel = ServiceLocator.get<MuscleMapViewModel>();
     _viewModel.init();
   }
 
