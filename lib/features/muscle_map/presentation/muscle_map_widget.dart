@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/features/muscle_map/data/datasources/muscle_map_asset_datasource.dart';
-import 'package:powerflix/features/muscle_map/data/repositories/muscle_map_repository_impl.dart';
+import 'package:powerflix/app/locator.dart';
+import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/widget/muscle_painter.dart';
 import 'package:powerflix/features/muscle_map/presentation/widget/muscle_side_toggle.dart';
@@ -19,16 +19,12 @@ class MuscleMapWidget extends StatefulWidget {
 class _MuscleMapWidgetState extends State<MuscleMapWidget> {
   late final MuscleMapViewModel _viewModel;
 
-  // Holds a reference to the painter so we can call hitTest from the
-  // GestureDetector without re-creating it on every frame.
   MusclePainter? _painter;
 
   @override
   void initState() {
     super.initState();
-    _viewModel = MuscleMapViewModel(
-      MuscleMapRepositoryImpl(MuscleMapAssetDatasource()),
-    );
+    _viewModel = ServiceLocator.get<MuscleMapViewModel>();
     _viewModel.init();
   }
 
@@ -65,7 +61,7 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
       children: [
         const SizedBox(height: 16),
         MuscleSideToggle(
-          isFront: _viewModel.isFront,
+          isFront: _viewModel.side == BodySide.front,
           onToggle: _viewModel.toggleSide,
         ),
         const SizedBox(height: 12),
@@ -81,7 +77,8 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
                     constraints.maxHeight,
                   );
                   _painter = MusclePainter(
-                    paths: _viewModel.paths,
+                    regions: _viewModel.regions,
+                    outline: _viewModel.outline,
                     stress: _viewModel.stress,
                   );
                   return GestureDetector(

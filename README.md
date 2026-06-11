@@ -43,6 +43,13 @@ assets/
 └── image/             # logo and muscle-map SVGs
 ```
 
+| Directory | Responsibility |
+|---|---|
+| `features/` | One self-contained vertical slice per capability. Each feature owns its `data/`, `domain/`, and `presentation/` layers. Nothing leaks between features. |
+| `core/` | Code shared by two or more features — domain models, shared repository interfaces, and cross-feature services. Promoted here only when genuinely needed by multiple features. |
+| `shared/` | Reusable UI primitives and theming — widgets, colours, and `AppTheme`. No business logic. |
+| `app/` | Composition root and infrastructure bootstrapping — database initialisation, adapters, and (soon) the service locator. |
+
 Each feature is structured as:
 
 ```

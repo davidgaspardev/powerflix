@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:powerflix/app/databases/hive.dart';
+import 'package:powerflix/app/locator.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
+import 'package:powerflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
+import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'PowerFlix',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      initialRoute: HomeWidget.routeName,
+      initialRoute: MuscleMapWidget.routeName,
       builder: (context, child) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -55,6 +58,7 @@ class MyApp extends StatelessWidget {
             );
 
           case MuscleMapWidget.routeName:
+            ServiceLocator.register(MuscleMapViewModel(BodyMapRepositoryImpl()));
             return MaterialPageRoute(
               builder: (_) => const MuscleMapWidget(),
             );

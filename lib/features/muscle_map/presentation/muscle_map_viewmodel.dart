@@ -1,21 +1,27 @@
 import 'package:flutter/foundation.dart';
 import 'package:powerflix/core/domain/models/muscle_stress.dart';
-import 'package:powerflix/features/muscle_map/domain/models/muscle_path_data.dart';
-import 'package:powerflix/features/muscle_map/domain/repositories/muscle_map_repository.dart';
+import 'package:powerflix/features/muscle_map/domain/models/body_sex.dart';
+import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
+import 'package:powerflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
+import 'package:powerflix/features/muscle_map/domain/models/muscle_region_data.dart';
+import 'package:powerflix/features/muscle_map/domain/repositories/body_map_repository.dart';
 
 class MuscleMapViewModel extends ChangeNotifier {
-  final MuscleMapRepository _repository;
+  final BodyMapRepository _repository;
 
   MuscleMapViewModel(this._repository);
 
-  List<MusclePathData> _paths = [];
-  List<MusclePathData> get paths => List.unmodifiable(_paths);
+  List<MuscleRegionData> _regions = [];
+  List<MuscleRegionData> get regions => List.unmodifiable(_regions);
+
+  FigureOutlinePathData? _outline;
+  FigureOutlinePathData? get outline => _outline;
 
   final Map<String, MuscleStress> _stress = {};
   Map<String, MuscleStress> get stress => Map.unmodifiable(_stress);
 
-  bool _isFront = true;
-  bool get isFront => _isFront;
+  BodySide _side = BodySide.front;
+  BodySide get side => _side;
 
   bool _isLoading = true;
   bool get isLoading => _isLoading;
@@ -23,11 +29,11 @@ class MuscleMapViewModel extends ChangeNotifier {
   String? _error;
   bool get hasError => _error != null;
 
-  Future<void> init() => _loadPaths();
+  Future<void> init() => _load();
 
   Future<void> toggleSide() async {
-    _isFront = !_isFront;
-    await _loadPaths();
+    _side = _side == BodySide.front ? BodySide.back : BodySide.front;
+    await _load();
   }
 
   void onMuscleTap(String muscleId) {
@@ -36,12 +42,13 @@ class MuscleMapViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> _loadPaths() async {
+  Future<void> _load() async {
     _isLoading = true;
     _error = null;
     notifyListeners();
     try {
-      _paths = await _repository.getPaths(isFront: _isFront);
+      _regions = await _repository.getMuscleRegions(side: _side, sex: BodySex.male);
+      _outline = await _repository.getFigureOutline(side: _side, sex: BodySex.male);
     } catch (e) {
       _error = e.toString();
     } finally {

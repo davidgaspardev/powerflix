@@ -1,0 +1,4 @@
+enum BodySide {
+  front,
+  back,
+}
