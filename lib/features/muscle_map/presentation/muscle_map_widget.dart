@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/app/locator.dart';
-import 'package:powerflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
 import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/widget/muscle_painter.dart';
