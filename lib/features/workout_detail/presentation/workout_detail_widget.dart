@@ -4,8 +4,8 @@ import 'package:powerflix/shared/widgets/label.dart';
 import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
-import 'package:powerflix/core/data/datasources/favorites_local_datasource.dart';
-import 'package:powerflix/core/data/repositories/favorites_repository_impl.dart';
+import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
+import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/slide_panel.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
@@ -30,7 +30,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
     super.initState();
     _viewModel = WorkoutDetailViewModel(
       plan: widget.plan,
-      repository: FavoritesRepositoryImpl(FavoritesLocalDatasource()),
+      repository: UserRepositoryImpl(UserLocalDatasource()),
     );
     _pageController = PageController();
     _viewModel.currentLevelNotifier.addListener(_syncPage);

@@ -1,41 +1,46 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/data/datasources/favorites_datasource.dart';
-import 'package:powerflix/core/data/repositories/favorites_repository_impl.dart';
+import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
+import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
+import 'package:powerflix/core/domain/models/user.dart';
+import 'package:powerflix/core/domain/models/user_preferences.dart';
 
-class _FakeFavoritesDatasource implements FavoritesDatasource {
-  final Map<String, bool> _data = {};
+class _FakeUserLocalDatasource implements UserLocalDatasource {
+  UserModel? _user;
+  UserPreferences _prefs = const UserPreferences();
 
   @override
-  Future<bool> isFavorite(String id) async => _data[id] ?? false;
+  Future<UserModel?> getUser() async => _user;
 
   @override
-  Future<void> setFavorite(String id, bool value) async => _data[id] = value;
+  Future<void> saveUser(UserModel user) async => _user = user;
+
+  @override
+  Future<UserPreferences> getPreferences() async => _prefs;
+
+  @override
+  Future<void> savePreferences(UserPreferences prefs) async => _prefs = prefs;
 }
 
 void main() {
-  group('FavoritesRepositoryImpl', () {
-    test('returns false for unknown id', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      expect(await repo.isFavorite('unknown'), isFalse);
+  group('UserRepositoryImpl', () {
+    test('getPreferences returns empty preferences by default', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      final prefs = await repo.getPreferences();
+      expect(prefs.favoriteWorkoutIds, isEmpty);
     });
 
-    test('returns true after setFavorite(true)', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      expect(await repo.isFavorite('plan-1'), isTrue);
+    test('savePreferences persists and getPreferences retrieves', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      await repo.savePreferences(
+        const UserPreferences(favoriteWorkoutIds: ['plan-1', 'plan-2']),
+      );
+      final prefs = await repo.getPreferences();
+      expect(prefs.favoriteWorkoutIds, ['plan-1', 'plan-2']);
     });
 
-    test('returns false after setFavorite(false)', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      await repo.setFavorite('plan-1', false);
-      expect(await repo.isFavorite('plan-1'), isFalse);
-    });
-
-    test('ids are independent', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      expect(await repo.isFavorite('plan-2'), isFalse);
+    test('getUser returns null when no user saved', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      expect(await repo.getUser(), isNull);
     });
   });
 }
