@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:powerflix/app/databases/hive.dart';
 import 'package:powerflix/app/locator.dart';
+import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
+import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
+import 'package:powerflix/features/profile/presentation/register_widget.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
@@ -18,11 +21,19 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(const MyApp());
+
+  final user = await UserRepositoryImpl(UserLocalDatasource()).getUser();
+  final initialRoute = user == null
+      ? RegisterWidget.routeName
+      : HomeWidget.routeName;
+
+  runApp(MyApp(initialRoute: initialRoute));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String initialRoute;
+
+  const MyApp({super.key, required this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,7 @@ class MyApp extends StatelessWidget {
       title: 'PowerFlix',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      initialRoute: MuscleMapWidget.routeName,
+      initialRoute: initialRoute,
       builder: (context, child) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -40,6 +51,11 @@ class MyApp extends StatelessWidget {
       },
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
+          case RegisterWidget.routeName:
+            return MaterialPageRoute(
+              builder: (_) => const RegisterWidget(),
+            );
+
           case HomeWidget.routeName:
             return MaterialPageRoute(
               builder: (_) => const HomeWidget(),

@@ -21,7 +21,7 @@ void main() {
 
   testWidgets('App smoke test — renders without exception',
       (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MyApp(initialRoute: '/register'));
     expect(find.byType(MyApp), findsOneWidget);
   });
 }
