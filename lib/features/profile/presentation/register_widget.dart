@@ -79,150 +79,205 @@ class _RegisterWidgetState extends State<RegisterWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(24),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: 32),
-                Center(
-                  child: SvgPicture.asset(
-                    'assets/image/svg/logo.svg',
-                    width: MediaQuery.of(context).size.width * 0.4,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFFFD8161),
+              const Color(0xFFFF5A5F),
+            ]
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const SizedBox(height: 32),
+                  Center(
+                    child: SvgPicture.asset(
+                      'assets/image/svg/logo.svg',
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      colorFilter: ColorFilter.mode(Theme.of(context).colorScheme.surface, BlendMode.srcIn),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 32),
-                Text(
-                  'Bem-vindo!',
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Preencha seus dados para começar.',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(height: 32),
+                  const SizedBox(height: 32),
+                  Text(
+                    'Bem-vindo!',
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.surface,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Preencha seus dados para começar.',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.surface.withAlpha(200),
+                    ),
+                  ),
+                  const SizedBox(height: 32),
 
-                Column(
-                  children: [
-                    TextFormField(
-                      controller: _nameController,
-                      decoration: const InputDecoration(
-                        labelText: 'Nome',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                          borderSide: BorderSide.none,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                          borderSide: BorderSide.none,
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                      textCapitalization: TextCapitalization.words,
-                      validator: (v) =>
-                      (v == null || v.trim().isEmpty) ? 'Informe seu nome' : null,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 16),
-                _SexSelector(
-                  value: _sex,
-                  onChanged: (sex) => setState(() => _sex = sex),
-                ),
-                const SizedBox(height: 16),
-                _BirthdayField(
-                  value: _birthday,
-                  onTap: _pickBirthday,
-                ),
-                const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _weightController,
-                        decoration: const InputDecoration(
-                          labelText: 'Peso (kg)',
-                          hintText: 'Ex: 70.5',
-                          filled: true,
-                          fillColor: Color(0x16646464),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
-                          ),
-                        ),
-                        keyboardType:
-                            const TextInputType.numberWithOptions(decimal: true),
-                        validator: (v) {
-                          final n = double.tryParse(v?.trim() ?? '');
-                          if (n == null || n <= 0) return 'Informe um peso válido';
-                          return null;
-                        },
-                      ),
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Theme.of(context).colorScheme.surface,
                     ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _heightController,
-                        decoration: const InputDecoration(
-                          labelText: 'Altura (cm)',
-                          hintText: 'Ex: 175',
-                          filled: true,
-                          fillColor: Color(0x16646464),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            borderSide: BorderSide.none,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsGeometry.only(top: 16, bottom: 8),
+                          child: TextFormField(
+                            controller: _nameController,
+                            decoration: const InputDecoration(
+                              label: Text('What your name?'),
+                              hintText: "Ex: David Gaspar",
+                              errorStyle: TextStyle(
+                                fontSize: 12,
+                                height: -0.1,
+                              ),
+                              floatingLabelBehavior: FloatingLabelBehavior.always,
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                            textCapitalization: TextCapitalization.words,
+                            validator: (v) =>
+                            (v == null || v.trim().isEmpty) ? 'Informe seu nome' : null,
                           ),
                         ),
-                        keyboardType: TextInputType.number,
-                        validator: (v) {
-                          final n = double.tryParse(v?.trim() ?? '');
-                          if (n == null || n <= 0) return 'Informe uma altura válida';
-                          return null;
-                        },
-                      ),
+                        Divider(
+                          height: 1,
+                          color: Colors.grey.withAlpha(100),
+                          thickness: 1,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsGeometry.only(top: 16),
+                          child: _BirthdayField(
+                            value: _birthday,
+                            onTap: _pickBirthday,
+                          ),
+                        ),
+                        Divider(
+                          height: 1,
+                          color: Colors.grey.withAlpha(100),
+                          thickness: 1,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsGeometry.only(top: 16, bottom: 8),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  controller: _weightController,
+                                  decoration: const InputDecoration(
+                                    labelText: 'Peso (kg)',
+                                    hintText: 'Ex: 70.5',
+                                    errorStyle: TextStyle(
+                                      fontSize: 12,
+                                      height: -0.1,
+                                    ),
+                                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                  ),
+                                  keyboardType:
+                                  const TextInputType.numberWithOptions(decimal: true),
+                                  validator: (v) {
+                                    final n = double.tryParse(v?.trim() ?? '');
+                                    if (n == null || n <= 0) return 'Informe um peso válido';
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              VerticalDivider(
+                                width: 1,
+                                color: Colors.grey.withAlpha(100),
+                                thickness: 1,
+                              ),
+                              Expanded(
+                                child: TextFormField(
+                                  controller: _heightController,
+                                  decoration: const InputDecoration(
+                                    labelText: 'Altura (cm)',
+                                    hintText: 'Ex: 175',
+                                    errorStyle: TextStyle(
+                                      fontSize: 12,
+                                      height: -0.1,
+                                    ),
+                                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none,
+                                    ),
+                                  ),
+                                  keyboardType: TextInputType.number,
+                                  validator: (v) {
+                                    final n = double.tryParse(v?.trim() ?? '');
+                                    if (n == null || n <= 0) return 'Informe uma altura válida';
+                                    return null;
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          height: 1,
+                          color: Colors.grey.withAlpha(100),
+                          thickness: 1,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(vertical: 8, horizontal: 16),
+                          child: _SexSelector(
+                            value: _sex,
+                            onChanged: (sex) => setState(() => _sex = sex),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                const SizedBox(height: 32),
-                ListenableBuilder(
-                  listenable: _viewModel,
-                  builder: (_, __) => FilledButton(
-                    onPressed: _viewModel.isSaving ? null : _submit,
-                    child: _viewModel.isSaving
-                        ? const SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Text('Começar'),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 32),
+                  ListenableBuilder(
+                    listenable: _viewModel,
+                    builder: (_, __) => FilledButton(
+                      onPressed: _viewModel.isSaving ? null : _submit,
+                      child: _viewModel.isSaving
+                          ? const SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Text('Começar'),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -243,11 +298,15 @@ class _SexSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Sexo', style: Theme.of(context).textTheme.bodySmall),
-        const SizedBox(height: 8),
+        const SizedBox(height: 4),
         SegmentedButton<BodySex>(
+          style: ButtonStyle(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          ),
+          expandedInsets: EdgeInsets.zero,
           segments: const [
-            ButtonSegment(value: BodySex.male, label: Text('Masculino')),
-            ButtonSegment(value: BodySex.female, label: Text('Feminino')),
+            ButtonSegment(value: BodySex.male, label: Text('Masculino'), icon: Icon(Icons.male)),
+            ButtonSegment(value: BodySex.female, label: Text('Feminino'), icon: Icon(Icons.female)),
           ],
           selected: {value},
           onSelectionChanged: (s) => onChanged(s.first),
@@ -278,18 +337,13 @@ class _BirthdayField extends StatelessWidget {
         decoration: const InputDecoration(
           labelText: 'Data de nascimento',
           suffixIcon: Icon(Icons.calendar_today, size: 18),
-          filled: true,
-          fillColor: Color(0x16646464),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide.none,
           ),
         ),
