@@ -19,6 +19,7 @@ class RegisterWidget extends StatefulWidget {
 
 class _RegisterWidgetState extends State<RegisterWidget> {
   final _formKey = GlobalKey<FormState>();
+  final _birthdayKey = GlobalKey<FormFieldState<DateTime>>();
   final _nameController = TextEditingController();
   final _weightController = TextEditingController();
   final _heightController = TextEditingController();
@@ -26,7 +27,6 @@ class _RegisterWidgetState extends State<RegisterWidget> {
   late final RegisterViewModel _viewModel;
 
   BodySex _sex = BodySex.male;
-  DateTime? _birthday;
 
   @override
   void initState() {
@@ -45,29 +45,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     super.dispose();
   }
 
-  Future<void> _pickBirthday() async {
-    final picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime(2000),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
-    if (picked != null) setState(() => _birthday = picked);
-  }
-
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
-    if (_birthday == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Selecione sua data de nascimento')),
-      );
-      return;
-    }
 
     await _viewModel.save(UserModel(
       name: _nameController.text.trim(),
       sex: _sex,
-      birthday: _birthday!,
+      birthday: _birthdayKey.currentState!.value!,
       weight: double.parse(_weightController.text.trim()),
       height: double.parse(_heightController.text.trim()),
     ));
@@ -144,7 +128,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 16, bottom: 8),
+                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: FieldText(
                             controller: _nameController,
                             label: 'What your name?',
@@ -160,10 +144,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           thickness: 1,
                         ),
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 16),
+                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: _BirthdayField(
-                            value: _birthday,
-                            onTap: _pickBirthday,
+                            key: _birthdayKey,
+                            validator: (v) => v == null
+                                ? 'Selecione sua data de nascimento'
+                                : null,
                           ),
                         ),
                         Divider(
@@ -172,7 +158,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           thickness: 1,
                         ),
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 16, bottom: 8),
+                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: Row(
                             children: [
                               Expanded(
@@ -213,7 +199,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           thickness: 1,
                         ),
                         Padding(
-                          padding: EdgeInsetsGeometry.symmetric(vertical: 8, horizontal: 16),
+                          padding: EdgeInsetsGeometry.symmetric(vertical: 16, horizontal: 8),
                           child: _SexSelector(
                             value: _sex,
                             onChanged: (sex) => setState(() => _sex = sex),
@@ -276,42 +262,64 @@ class _SexSelector extends StatelessWidget {
   }
 }
 
-class _BirthdayField extends StatelessWidget {
-  final DateTime? value;
-  final VoidCallback onTap;
+class _BirthdayField extends FormField<DateTime> {
+  _BirthdayField({
+    super.key,
+    super.validator,
+  }) : super(
+          builder: (FormFieldState<DateTime> state) {
+            final formatted = state.value == null
+                ? null
+                : '${state.value!.day.toString().padLeft(2, '0')}/'
+                    '${state.value!.month.toString().padLeft(2, '0')}/'
+                    '${state.value!.year}';
 
-  const _BirthdayField({required this.value, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    final label = value == null
-        ? 'Data de nascimento'
-        : '${value!.day.toString().padLeft(2, '0')}/'
-            '${value!.month.toString().padLeft(2, '0')}/'
-            '${value!.year}';
-
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(4),
-      child: InputDecorator(
-        decoration: const InputDecoration(
-          labelText: 'Data de nascimento',
-          suffixIcon: Icon(Icons.calendar_today, size: 18),
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
-        ),
-        child: Text(
-          value == null ? '' : label,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-      ),
-    );
-  }
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                InkWell(
+                  onTap: () async {
+                    final picked = await showDatePicker(
+                      context: state.context,
+                      initialDate: state.value ?? DateTime(2000),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime.now(),
+                    );
+                    if (picked != null) state.didChange(picked);
+                  },
+                  borderRadius: BorderRadius.circular(4),
+                  child: InputDecorator(
+                    isEmpty: state.value == null,
+                    decoration: const InputDecoration(
+                      labelText: 'Data de nascimento',
+                      hintText: 'Ex: 16/02/1999',
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
+                      contentPadding: EdgeInsets.only(left: 4, right: 4, top: 8, bottom: 0),
+                      suffixIcon: Icon(Icons.calendar_today, size: 18),
+                      border: OutlineInputBorder(borderSide: BorderSide.none),
+                      enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
+                    ),
+                    child: Text(
+                      formatted ?? '',
+                      style: Theme.of(state.context).textTheme.bodyLarge,
+                    ),
+                  ),
+                ),
+                if (state.hasError)
+                  Container(
+                    margin: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      state.errorText!,
+                      style: TextStyle(
+                        color: Theme.of(state.context).colorScheme.error,
+                        fontSize: 12,
+                        height: -0.1,
+                      ),
+                    ),
+                  ),
+              ],
+            );
+          },
+        );
 }
