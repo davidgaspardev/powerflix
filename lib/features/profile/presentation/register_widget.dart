@@ -6,6 +6,7 @@ import 'package:powerflix/core/domain/models/body_sex.dart';
 import 'package:powerflix/core/domain/models/user.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
 import 'package:powerflix/features/profile/presentation/register_viewmodel.dart';
+import 'package:powerflix/features/profile/presentation/widget/fieldtext.dart';
 
 class RegisterWidget extends StatefulWidget {
   static const routeName = '/register';
@@ -80,6 +81,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -92,7 +94,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
         ),
         child: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24),
+            physics: BouncingScrollPhysics(),
+            padding: const EdgeInsets.all(16),
             child: Form(
               key: _formKey,
               child: Column(
@@ -107,18 +110,26 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  Text(
-                    'Bem-vindo!',
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.surface,
-                          fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Bem-vindo!',
+                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.surface,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Preencha seus dados para começar.',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.surface.withAlpha(200),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Preencha seus dados para começar.',
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.surface.withAlpha(200),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -134,29 +145,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsGeometry.only(top: 16, bottom: 8),
-                          child: TextFormField(
+                          child: FieldText(
                             controller: _nameController,
-                            decoration: const InputDecoration(
-                              label: Text('What your name?'),
-                              hintText: "Ex: David Gaspar",
-                              errorStyle: TextStyle(
-                                fontSize: 12,
-                                height: -0.1,
-                              ),
-                              floatingLabelBehavior: FloatingLabelBehavior.always,
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
+                            label: 'What your name?',
+                            hintText: 'Ex: David Gaspar',
                             textCapitalization: TextCapitalization.words,
                             validator: (v) =>
-                            (v == null || v.trim().isEmpty) ? 'Informe seu nome' : null,
+                                (v == null || v.trim().isEmpty) ? 'Informe seu nome' : null,
                           ),
                         ),
                         Divider(
@@ -181,32 +176,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           child: Row(
                             children: [
                               Expanded(
-                                child: TextFormField(
+                                child: FieldText(
                                   controller: _weightController,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Peso (kg)',
-                                    hintText: 'Ex: 70.5',
-                                    errorStyle: TextStyle(
-                                      fontSize: 12,
-                                      height: -0.1,
-                                    ),
-                                    floatingLabelBehavior: FloatingLabelBehavior.always,
-                                    border: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                  ),
-                                  keyboardType:
-                                  const TextInputType.numberWithOptions(decimal: true),
+                                  label: 'Peso (kg)',
+                                  hintText: 'Ex: 70.5',
+                                  keyboardType: const TextInputType.numberWithOptions(decimal: true),
                                   validator: (v) {
                                     final n = double.tryParse(v?.trim() ?? '');
-                                    if (n == null || n <= 0) return 'Informe um peso válido';
-                                    return null;
+                                    return (n == null || n <= 0) ? 'Informe um peso válido' : null;
                                   },
                                 ),
                               ),
@@ -216,31 +193,14 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 thickness: 1,
                               ),
                               Expanded(
-                                child: TextFormField(
+                                child: FieldText(
                                   controller: _heightController,
-                                  decoration: const InputDecoration(
-                                    labelText: 'Altura (cm)',
-                                    hintText: 'Ex: 175',
-                                    errorStyle: TextStyle(
-                                      fontSize: 12,
-                                      height: -0.1,
-                                    ),
-                                    floatingLabelBehavior: FloatingLabelBehavior.always,
-                                    border: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide.none,
-                                    ),
-                                  ),
+                                  label: 'Altura (cm)',
+                                  hintText: 'Ex: 175',
                                   keyboardType: TextInputType.number,
                                   validator: (v) {
                                     final n = double.tryParse(v?.trim() ?? '');
-                                    if (n == null || n <= 0) return 'Informe uma altura válida';
-                                    return null;
+                                    return (n == null || n <= 0) ? 'Informe uma altura válida' : null;
                                   },
                                 ),
                               ),
