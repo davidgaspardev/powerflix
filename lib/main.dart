@@ -40,12 +40,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'PowerFlix',
       theme: AppTheme.light,
-      darkTheme: AppTheme.dark,
       initialRoute: initialRoute,
       builder: (context, child) {
-        final isDark = Theme.of(context).brightness == Brightness.dark;
         return AnnotatedRegion<SystemUiOverlayStyle>(
-          value: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+          value: SystemUiOverlayStyle.dark,
           child: child!,
         );
       },
