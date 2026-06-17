@@ -4,7 +4,7 @@ import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
 import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
 import 'package:powerflix/core/domain/models/body_sex.dart';
 import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
+import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/profile/presentation/register_viewmodel.dart';
 import 'package:powerflix/features/profile/presentation/widget/fieldtext.dart';
 
@@ -57,7 +57,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     ));
 
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed(MuscleMapWidget.routeName);
+      Navigator.of(context).pushReplacementNamed(HomeWidget.routeName);
     }
   }
 
@@ -128,7 +128,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
                           child: FieldText(
                             controller: _nameController,
                             label: 'What your name?',
@@ -140,7 +140,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
                           child: _BirthdayField(
                             key: _birthdayKey,
                             validator: (v) => v == null
@@ -150,7 +150,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
                           child: Row(
                             children: [
                               Expanded(
@@ -280,7 +280,6 @@ class _BirthdayField extends FormField<DateTime> {
                     isEmpty: state.value == null,
                     decoration: const InputDecoration(
                       labelText: 'Data de nascimento',
-                      hintText: 'Ex: 16/02/1999',
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       contentPadding: EdgeInsets.only(left: 4, right: 4, top: 8, bottom: 0),
                       suffixIcon: Icon(Icons.calendar_today, size: 18),
@@ -289,8 +288,12 @@ class _BirthdayField extends FormField<DateTime> {
                       focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
                     ),
                     child: Text(
-                      formatted ?? '',
-                      style: Theme.of(state.context).textTheme.bodyLarge,
+                      formatted ?? 'Ex: 16/02/1999',
+                      style: Theme.of(state.context).textTheme.bodyLarge?.copyWith(
+                        color: state.value == null
+                            ? Colors.black.withAlpha(80)
+                            : null,
+                      ),
                     ),
                   ),
                 ),

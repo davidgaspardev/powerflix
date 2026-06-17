@@ -31,6 +31,7 @@ class FieldText extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
         labelText: label,
         hintText: hintText,
+        hintStyle: TextStyle(color: Colors.black.withAlpha(80)),
         errorStyle: const TextStyle(fontSize: 12, height: -0.1),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         border: _border,
