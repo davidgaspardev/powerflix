@@ -119,7 +119,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   const SizedBox(height: 32),
 
                   Container(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: Theme.of(context).colorScheme.surface,
@@ -128,7 +128,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: FieldText(
                             controller: _nameController,
                             label: 'What your name?',
@@ -138,13 +138,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 (v == null || v.trim().isEmpty) ? 'Informe seu nome' : null,
                           ),
                         ),
-                        Divider(
-                          height: 1,
-                          color: Colors.grey.withAlpha(100),
-                          thickness: 1,
-                        ),
+                        Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: _BirthdayField(
                             key: _birthdayKey,
                             validator: (v) => v == null
@@ -152,13 +148,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                 : null,
                           ),
                         ),
-                        Divider(
-                          height: 1,
-                          color: Colors.grey.withAlpha(100),
-                          thickness: 1,
-                        ),
+                        Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: EdgeInsetsGeometry.only(top: 20, bottom: 8),
+                          padding: const EdgeInsetsGeometry.only(top: 20, bottom: 8),
                           child: Row(
                             children: [
                               Expanded(
@@ -193,13 +185,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             ],
                           ),
                         ),
-                        Divider(
-                          height: 1,
-                          color: Colors.grey.withAlpha(100),
-                          thickness: 1,
-                        ),
+                        Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: EdgeInsetsGeometry.symmetric(vertical: 16, horizontal: 8),
+                          padding: const EdgeInsetsGeometry.symmetric(vertical: 16, horizontal: 8),
                           child: _SexSelector(
                             value: _sex,
                             onChanged: (sex) => setState(() => _sex = sex),

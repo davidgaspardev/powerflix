@@ -28,7 +28,7 @@ class FieldText extends StatelessWidget {
       textCapitalization: textCapitalization,
       validator: validator,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
         labelText: label,
         hintText: hintText,
         errorStyle: const TextStyle(fontSize: 12, height: -0.1),
