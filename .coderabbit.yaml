@@ -1,0 +1,98 @@
+language: en-US
+
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+
+knowledge_base:
+  learnings:
+    scope: auto
+
+instructions:
+  - path: "lib/features/**"
+    instructions: |
+      This project follows a strict **feature-first architecture** combined with **MVVM**.
+      Enforce the following rules for every file under `lib/features/<feature_name>/`:
+
+      ## Directory structure
+      Each feature must follow this layout:
+      ```
+      lib/features/<feature>/
+        data/
+          datasources/   # abstract datasource + concrete implementations
+          repositories/  # <FeatureRepository>Impl implements domain interface
+        domain/
+          models/        # plain Dart model classes
+          repositories/  # abstract repository interfaces
+        presentation/
+          widget/        # sub-widgets used only inside this feature
+          <feature>_widget.dart      # root screen widget (StatefulWidget or StatelessWidget)
+          <feature>_viewmodel.dart   # ViewModel (ChangeNotifier)
+      ```
+      Flag any file placed outside this structure (e.g. a repository impl inside `presentation/`,
+      a widget inside `data/`, or a model inside `presentation/`).
+
+      ## MVVM rules (applies when a `*_widget.dart` exists)
+      - Every screen widget that owns state or calls a repository **must** have a paired
+        `<feature>_viewmodel.dart` in the same `presentation/` folder.
+      - The ViewModel **must** extend `ChangeNotifier` and expose state via getters
+        (never expose mutable fields directly).
+      - The Widget **must not** own business logic — no direct repository or datasource
+        calls inside `build()`, `initState()`, or event handlers. All calls go through
+        the ViewModel.
+      - UI state (loading, error, data) must live in the ViewModel, not in widget `setState`.
+        `setState` is only acceptable for pure UI state (e.g. animation toggles, selected tab).
+      - The Widget rebuilds via `ListenableBuilder` or `AnimatedBuilder` — not by calling
+        `notifyListeners()` from within the widget itself.
+
+      ## Naming conventions
+      - Screen widget: `<FeatureName>Widget` (e.g. `HomeWidget`, `MuscleMapWidget`)
+      - ViewModel: `<FeatureName>ViewModel` (e.g. `HomeViewModel`, `MuscleMapViewModel`)
+      - Repository interface: `<FeatureName>Repository`
+      - Repository impl: `<FeatureName>RepositoryImpl`
+      - Datasource interface: `<FeatureName>Datasource`
+      - Concrete datasource: `<FeatureName>NetworkDatasource`, `<FeatureName>LocalDatasource`, etc.
+
+      ## Sub-widget rules
+      - Reusable widgets scoped to a single feature go in `presentation/widget/`.
+      - Widgets reused across multiple features go in `lib/shared/widgets/`.
+      - Sub-widgets must be stateless unless they own purely visual state
+        (e.g. hover, focus). They must not hold business logic.
+
+      ## What to flag
+      - A `*_widget.dart` with no corresponding `*_viewmodel.dart` when the widget
+        fetches data or manages non-trivial state.
+      - A ViewModel that imports Flutter widgets (`package:flutter/widgets.dart` is OK
+        for `ChangeNotifier`; importing `BuildContext` or concrete widgets is not).
+      - Direct datasource usage inside a widget (bypassing the repository layer).
+      - Models defined inside `presentation/` or `data/` instead of `domain/models/`.
+      - Any cross-feature import that goes through `presentation/` of another feature
+        (cross-feature sharing must go through `core/` or `shared/`).
+
+  - path: "lib/core/**"
+    instructions: |
+      `lib/core/` holds **cross-feature** domain and data code only.
+      - `core/domain/models/` — shared model classes (e.g. `UserModel`, `BodySex`)
+      - `core/domain/repositories/` — shared repository interfaces
+      - `core/data/datasources/` — shared datasource implementations
+      - `core/data/repositories/` — shared repository implementations
+      Flag any feature-specific logic placed in `core/` that belongs inside
+      `lib/features/<feature>/` instead.
+
+  - path: "lib/shared/**"
+    instructions: |
+      `lib/shared/` is for widgets, theme, and utilities used by **two or more features**.
+      Flag any widget here that is only used by a single feature — it should live in
+      `lib/features/<feature>/presentation/widget/` instead.
+
+  - path: "test/**"
+    instructions: |
+      Unit tests must cover ViewModels independently of Flutter widgets.
+      Repository tests should mock datasources, not hit real I/O.
+      Flag any test that instantiates a widget solely to test ViewModel logic.
