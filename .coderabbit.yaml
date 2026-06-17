@@ -38,18 +38,53 @@ instructions:
       Flag any file placed outside this structure (e.g. a repository impl inside `presentation/`,
       a widget inside `data/`, or a model inside `presentation/`).
 
-      ## MVVM rules (applies when a `*_widget.dart` exists)
-      - Every screen widget that owns state or calls a repository **must** have a paired
+      ## MVVM + Unidirectional Data Flow (UDF)
+      Communication between View and ViewModel must be strictly unidirectional:
+
+      ```
+      User interaction
+           │
+           ▼
+        View  ──── calls method ────▶  ViewModel
+           ▲                               │
+           └──── reads state (getters) ────┘
+                  via ListenableBuilder
+      ```
+
+      ### ViewModel rules
+      - Must extend `ChangeNotifier`.
+      - All state lives here — loading flags, error messages, data lists, selected values.
+      - State is exposed only through **read-only getters** (private fields, public getters).
+        Never expose mutable fields or `ValueNotifier` instances directly.
+      - Must not import or reference any Flutter widget, `BuildContext`, or `Navigator`.
+        (`package:flutter/foundation.dart` for `ChangeNotifier` is the only Flutter import allowed.)
+      - Calls `notifyListeners()` only after mutating its own state — never as a side-effect
+        triggered from the View.
+
+      ### View (Widget) rules
+      - Every screen widget that manages non-trivial state **must** have a paired
         `<feature>_viewmodel.dart` in the same `presentation/` folder.
-      - The ViewModel **must** extend `ChangeNotifier` and expose state via getters
-        (never expose mutable fields directly).
-      - The Widget **must not** own business logic — no direct repository or datasource
-        calls inside `build()`, `initState()`, or event handlers. All calls go through
-        the ViewModel.
-      - UI state (loading, error, data) must live in the ViewModel, not in widget `setState`.
-        `setState` is only acceptable for pure UI state (e.g. animation toggles, selected tab).
-      - The Widget rebuilds via `ListenableBuilder` or `AnimatedBuilder` — not by calling
-        `notifyListeners()` from within the widget itself.
+      - The View **only consumes** state — it reads getters, it never writes to ViewModel fields.
+      - The View **dispatches events** — it calls ViewModel methods (e.g. `_viewModel.load()`,
+        `_viewModel.save(data)`) in response to user actions or lifecycle callbacks.
+      - No business logic in `build()`, `initState()`, or event handlers — delegate everything
+        to the ViewModel.
+      - `setState` is forbidden for business state (loading, error, data). It is only allowed
+        for purely local visual state that has no meaning outside the widget
+        (e.g. keyboard focus, hover, animation phase).
+      - Rebuilds are driven exclusively by `ListenableBuilder` or `AnimatedBuilder` wrapping
+        the ViewModel — never by the widget calling `notifyListeners()` itself.
+      - The View must not perform navigation decisions based on its own logic; navigation
+        triggers should come from reacting to a ViewModel state change
+        (e.g. `if (_viewModel.isSaved) Navigator.of(context).pushReplacementNamed(...)`).
+
+      ### What to flag (UDF violations)
+      - A widget that reads a ViewModel getter AND mutates the same value via `setState`.
+      - A ViewModel method that receives a `BuildContext` or triggers navigation directly.
+      - Business state (fetched data, error, loading) stored in a widget field instead of the ViewModel.
+      - Two-way data binding patterns (e.g. a `TextEditingController` synced back into ViewModel
+        state on every keystroke without going through an explicit event method).
+      - A ViewModel that holds a reference to its View or any widget instance.
 
       ## Naming conventions
       - Screen widget: `<FeatureName>Widget` (e.g. `HomeWidget`, `MuscleMapWidget`)
