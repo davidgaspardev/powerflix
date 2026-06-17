@@ -232,7 +232,7 @@ class _SexSelector extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Sexo', style: Theme.of(context).textTheme.bodySmall),
-        const SizedBox(height: 4),
+        const SizedBox(height: 16),
         SegmentedButton<BodySex>(
           style: ButtonStyle(
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
