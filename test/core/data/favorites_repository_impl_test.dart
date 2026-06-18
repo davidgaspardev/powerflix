@@ -1,41 +1,84 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/data/datasources/favorites_datasource.dart';
-import 'package:powerflix/core/data/repositories/favorites_repository_impl.dart';
+import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
+import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
+import 'package:powerflix/core/domain/models/body_sex.dart';
+import 'package:powerflix/core/domain/models/user.dart';
+import 'package:powerflix/core/domain/models/user_preferences.dart';
 
-class _FakeFavoritesDatasource implements FavoritesDatasource {
-  final Map<String, bool> _data = {};
+class _FakeUserLocalDatasource implements UserLocalDatasource {
+  UserModel? _user;
+  UserPreferences _prefs = const UserPreferences();
 
   @override
-  Future<bool> isFavorite(String id) async => _data[id] ?? false;
+  Future<UserModel?> getUser() async => _user;
 
   @override
-  Future<void> setFavorite(String id, bool value) async => _data[id] = value;
+  Future<void> saveUser(UserModel user) async => _user = user;
+
+  @override
+  Future<UserPreferences> getPreferences() async => _prefs;
+
+  @override
+  Future<void> savePreferences(UserPreferences prefs) async => _prefs = prefs;
 }
 
 void main() {
-  group('FavoritesRepositoryImpl', () {
-    test('returns false for unknown id', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      expect(await repo.isFavorite('unknown'), isFalse);
+  group('UserRepositoryImpl', () {
+    test('getPreferences returns empty preferences by default', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      final prefs = await repo.getPreferences();
+      expect(prefs.favoriteWorkoutIds, isEmpty);
     });
 
-    test('returns true after setFavorite(true)', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      expect(await repo.isFavorite('plan-1'), isTrue);
+    test('savePreferences persists and getPreferences retrieves', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      await repo.savePreferences(
+        const UserPreferences(favoriteWorkoutIds: ['plan-1', 'plan-2']),
+      );
+      final prefs = await repo.getPreferences();
+      expect(prefs.favoriteWorkoutIds, ['plan-1', 'plan-2']);
     });
 
-    test('returns false after setFavorite(false)', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      await repo.setFavorite('plan-1', false);
-      expect(await repo.isFavorite('plan-1'), isFalse);
+    test('getUser returns null when no user saved', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      expect(await repo.getUser(), isNull);
     });
 
-    test('ids are independent', () async {
-      final repo = FavoritesRepositoryImpl(_FakeFavoritesDatasource());
-      await repo.setFavorite('plan-1', true);
-      expect(await repo.isFavorite('plan-2'), isFalse);
+    test('saveUser persists and getUser retrieves the same user', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      final user = UserModel(
+        name: 'David',
+        sex: BodySex.male,
+        birthday: DateTime(1999, 2, 16),
+        weight: 80.0,
+        height: 175.0,
+      );
+      await repo.saveUser(user);
+      final retrieved = await repo.getUser();
+      expect(retrieved, isNotNull);
+      expect(retrieved!.name, 'David');
+      expect(retrieved.weight, 80.0);
+      expect(retrieved.height, 175.0);
+    });
+
+    test('saveUser overwrites previous user', () async {
+      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+      await repo.saveUser(UserModel(
+        name: 'First',
+        sex: BodySex.female,
+        birthday: DateTime(2000),
+        weight: 60.0,
+        height: 165.0,
+      ));
+      await repo.saveUser(UserModel(
+        name: 'Second',
+        sex: BodySex.male,
+        birthday: DateTime(1995),
+        weight: 75.0,
+        height: 180.0,
+      ));
+      final user = await repo.getUser();
+      expect(user!.name, 'Second');
     });
   });
 }

@@ -4,8 +4,6 @@ import 'package:powerflix/shared/widgets/label.dart';
 import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
-import 'package:powerflix/core/data/datasources/favorites_local_datasource.dart';
-import 'package:powerflix/core/data/repositories/favorites_repository_impl.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
 import 'package:powerflix/features/workout_detail/presentation/widget/slide_panel.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
@@ -14,8 +12,9 @@ class WorkoutDetailWidget extends StatefulWidget {
   static const routeName = '/workout_detail';
 
   final WorkoutPlan plan;
+  final WorkoutDetailViewModel viewModel;
 
-  const WorkoutDetailWidget({super.key, required this.plan});
+  const WorkoutDetailWidget({super.key, required this.plan, required this.viewModel});
 
   @override
   State<WorkoutDetailWidget> createState() => _WorkoutDetailWidgetState();
@@ -28,10 +27,7 @@ class _WorkoutDetailWidgetState extends State<WorkoutDetailWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = WorkoutDetailViewModel(
-      plan: widget.plan,
-      repository: FavoritesRepositoryImpl(FavoritesLocalDatasource()),
-    );
+    _viewModel = widget.viewModel;
     _pageController = PageController();
     _viewModel.currentLevelNotifier.addListener(_syncPage);
     _viewModel.init();
