@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/app/locator.dart';
 import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/widget/muscle_painter.dart';
@@ -10,7 +9,9 @@ import 'package:powerflix/shared/widgets/loading.dart';
 class MuscleMapWidget extends StatefulWidget {
   static const routeName = '/muscle_map';
 
-  const MuscleMapWidget({super.key});
+  final MuscleMapViewModel viewModel;
+
+  const MuscleMapWidget({super.key, required this.viewModel});
 
   @override
   State<MuscleMapWidget> createState() => _MuscleMapWidgetState();
@@ -24,7 +25,7 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = ServiceLocator.get<MuscleMapViewModel>();
+    _viewModel = widget.viewModel;
     _viewModel.init();
   }
 

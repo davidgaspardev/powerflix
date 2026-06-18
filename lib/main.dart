@@ -5,13 +5,26 @@ import 'package:powerflix/app/locator.dart';
 import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
 import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
 import 'package:powerflix/core/domain/models/workout_plan.dart';
+import 'package:powerflix/core/domain/repositories/user_repository.dart';
+import 'package:powerflix/features/home/data/datasources/workout_hive_datasource.dart';
+import 'package:powerflix/features/home/data/datasources/workout_local_datasource.dart';
+import 'package:powerflix/features/home/data/repositories/workout_repository_impl.dart';
+import 'package:powerflix/features/home/domain/repositories/workout_repository.dart';
+import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
+import 'package:powerflix/features/home/presentation/home_widget.dart';
 import 'package:powerflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
+import 'package:powerflix/features/muscle_map/domain/repositories/body_map_repository.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:powerflix/features/muscle_map/presentation/muscle_map_widget.dart';
+import 'package:powerflix/features/profile/presentation/register_viewmodel.dart';
 import 'package:powerflix/features/profile/presentation/register_widget.dart';
-import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
-import 'package:powerflix/features/home/presentation/home_widget.dart';
+import 'package:powerflix/features/video/data/datasources/video_network_datasource.dart';
+import 'package:powerflix/features/video/data/repositories/video_repository_impl.dart';
+import 'package:powerflix/features/video/domain/repositories/video_repository.dart';
+import 'package:powerflix/features/video/presentation/video_viewmodel.dart';
 import 'package:powerflix/features/video/presentation/video_widget.dart';
+import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
+import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
 import 'package:powerflix/shared/theme/app_theme.dart';
 
 void main() async {
@@ -22,12 +35,29 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  final user = await UserRepositoryImpl(UserLocalDatasource()).getUser();
+  _registerDependencies();
+
+  final user = await ServiceLocator.get<UserRepository>().getUser();
   final initialRoute = user == null
       ? RegisterWidget.routeName
       : HomeWidget.routeName;
 
   runApp(MyApp(initialRoute: initialRoute));
+}
+
+void _registerDependencies() {
+  ServiceLocator.register<UserRepository>(
+    UserRepositoryImpl(UserLocalDatasource()),
+  );
+  ServiceLocator.register<WorkoutRepository>(
+    WorkoutRepositoryImpl(WorkoutLocalDatasource(), WorkoutHiveDatasource()),
+  );
+  ServiceLocator.register<VideoRepository>(
+    VideoRepositoryImpl(VideoNetworkDatasource()),
+  );
+  ServiceLocator.register<BodyMapRepository>(
+    BodyMapRepositoryImpl(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -51,30 +81,52 @@ class MyApp extends StatelessWidget {
         switch (settings.name) {
           case RegisterWidget.routeName:
             return MaterialPageRoute(
-              builder: (_) => const RegisterWidget(),
+              builder: (_) => RegisterWidget(
+                viewModel: RegisterViewModel(
+                  ServiceLocator.get<UserRepository>(),
+                ),
+              ),
             );
 
           case HomeWidget.routeName:
             return MaterialPageRoute(
-              builder: (_) => const HomeWidget(),
+              builder: (_) => HomeWidget(
+                viewModel: HomeViewModel(
+                  ServiceLocator.get<WorkoutRepository>(),
+                ),
+              ),
             );
 
           case WorkoutDetailWidget.routeName:
             final plan = settings.arguments as WorkoutPlan;
             return MaterialPageRoute(
-              builder: (_) => WorkoutDetailWidget(plan: plan),
+              builder: (_) => WorkoutDetailWidget(
+                plan: plan,
+                viewModel: WorkoutDetailViewModel(
+                  plan: plan,
+                  repository: ServiceLocator.get<UserRepository>(),
+                ),
+              ),
             );
 
           case VideoWidget.routeName:
             final link = settings.arguments as String;
             return MaterialPageRoute(
-              builder: (_) => VideoWidget(link: link),
+              builder: (_) => VideoWidget(
+                viewModel: VideoViewModel(
+                  link: link,
+                  repository: ServiceLocator.get<VideoRepository>(),
+                ),
+              ),
             );
 
           case MuscleMapWidget.routeName:
-            ServiceLocator.register(MuscleMapViewModel(BodyMapRepositoryImpl()));
             return MaterialPageRoute(
-              builder: (_) => const MuscleMapWidget(),
+              builder: (_) => MuscleMapWidget(
+                viewModel: MuscleMapViewModel(
+                  ServiceLocator.get<BodyMapRepository>(),
+                ),
+              ),
             );
 
           default:

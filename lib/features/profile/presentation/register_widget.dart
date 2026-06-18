@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
-import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
 import 'package:powerflix/core/domain/models/body_sex.dart';
 import 'package:powerflix/core/domain/models/user.dart';
 import 'package:powerflix/features/home/presentation/home_widget.dart';
@@ -11,7 +9,9 @@ import 'package:powerflix/features/profile/presentation/widget/fieldtext.dart';
 class RegisterWidget extends StatefulWidget {
   static const routeName = '/register';
 
-  const RegisterWidget({super.key});
+  final RegisterViewModel viewModel;
+
+  const RegisterWidget({super.key, required this.viewModel});
 
   @override
   State<RegisterWidget> createState() => _RegisterWidgetState();
@@ -31,9 +31,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = RegisterViewModel(
-      UserRepositoryImpl(UserLocalDatasource()),
-    );
+    _viewModel = widget.viewModel;
   }
 
   @override

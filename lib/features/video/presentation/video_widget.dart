@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:powerflix/shared/widgets/label.dart';
-import 'package:powerflix/features/video/data/datasources/video_network_datasource.dart';
-import 'package:powerflix/features/video/data/repositories/video_repository_impl.dart';
 import 'package:powerflix/features/video/presentation/video_viewmodel.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoWidget extends StatefulWidget {
   static const routeName = '/video';
 
-  final String link;
+  final VideoViewModel viewModel;
 
-  const VideoWidget({super.key, required this.link});
+  const VideoWidget({super.key, required this.viewModel});
 
   @override
   State<VideoWidget> createState() => _VideoWidgetState();
@@ -22,10 +20,7 @@ class _VideoWidgetState extends State<VideoWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = VideoViewModel(
-      link: widget.link,
-      repository: VideoRepositoryImpl(VideoNetworkDatasource()),
-    );
+    _viewModel = widget.viewModel;
     _viewModel.init();
   }
 

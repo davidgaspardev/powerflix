@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:powerflix/shared/widgets/loading.dart';
 import 'package:powerflix/shared/widgets/top_drawer.dart';
 import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
-import 'package:powerflix/features/home/data/datasources/workout_hive_datasource.dart';
-import 'package:powerflix/features/home/data/datasources/workout_local_datasource.dart';
-import 'package:powerflix/features/home/data/repositories/workout_repository_impl.dart';
 import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
 import 'package:powerflix/features/home/presentation/widget/header.dart';
 import 'package:powerflix/features/home/presentation/widget/workout_plan_card.dart';
@@ -12,7 +9,9 @@ import 'package:powerflix/features/home/presentation/widget/workout_plan_card.da
 class HomeWidget extends StatefulWidget {
   static const routeName = '/home';
 
-  const HomeWidget({super.key});
+  final HomeViewModel viewModel;
+
+  const HomeWidget({super.key, required this.viewModel});
 
   @override
   State<HomeWidget> createState() => _HomeWidgetState();
@@ -26,9 +25,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   void initState() {
     super.initState();
-    _viewModel = HomeViewModel(
-      WorkoutRepositoryImpl(WorkoutLocalDatasource(), WorkoutHiveDatasource()),
-    );
+    _viewModel = widget.viewModel;
     _viewModel.init();
   }
 
