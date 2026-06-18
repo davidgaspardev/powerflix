@@ -126,7 +126,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
+                          padding: const EdgeInsets.only(top: 24, bottom: 12),
                           child: FieldText(
                             controller: _nameController,
                             label: 'What your name?',
@@ -138,7 +138,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
+                          padding: const EdgeInsets.only(top: 24, bottom: 12),
                           child: _BirthdayField(
                             key: _birthdayKey,
                             validator: (v) => v == null
@@ -148,7 +148,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: const EdgeInsetsGeometry.only(top: 24, bottom: 12),
+                          padding: const EdgeInsets.only(top: 24, bottom: 12),
                           child: Row(
                             children: [
                               Expanded(
@@ -185,7 +185,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         ),
                         Divider(height: 1, color: Colors.grey.withAlpha(100), thickness: 1),
                         Padding(
-                          padding: const EdgeInsetsGeometry.symmetric(vertical: 16, horizontal: 8),
+                          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
                           child: _SexSelector(
                             value: _sex,
                             onChanged: (sex) => setState(() => _sex = sex),
