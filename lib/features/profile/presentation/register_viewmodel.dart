@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:powerflix/core/domain/models/user.dart';
 import 'package:powerflix/core/domain/repositories/user_repository.dart';
@@ -11,10 +13,15 @@ class RegisterViewModel extends ChangeNotifier {
   RegisterViewModel(this._repository);
 
   Future<void> save(UserModel user) async {
-    _isSaving = true;
-    notifyListeners();
-    await _repository.saveUser(user);
-    _isSaving = false;
-    notifyListeners();
+    try {
+      _isSaving = true;
+      notifyListeners();
+      await _repository.saveUser(user);
+    } catch(e) {
+      log(e.toString());
+    } finally {
+      _isSaving = false;
+      notifyListeners();
+    }
   }
 }
