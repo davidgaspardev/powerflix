@@ -20,5 +20,4 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<void> savePreferences(UserPreferences prefs) =>
       _datasource.savePreferences(prefs);
-
 }
