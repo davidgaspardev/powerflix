@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
-import 'package:powerflix/shared/widgets/loading.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/shared/widgets/loading.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
 
 class WorkoutPlanCard extends StatelessWidget {
   final WorkoutPlan data;

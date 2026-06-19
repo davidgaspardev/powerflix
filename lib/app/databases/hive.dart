@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:powerflix/app/databases/hive_adapter.dart';
+import 'package:moveflix/app/databases/hive_adapter.dart';
 
 class HiveDatabase {
   HiveDatabase._internal();

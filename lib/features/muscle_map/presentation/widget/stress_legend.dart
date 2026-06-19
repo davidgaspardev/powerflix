@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/core/domain/models/muscle_stress.dart';
-import 'package:powerflix/features/muscle_map/presentation/widget/muscle_painter.dart';
+import 'package:moveflix/core/domain/models/muscle_stress.dart';
+import 'package:moveflix/features/muscle_map/presentation/widget/muscle_painter.dart';
 
 class StressLegend extends StatelessWidget {
   const StressLegend({super.key});

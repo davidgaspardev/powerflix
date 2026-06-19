@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/widgets/label.dart';
+import 'package:moveflix/shared/widgets/label.dart';
 
 class Loading extends StatefulWidget {
   const Loading({super.key});

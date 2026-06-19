@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/theme/colors.dart';
-import 'package:powerflix/shared/widgets/label.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/shared/theme/colors.dart';
+import 'package:moveflix/shared/widgets/label.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
 
 class DifficultyTierCard extends StatelessWidget {
   final DifficultyTier data;

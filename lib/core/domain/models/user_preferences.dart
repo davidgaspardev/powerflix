@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:powerflix/core/domain/model.dart';
+import 'package:moveflix/core/domain/model.dart';
 
 class UserPreferences extends Model {
   final List<String> favoriteWorkoutIds;

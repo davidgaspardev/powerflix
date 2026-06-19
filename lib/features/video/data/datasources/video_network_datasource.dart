@@ -1,4 +1,4 @@
-import 'package:powerflix/features/video/data/datasources/video_datasource.dart';
+import 'package:moveflix/features/video/data/datasources/video_datasource.dart';
 
 class VideoNetworkDatasource implements VideoDatasource {
   @override

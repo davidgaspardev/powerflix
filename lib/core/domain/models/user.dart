@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:powerflix/core/domain/model.dart';
-import 'package:powerflix/core/domain/models/body_sex.dart';
+import 'package:moveflix/core/domain/model.dart';
+import 'package:moveflix/core/domain/models/body_sex.dart';
 
 class UserModel extends Model {
   final String name;

@@ -1,4 +1,4 @@
-package team.squill.powerflix
+package team.squill.moveflix
 
 import io.flutter.embedding.android.FlutterActivity
 

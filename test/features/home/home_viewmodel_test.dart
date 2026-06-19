@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/home/domain/repositories/workout_repository.dart';
-import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/home/domain/repositories/workout_repository.dart';
+import 'package:moveflix/features/home/presentation/home_viewmodel.dart';
 
 class _FakeWorkoutRepository implements WorkoutRepository {
   final List<WorkoutPlan> plans;

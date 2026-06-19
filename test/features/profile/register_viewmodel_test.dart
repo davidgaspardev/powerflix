@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/domain/models/body_sex.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/core/domain/models/user_preferences.dart';
-import 'package:powerflix/core/domain/repositories/user_repository.dart';
-import 'package:powerflix/features/profile/presentation/register_viewmodel.dart';
+import 'package:moveflix/core/domain/models/body_sex.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/models/user_preferences.dart';
+import 'package:moveflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/features/profile/presentation/register_viewmodel.dart';
 
 class _FakeUserRepository implements UserRepository {
   UserModel? saved;

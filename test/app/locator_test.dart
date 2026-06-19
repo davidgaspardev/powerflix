@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/app/locator.dart';
+import 'package:moveflix/app/locator.dart';
 
 abstract class _A {}
 

@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
-import 'package:powerflix/features/video/domain/repositories/video_repository.dart';
+import 'package:moveflix/features/video/domain/repositories/video_repository.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoViewModel extends ChangeNotifier {

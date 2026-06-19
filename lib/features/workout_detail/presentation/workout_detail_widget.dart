@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/theme/colors.dart';
-import 'package:powerflix/shared/widgets/label.dart';
-import 'package:powerflix/shared/widgets/loading.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/video/presentation/video_widget.dart';
-import 'package:powerflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
-import 'package:powerflix/features/workout_detail/presentation/widget/slide_panel.dart';
-import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
+import 'package:moveflix/shared/theme/colors.dart';
+import 'package:moveflix/shared/widgets/label.dart';
+import 'package:moveflix/shared/widgets/loading.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/video/presentation/video_widget.dart';
+import 'package:moveflix/features/workout_detail/presentation/widget/difficulty_tier_card.dart';
+import 'package:moveflix/features/workout_detail/presentation/widget/slide_panel.dart';
+import 'package:moveflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
 
 class WorkoutDetailWidget extends StatefulWidget {
   static const routeName = '/workout_detail';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/features/muscle_map/domain/models/body_side.dart';
-import 'package:powerflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
-import 'package:powerflix/features/muscle_map/presentation/widget/muscle_painter.dart';
-import 'package:powerflix/features/muscle_map/presentation/widget/muscle_side_toggle.dart';
-import 'package:powerflix/features/muscle_map/presentation/widget/stress_legend.dart';
-import 'package:powerflix/shared/widgets/loading.dart';
+import 'package:moveflix/features/muscle_map/domain/models/body_side.dart';
+import 'package:moveflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
+import 'package:moveflix/features/muscle_map/presentation/widget/muscle_painter.dart';
+import 'package:moveflix/features/muscle_map/presentation/widget/muscle_side_toggle.dart';
+import 'package:moveflix/features/muscle_map/presentation/widget/stress_legend.dart';
+import 'package:moveflix/shared/widgets/loading.dart';
 
 class MuscleMapWidget extends StatefulWidget {
   static const routeName = '/muscle_map';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/widgets/loading.dart';
-import 'package:powerflix/shared/widgets/top_drawer.dart';
-import 'package:powerflix/features/workout_detail/presentation/workout_detail_widget.dart';
-import 'package:powerflix/features/home/presentation/home_viewmodel.dart';
-import 'package:powerflix/features/home/presentation/widget/header.dart';
-import 'package:powerflix/features/home/presentation/widget/workout_plan_card.dart';
+import 'package:moveflix/shared/widgets/loading.dart';
+import 'package:moveflix/shared/widgets/top_drawer.dart';
+import 'package:moveflix/features/workout_detail/presentation/workout_detail_widget.dart';
+import 'package:moveflix/features/home/presentation/home_viewmodel.dart';
+import 'package:moveflix/features/home/presentation/widget/header.dart';
+import 'package:moveflix/features/home/presentation/widget/workout_plan_card.dart';
 
 class HomeWidget extends StatefulWidget {
   static const routeName = '/home';
