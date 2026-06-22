@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:powerflix/core/domain/models/body_sex.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/features/home/presentation/home_widget.dart';
-import 'package:powerflix/features/profile/presentation/register_viewmodel.dart';
-import 'package:powerflix/features/profile/presentation/widget/fieldtext.dart';
+import 'package:moveflix/core/domain/models/body_sex.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/features/home/presentation/home_widget.dart';
+import 'package:moveflix/features/profile/presentation/register_viewmodel.dart';
+import 'package:moveflix/features/profile/presentation/widget/fieldtext.dart';
 
 class RegisterWidget extends StatefulWidget {
   static const routeName = '/register';

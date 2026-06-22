@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/widgets/label.dart';
-import 'package:powerflix/features/video/presentation/video_viewmodel.dart';
+import 'package:moveflix/shared/widgets/label.dart';
+import 'package:moveflix/features/video/presentation/video_viewmodel.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoWidget extends StatefulWidget {

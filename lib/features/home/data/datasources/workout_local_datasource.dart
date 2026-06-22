@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/features/home/data/datasources/workout_datasource.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/home/data/datasources/workout_datasource.dart';
 
 class WorkoutLocalDatasource implements WorkoutDatasource {
   static const _assetPath = 'assets/data/workouts.json';

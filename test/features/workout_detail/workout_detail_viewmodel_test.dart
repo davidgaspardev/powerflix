@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/core/domain/models/user_preferences.dart';
-import 'package:powerflix/core/domain/models/workout_plan.dart';
-import 'package:powerflix/core/domain/repositories/user_repository.dart';
-import 'package:powerflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/models/user_preferences.dart';
+import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
 
 class _FakeUserRepository implements UserRepository {
   UserPreferences _prefs;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:powerflix/shared/theme/colors.dart';
+import 'package:moveflix/shared/theme/colors.dart';
 
 class AppTheme {
   static ThemeData get light => ThemeData(

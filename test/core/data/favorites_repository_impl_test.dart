@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:powerflix/core/data/datasources/user_local_datasource.dart';
-import 'package:powerflix/core/data/repositories/user_repository_impl.dart';
-import 'package:powerflix/core/domain/models/body_sex.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/core/domain/models/user_preferences.dart';
+import 'package:moveflix/core/data/datasources/user_local_datasource.dart';
+import 'package:moveflix/core/data/repositories/user_repository_impl.dart';
+import 'package:moveflix/core/domain/models/body_sex.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/models/user_preferences.dart';
 
 class _FakeUserLocalDatasource implements UserLocalDatasource {
   UserModel? _user;

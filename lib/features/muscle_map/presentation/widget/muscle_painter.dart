@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart' show Color, CustomPainter, StrokeCap, StrokeJoin;
-import 'package:powerflix/core/domain/models/muscle_stress.dart';
-import 'package:powerflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
-import 'package:powerflix/features/muscle_map/domain/models/muscle_region_data.dart';
+import 'package:moveflix/core/domain/models/muscle_stress.dart';
+import 'package:moveflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
+import 'package:moveflix/features/muscle_map/domain/models/muscle_region_data.dart';
 
 // SVG viewBox dimensions — both maps share the same canvas size.
 const double kMuscleMapWidth = 661.0;

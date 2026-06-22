@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/repositories/user_repository.dart';
 
 class RegisterViewModel extends ChangeNotifier {
   final UserRepository _repository;

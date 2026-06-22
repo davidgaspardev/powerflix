@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:powerflix/core/domain/models/user.dart';
-import 'package:powerflix/core/domain/models/user_preferences.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/models/user_preferences.dart';
 
 class UserLocalDatasource {
   static const _userBox = 'user';
