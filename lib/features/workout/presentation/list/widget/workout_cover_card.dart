@@ -92,18 +92,12 @@ class _SkeletonCardState extends State<_SkeletonCard>
               begin: Alignment(-1.5 + sweep * 3, 0),
               end: Alignment(0.5 + sweep * 3, 0),
               colors: const [
-                Color(0xFF1E1E1E),
-                Color(0xFF2E2E2E),
-                Color(0xFF424242),
-                Color(0xFF2E2E2E),
-                Color(0xFF1E1E1E),
+                Color(0xFFE0E0E0),
+                Color(0xFFF5F5F5),
+                Color(0xFFE0E0E0),
               ],
-              stops: const [0.0, 0.25, 0.5, 0.75, 1.0],
+              stops: const [0.0, 0.5, 1.0],
             ),
-          ),
-          child: const Align(
-            alignment: Alignment(0.7, -0.85),
-            child: Icon(Icons.star_border, color: Color(0xFF3A3A3A)),
           ),
         );
       },
