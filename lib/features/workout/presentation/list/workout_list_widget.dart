@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:moveflix/app/router/route_observer.dart';
 import 'package:moveflix/features/workout/presentation/list/widget/header.dart';
-import 'package:moveflix/features/workout/presentation/list/widget/workout_plan_card.dart';
+import 'package:moveflix/features/workout/presentation/list/widget/workout_cover_card.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
 import 'package:moveflix/features/workout/workout_routes.dart';
 import 'package:moveflix/shared/widgets/loading.dart';
@@ -72,7 +72,7 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
               delegate: SliverChildBuilderDelegate(
                 (context, int index) {
                   final workoutCover = viewModel.workoutCoverList[index];
-                  return WorkoutPlanCard(
+                  return WorkoutCoverCard(
                     data: workoutCover,
                     onTap: () => viewModel.openWorkoutCover(workoutCover.id),
                   );

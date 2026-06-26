@@ -1,0 +1,112 @@
+import 'package:flutter/material.dart';
+import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
+import 'package:moveflix/shared/widgets/loading.dart';
+
+class WorkoutCoverCard extends StatelessWidget {
+  final WorkoutCover data;
+  final VoidCallback? onTap;
+
+  const WorkoutCoverCard({
+    super.key,
+    required this.data,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Hero(
+        tag: data.id,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.network(
+                data.coverUrl,
+                fit: BoxFit.fill,
+                loadingBuilder: _loadingBuilder,
+                errorBuilder: _errorBuilder,
+              ),
+              Positioned(
+                top: 8,
+                right: 8,
+                child: Icon(
+                  data.isFavorite ? Icons.star : Icons.star_border,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _loadingBuilder(BuildContext context, Widget child, ImageChunkEvent? chunk) {
+    if (chunk == null) return child;
+    return const _SkeletonCard();
+  }
+
+  Widget _errorBuilder(BuildContext context, Object error, StackTrace? stackTrace) {
+    return LoadingError(message: error.toString());
+  }
+}
+
+class _SkeletonCard extends StatefulWidget {
+  const _SkeletonCard();
+
+  @override
+  State<_SkeletonCard> createState() => _SkeletonCardState();
+}
+
+class _SkeletonCardState extends State<_SkeletonCard>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 1200),
+      vsync: this,
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, _) {
+        final sweep = _controller.value;
+        return Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment(-1.5 + sweep * 3, 0),
+              end: Alignment(0.5 + sweep * 3, 0),
+              colors: const [
+                Color(0xFF1E1E1E),
+                Color(0xFF2E2E2E),
+                Color(0xFF424242),
+                Color(0xFF2E2E2E),
+                Color(0xFF1E1E1E),
+              ],
+              stops: const [0.0, 0.25, 0.5, 0.75, 1.0],
+            ),
+          ),
+          child: const Align(
+            alignment: Alignment(0.7, -0.85),
+            child: Icon(Icons.star_border, color: Color(0xFF3A3A3A)),
+          ),
+        );
+      },
+    );
+  }
+}
