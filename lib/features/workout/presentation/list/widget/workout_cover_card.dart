@@ -44,15 +44,27 @@ class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
                 loadingBuilder: _loadingBuilder,
                 errorBuilder: _errorBuilder,
               ),
-              if (_loaded)
+              if (_loaded) ...[
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(
+                      color: Colors.grey.withAlpha(64),
+                      width: 2,
+                    ),
+                  ),
+                ),
                 Positioned(
                   top: 8,
                   right: 8,
                   child: Icon(
                     widget.data.isFavorite ? Icons.star : Icons.star_border,
-                    color: Colors.white,
+                    color: widget.data.isFavorite ? Colors.yellow : Colors.white,
                   ),
-                ),
+                )
+              ],
             ],
           ),
         ),
@@ -60,7 +72,8 @@ class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
     );
   }
 
-  Widget _loadingBuilder(BuildContext context, Widget child, ImageChunkEvent? chunk) {
+  Widget _loadingBuilder(
+      BuildContext context, Widget child, ImageChunkEvent? chunk) {
     if (chunk == null) {
       if (!_loaded) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -77,7 +90,8 @@ class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
     return const _SkeletonCard();
   }
 
-  Widget _errorBuilder(BuildContext context, Object error, StackTrace? stackTrace) {
+  Widget _errorBuilder(
+      BuildContext context, Object error, StackTrace? stackTrace) {
     return LoadingError(message: error.toString());
   }
 }
