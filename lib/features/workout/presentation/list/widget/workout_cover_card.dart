@@ -23,6 +23,7 @@ class WorkoutCoverCard extends StatelessWidget {
           child: Image.network(
             data.coverUrl,
             fit: BoxFit.fill,
+            frameBuilder: _frameBuilder,
             loadingBuilder: _loadingBuilder,
             errorBuilder: _errorBuilder,
           ),
@@ -31,33 +32,37 @@ class WorkoutCoverCard extends StatelessWidget {
     );
   }
 
+  // Called when an image frame is ready. frame==null means no frame rendered yet.
+  Widget _frameBuilder(BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
+    if (frame == null) return child;
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        child,
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(
+              color: Colors.grey.withAlpha(64),
+              width: 2,
+            ),
+          ),
+        ),
+        Positioned(
+          top: 8,
+          right: 8,
+          child: Icon(
+            data.isFavorite ? Icons.star : Icons.star_border,
+            color: data.isFavorite ? Colors.yellow : Colors.white,
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _loadingBuilder(BuildContext context, Widget child, ImageChunkEvent? chunk) {
-    if (chunk == null) {
-      return Stack(
-        fit: StackFit.expand,
-        children: [
-          child,
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
-              border: Border.all(
-                color: Colors.grey.withAlpha(64),
-                width: 2,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 8,
-            right: 8,
-            child: Icon(
-              data.isFavorite ? Icons.star : Icons.star_border,
-              color: data.isFavorite ? Colors.yellow : Colors.white,
-            ),
-          ),
-        ],
-      );
-    }
-    return const _SkeletonCard();
+    if (chunk != null) return const _SkeletonCard();
+    return child;
   }
 
   Widget _errorBuilder(BuildContext context, Object error, StackTrace? stackTrace) {
