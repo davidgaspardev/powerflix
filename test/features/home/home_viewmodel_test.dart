@@ -113,11 +113,11 @@ void main() {
       expect(notifyCount, 1);
     });
 
-    test('init() triggers loadWorkouts asynchronously', () async {
+    test('loadWorkouts runs asynchronously and updates state', () async {
       final vm = _vm(plans: [_plan('p1', 'A')]);
-      vm.init();
+      final future = vm.loadWorkouts();
       expect(vm.isLoading, isTrue);
-      await Future.delayed(Duration.zero);
+      await future;
       expect(vm.isLoading, isFalse);
       expect(vm.workoutCoverList, hasLength(1));
     });

@@ -10,27 +10,26 @@ import 'package:moveflix/shared/widgets/loading.dart';
 import 'package:moveflix/shared/widgets/top_drawer.dart';
 
 class WorkoutListWidget extends StatefulWidget {
-  final WorkoutListViewModel viewModel;
+  final WorkoutListViewModel _viewModel;
 
-  const WorkoutListWidget({super.key, required this.viewModel});
+  const WorkoutListWidget({super.key, required WorkoutListViewModel viewModel}) : _viewModel = viewModel;
 
   @override
   State<WorkoutListWidget> createState() => _WorkoutListWidgetState();
 }
 
 class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
-  late final WorkoutListViewModel _viewModel;
-  late final StreamSubscription<String> _navigation;
+ WorkoutListViewModel get viewModel => widget._viewModel;
+  late final StreamSubscription<String> navigationEvent;
 
   static const double _menuHeight = 260;
 
   @override
   void initState() {
     super.initState();
-    _viewModel = widget.viewModel;
-    _viewModel.init();
+    viewModel.loadWorkouts();
 
-    _navigation = _viewModel.navigationEvents.listen((String workoutId) {
+    navigationEvent = viewModel.navigationEvents.listen((String workoutId) {
       Navigator.of(context).pushNamed(
         WorkoutRoutes.detail,
         arguments: workoutId,
@@ -47,8 +46,8 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
   @override
   void dispose() {
     appRouteObserver.unsubscribe(this);
-    _navigation.cancel();
-    _viewModel.dispose();
+    navigationEvent.cancel();
+    viewModel.dispose();
     super.dispose();
   }
 
@@ -62,7 +61,7 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
         SliverPadding(
           padding: const EdgeInsets.all(10),
           sliver: ListenableBuilder(
-            listenable: _viewModel,
+            listenable: viewModel,
             builder: (BuildContext context, Widget? child) => SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -72,13 +71,13 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
               ),
               delegate: SliverChildBuilderDelegate(
                 (context, int index) {
-                  final workoutCover = _viewModel.workoutCoverList[index];
+                  final workoutCover = viewModel.workoutCoverList[index];
                   return WorkoutPlanCard(
                     data: workoutCover,
-                    onTap: () => _viewModel.openWorkoutCover(workoutCover.id),
+                    onTap: () => viewModel.openWorkoutCover(workoutCover.id),
                   );
                 },
-                childCount: _viewModel.workoutCoverList.length,
+                childCount: viewModel.workoutCoverList.length,
               ),
             ),
           ),
@@ -99,10 +98,10 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
         footerBuilder: (_, toggle) => Header(onTap: toggle),
         panelColor: Theme.of(context).colorScheme.surface,
         child: ListenableBuilder(
-          listenable: _viewModel,
+          listenable: viewModel,
           builder: (context, _) {
-            if (_viewModel.isLoading) return Loading();
-            if (_viewModel.hasError) {
+            if (viewModel.isLoading) return Loading();
+            if (viewModel.hasError) {
               return LoadingError(message: 'Erro ao carregar os treinos.');
             }
             return _buildGrid(topInset);
@@ -114,6 +113,6 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
 
   @override
   void didPopNext() {
-    _viewModel.loadWorkouts();
+    viewModel.loadWorkouts();
   }
 }
