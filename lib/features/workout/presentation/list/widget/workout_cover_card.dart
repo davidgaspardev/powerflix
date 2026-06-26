@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
 import 'package:moveflix/shared/widgets/loading.dart';
 
-class WorkoutCoverCard extends StatefulWidget {
+class WorkoutCoverCard extends StatelessWidget {
   final WorkoutCover data;
   final VoidCallback? onTap;
 
@@ -13,85 +13,54 @@ class WorkoutCoverCard extends StatefulWidget {
   });
 
   @override
-  State<WorkoutCoverCard> createState() => _WorkoutCoverCardState();
-}
-
-class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
-  bool _loaded = false;
-
-  @override
-  void didUpdateWidget(WorkoutCoverCard oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.data.coverUrl != widget.data.coverUrl) {
-      _loaded = false;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: Hero(
-        tag: widget.data.id,
+        tag: data.id,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(4),
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Image.network(
-                widget.data.coverUrl,
-                fit: BoxFit.fill,
-                loadingBuilder: _loadingBuilder,
-                errorBuilder: _errorBuilder,
-              ),
-              if (_loaded) ...[
-                Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    border: Border.all(
-                      color: Colors.grey.withAlpha(64),
-                      width: 2,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: Icon(
-                    widget.data.isFavorite ? Icons.star : Icons.star_border,
-                    color: widget.data.isFavorite ? Colors.yellow : Colors.white,
-                  ),
-                )
-              ],
-            ],
+          child: Image.network(
+            data.coverUrl,
+            fit: BoxFit.fill,
+            loadingBuilder: _loadingBuilder,
+            errorBuilder: _errorBuilder,
           ),
         ),
       ),
     );
   }
 
-  Widget _loadingBuilder(
-      BuildContext context, Widget child, ImageChunkEvent? chunk) {
+  Widget _loadingBuilder(BuildContext context, Widget child, ImageChunkEvent? chunk) {
     if (chunk == null) {
-      if (!_loaded) {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (mounted) setState(() => _loaded = true);
-        });
-      }
-      return child;
-    }
-    if (_loaded) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) setState(() => _loaded = false);
-      });
+      return Stack(
+        fit: StackFit.expand,
+        children: [
+          child,
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(
+                color: Colors.grey.withAlpha(64),
+                width: 2,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 8,
+            right: 8,
+            child: Icon(
+              data.isFavorite ? Icons.star : Icons.star_border,
+              color: data.isFavorite ? Colors.yellow : Colors.white,
+            ),
+          ),
+        ],
+      );
     }
     return const _SkeletonCard();
   }
 
-  Widget _errorBuilder(
-      BuildContext context, Object error, StackTrace? stackTrace) {
+  Widget _errorBuilder(BuildContext context, Object error, StackTrace? stackTrace) {
     return LoadingError(message: error.toString());
   }
 }
