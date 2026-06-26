@@ -106,7 +106,7 @@ void main() {
       var notifyCount = 0;
       vm.addListener(() => notifyCount++);
       await vm.loadWorkouts();
-      expect(notifyCount, 1);
+      expect(notifyCount, 2); // once for isLoading=true, once for isLoading=false
     });
 
     test('loadWorkouts notifies listeners on error', () async {
@@ -114,7 +114,7 @@ void main() {
       var notifyCount = 0;
       vm.addListener(() => notifyCount++);
       await vm.loadWorkouts();
-      expect(notifyCount, 1);
+      expect(notifyCount, 2); // once for isLoading=true, once for isLoading=false
     });
 
     test('loadWorkouts runs asynchronously and updates state', () async {

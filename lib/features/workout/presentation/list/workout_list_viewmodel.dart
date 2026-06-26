@@ -37,6 +37,8 @@ class WorkoutListViewModel extends ChangeNotifier {
   String? get error => _error;
 
   Future<void> loadWorkouts() async {
+    _isLoading = true;
+    notifyListeners();
     try {
       _workoutCoverList = await _getWorkoutCoverListUseCase();
       _error = null;
@@ -46,6 +48,12 @@ class WorkoutListViewModel extends ChangeNotifier {
       _isLoading = false;
       notifyListeners();
     }
+  }
+
+  @override
+  void dispose() {
+    _navigationController.close();
+    super.dispose();
   }
 
   Future<void> openWorkoutCover(String id) async {
