@@ -80,7 +80,6 @@ class _SlidePanelState extends State<SlidePanel>
     } else if (velocity > 300) {
       close();
     } else if (_isOpen) {
-      // Snap back to open — covers the case of taps or tiny drags while open
       open();
     } else {
       close();

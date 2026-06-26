@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 
 List<Map<String, dynamic>> _loadFixture() {
   final file = File('assets/data/workouts.json');

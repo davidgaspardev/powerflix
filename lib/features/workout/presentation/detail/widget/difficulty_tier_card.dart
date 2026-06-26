@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/shared/theme/colors.dart';
 import 'package:moveflix/shared/widgets/label.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
 
 class DifficultyTierCard extends StatelessWidget {
   final DifficultyTier data;
@@ -30,7 +30,7 @@ class DifficultyTierCard extends StatelessWidget {
     return reps != null ? '${sets}x$reps' : '${sets}x falha';
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(8),
@@ -117,9 +117,7 @@ class DifficultyTierCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
-        children: data.exercises
-            .map<Widget>((e) => _buildExercise(e))
-            .toList(),
+        children: data.exercises.map<Widget>((e) => _buildExercise(e)).toList(),
       ),
     );
   }

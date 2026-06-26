@@ -218,14 +218,18 @@ class WorkoutPlan extends Model {
     }
   }
 
+  static WorkoutPlan fromJson(String json) {
+    final map = jsonDecode(json) as Map<String, dynamic>;
+    return WorkoutPlan.fromMap(map);
+  }
+
   @override
   Map<String, dynamic> toMap() => {
         'id': id,
         'name': name,
         'description': description,
         'coverUrl': coverUrl,
-        'levels':
-            levels.map<Map<String, dynamic>>((l) => l.toMap()).toList(),
+        'levels': levels.map<Map<String, dynamic>>((l) => l.toMap()).toList(),
       };
 
   @override

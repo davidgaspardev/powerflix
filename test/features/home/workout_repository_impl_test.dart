@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
-import 'package:moveflix/features/home/data/datasources/workout_cache_datasource.dart';
-import 'package:moveflix/features/home/data/datasources/workout_datasource.dart';
-import 'package:moveflix/features/home/data/repositories/workout_repository_impl.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/data/datasources/workout_cache_datasource.dart';
+import 'package:moveflix/features/workout/data/datasources/workout_datasource.dart';
+import 'package:moveflix/features/workout/data/repositories/workout_repository_impl.dart';
 
 // ── fakes ──────────────────────────────────────────────────────────────────
 

@@ -4,14 +4,7 @@ import 'package:moveflix/app/databases/hive.dart';
 import 'package:moveflix/app/locator.dart';
 import 'package:moveflix/core/data/datasources/user_local_datasource.dart';
 import 'package:moveflix/core/data/repositories/user_repository_impl.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
-import 'package:moveflix/features/home/data/datasources/workout_hive_datasource.dart';
-import 'package:moveflix/features/home/data/datasources/workout_local_datasource.dart';
-import 'package:moveflix/features/home/data/repositories/workout_repository_impl.dart';
-import 'package:moveflix/features/home/domain/repositories/workout_repository.dart';
-import 'package:moveflix/features/home/presentation/home_viewmodel.dart';
-import 'package:moveflix/features/home/presentation/home_widget.dart';
 import 'package:moveflix/features/muscle_map/data/repositories/body_map_repository_impl.dart';
 import 'package:moveflix/features/muscle_map/domain/repositories/body_map_repository.dart';
 import 'package:moveflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
@@ -23,8 +16,9 @@ import 'package:moveflix/features/video/data/repositories/video_repository_impl.
 import 'package:moveflix/features/video/domain/repositories/video_repository.dart';
 import 'package:moveflix/features/video/presentation/video_viewmodel.dart';
 import 'package:moveflix/features/video/presentation/video_widget.dart';
-import 'package:moveflix/features/workout_detail/presentation/workout_detail_viewmodel.dart';
-import 'package:moveflix/features/workout_detail/presentation/workout_detail_widget.dart';
+import 'package:moveflix/app/router/route_observer.dart';
+import 'package:moveflix/features/workout/workout_module.dart';
+import 'package:moveflix/features/workout/workout_routes.dart';
 import 'package:moveflix/shared/theme/app_theme.dart';
 
 void main() async {
@@ -38,9 +32,7 @@ void main() async {
   _registerDependencies();
 
   final user = await ServiceLocator.get<UserRepository>().getUser();
-  final initialRoute = user == null
-      ? RegisterWidget.routeName
-      : HomeWidget.routeName;
+  final initialRoute = user == null ? RegisterWidget.routeName : WorkoutRoutes.list;
 
   runApp(MyApp(initialRoute: initialRoute));
 }
@@ -49,9 +41,7 @@ void _registerDependencies() {
   ServiceLocator.register<UserRepository>(
     UserRepositoryImpl(UserLocalDatasource()),
   );
-  ServiceLocator.register<WorkoutRepository>(
-    WorkoutRepositoryImpl(WorkoutLocalDatasource(), WorkoutHiveDatasource()),
-  );
+  WorkoutModule.register();
   ServiceLocator.register<VideoRepository>(
     VideoRepositoryImpl(VideoNetworkDatasource()),
   );
@@ -71,6 +61,7 @@ class MyApp extends StatelessWidget {
       title: 'PowerFlix',
       theme: AppTheme.light,
       initialRoute: initialRoute,
+      navigatorObservers: [appRouteObserver],
       builder: (context, child) {
         return AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle.dark,
@@ -84,27 +75,6 @@ class MyApp extends StatelessWidget {
               builder: (_) => RegisterWidget(
                 viewModel: RegisterViewModel(
                   ServiceLocator.get<UserRepository>(),
-                ),
-              ),
-            );
-
-          case HomeWidget.routeName:
-            return MaterialPageRoute(
-              builder: (_) => HomeWidget(
-                viewModel: HomeViewModel(
-                  ServiceLocator.get<WorkoutRepository>(),
-                ),
-              ),
-            );
-
-          case WorkoutDetailWidget.routeName:
-            final plan = settings.arguments as WorkoutPlan;
-            return MaterialPageRoute(
-              builder: (_) => WorkoutDetailWidget(
-                plan: plan,
-                viewModel: WorkoutDetailViewModel(
-                  plan: plan,
-                  repository: ServiceLocator.get<UserRepository>(),
                 ),
               ),
             );
@@ -130,7 +100,9 @@ class MyApp extends StatelessWidget {
             );
 
           default:
-            return null;
+            final builder = WorkoutModule.routes[settings.name];
+            if (builder == null) return null;
+            return MaterialPageRoute(settings: settings, builder: builder);
         }
       },
     );
