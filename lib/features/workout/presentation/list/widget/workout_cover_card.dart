@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
 import 'package:moveflix/shared/widgets/loading.dart';
 
-class WorkoutCoverCard extends StatelessWidget {
+class WorkoutCoverCard extends StatefulWidget {
   final WorkoutCover data;
   final VoidCallback? onTap;
 
@@ -13,30 +13,38 @@ class WorkoutCoverCard extends StatelessWidget {
   });
 
   @override
+  State<WorkoutCoverCard> createState() => _WorkoutCoverCardState();
+}
+
+class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
+  bool _loaded = false;
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Hero(
-        tag: data.id,
+        tag: widget.data.id,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(4),
           child: Stack(
             fit: StackFit.expand,
             children: [
               Image.network(
-                data.coverUrl,
+                widget.data.coverUrl,
                 fit: BoxFit.fill,
                 loadingBuilder: _loadingBuilder,
                 errorBuilder: _errorBuilder,
               ),
-              Positioned(
-                top: 8,
-                right: 8,
-                child: Icon(
-                  data.isFavorite ? Icons.star : Icons.star_border,
-                  color: Colors.white,
+              if (_loaded)
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: Icon(
+                    widget.data.isFavorite ? Icons.star : Icons.star_border,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
             ],
           ),
         ),
@@ -45,7 +53,14 @@ class WorkoutCoverCard extends StatelessWidget {
   }
 
   Widget _loadingBuilder(BuildContext context, Widget child, ImageChunkEvent? chunk) {
-    if (chunk == null) return child;
+    if (chunk == null) {
+      if (!_loaded) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) setState(() => _loaded = true);
+        });
+      }
+      return child;
+    }
     return const _SkeletonCard();
   }
 
