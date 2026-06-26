@@ -5,11 +5,13 @@ import 'package:moveflix/shared/widgets/loading.dart';
 class WorkoutCoverCard extends StatelessWidget {
   final WorkoutCover data;
   final VoidCallback? onTap;
+  final VoidCallback? onFavorite;
 
   const WorkoutCoverCard({
     super.key,
     required this.data,
     this.onTap,
+    this.onFavorite,
   });
 
   @override
@@ -51,9 +53,12 @@ class WorkoutCoverCard extends StatelessWidget {
         Positioned(
           top: 8,
           right: 8,
-          child: Icon(
-            data.isFavorite ? Icons.star : Icons.star_border,
-            color: data.isFavorite ? Colors.yellow : Colors.white,
+          child: GestureDetector(
+            onTap: onFavorite,
+            child: Icon(
+              data.isFavorite ? Icons.star : Icons.star_border,
+              color: data.isFavorite ? Colors.yellow : Colors.white,
+            ),
           ),
         ),
       ],

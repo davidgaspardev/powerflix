@@ -6,6 +6,7 @@ import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
+import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
 
 class _FakeWorkoutPlanRepository implements WorkoutPlanRepository {
@@ -54,6 +55,9 @@ WorkoutListViewModel _vm({List<WorkoutPlan> plans = const [], Object? error}) {
     ),
     getWorkoutPlanByIdUseCase: GetWorkoutPlanByIdUseCase(
       workoutPlanRepository: workoutRepo,
+    ),
+    toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(
+      userRepository: userRepo,
     ),
   );
 }

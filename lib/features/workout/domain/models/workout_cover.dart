@@ -16,6 +16,13 @@ class WorkoutCover extends Model {
     required this.isFavorite,
   });
 
+  WorkoutCover copyWith({bool? isFavorite}) => WorkoutCover(
+        id: id,
+        description: description,
+        coverUrl: coverUrl,
+        isFavorite: isFavorite ?? this.isFavorite,
+      );
+
   static WorkoutCover fromWorkoutPlan(
     WorkoutPlan workoutPlan, {
     bool isFavorite = false,

@@ -8,6 +8,7 @@ import 'package:moveflix/features/workout/data/repositories/workout_repository_i
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
+import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 import 'package:moveflix/features/workout/presentation/detail/workout_detail_viewmodel.dart';
 import 'package:moveflix/features/workout/presentation/detail/workout_detail_widget.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
@@ -31,6 +32,9 @@ class WorkoutModule {
               ),
               getWorkoutPlanByIdUseCase: GetWorkoutPlanByIdUseCase(
                 workoutPlanRepository: ServiceLocator.get<WorkoutPlanRepository>(),
+              ),
+              toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(
+                userRepository: ServiceLocator.get<UserRepository>(),
               ),
             ),
           );

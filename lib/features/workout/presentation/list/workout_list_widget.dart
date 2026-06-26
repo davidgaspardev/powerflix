@@ -75,6 +75,7 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
                   return WorkoutCoverCard(
                     data: workoutCover,
                     onTap: () => viewModel.openWorkoutCover(workoutCover.id),
+                    onFavorite: () => viewModel.toggleFavorite(workoutCover.id),
                   );
                 },
                 childCount: viewModel.workoutCoverList.length,
