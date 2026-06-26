@@ -1,13 +1,13 @@
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
-import 'package:moveflix/features/workout/domain/repositories/workout_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 
 class GetWorkoutCoverListUseCase {
-  final WorkoutRepository _workoutPlanRepository;
+  final WorkoutPlanRepository _workoutPlanRepository;
   final UserRepository _userRepository;
 
   GetWorkoutCoverListUseCase({
-    required WorkoutRepository workoutPlanRepository,
+    required WorkoutPlanRepository workoutPlanRepository,
     required UserRepository userRepository,
   })  : _workoutPlanRepository = workoutPlanRepository,
         _userRepository = userRepository;

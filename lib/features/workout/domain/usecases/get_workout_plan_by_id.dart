@@ -1,11 +1,11 @@
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
-import 'package:moveflix/features/workout/domain/repositories/workout_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 
 class GetWorkoutPlanByIdUseCase {
-  late final WorkoutRepository _workoutPlanRepository;
+  late final WorkoutPlanRepository _workoutPlanRepository;
 
   GetWorkoutPlanByIdUseCase({
-    required WorkoutRepository workoutPlanRepository,
+    required WorkoutPlanRepository workoutPlanRepository,
   }) : _workoutPlanRepository = workoutPlanRepository;
 
   Future<WorkoutPlan> call(String id) async {

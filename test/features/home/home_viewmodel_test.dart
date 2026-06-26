@@ -3,16 +3,16 @@ import 'package:moveflix/core/domain/models/user.dart';
 import 'package:moveflix/core/domain/models/user_preferences.dart';
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
-import 'package:moveflix/features/workout/domain/repositories/workout_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
 
-class _FakeWorkoutRepository implements WorkoutRepository {
+class _FakeWorkoutPlanRepository implements WorkoutPlanRepository {
   final List<WorkoutPlan> plans;
   final Object? error;
 
-  _FakeWorkoutRepository({this.plans = const [], this.error});
+  _FakeWorkoutPlanRepository({this.plans = const [], this.error});
 
   @override
   Future<List<WorkoutPlan>> getWorkouts() async {
@@ -45,7 +45,7 @@ WorkoutPlan _plan(String id, String name) => WorkoutPlan(
     );
 
 WorkoutListViewModel _vm({List<WorkoutPlan> plans = const [], Object? error}) {
-  final workoutRepo = _FakeWorkoutRepository(plans: plans, error: error);
+  final workoutRepo = _FakeWorkoutPlanRepository(plans: plans, error: error);
   final userRepo = _FakeUserRepository();
   return WorkoutListViewModel(
     getWorkoutCoverListUseCase: GetWorkoutCoverListUseCase(

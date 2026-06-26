@@ -1,13 +1,13 @@
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/data/datasources/workout_cache_datasource.dart';
 import 'package:moveflix/features/workout/data/datasources/workout_datasource.dart';
-import 'package:moveflix/features/workout/domain/repositories/workout_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 
-class WorkoutRepositoryImpl implements WorkoutRepository {
+class WorkoutPlanRepositoryImpl implements WorkoutPlanRepository {
   final WorkoutDatasource _source;
   final WorkoutCacheDatasource _cache;
 
-  WorkoutRepositoryImpl(this._source, this._cache);
+  WorkoutPlanRepositoryImpl(this._source, this._cache);
 
   @override
   Future<WorkoutPlan> getById(String id) async {
