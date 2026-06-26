@@ -20,6 +20,14 @@ class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
   bool _loaded = false;
 
   @override
+  void didUpdateWidget(WorkoutCoverCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.data.coverUrl != widget.data.coverUrl) {
+      _loaded = false;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: widget.onTap,
@@ -60,6 +68,11 @@ class _WorkoutCoverCardState extends State<WorkoutCoverCard> {
         });
       }
       return child;
+    }
+    if (_loaded) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) setState(() => _loaded = false);
+      });
     }
     return const _SkeletonCard();
   }
