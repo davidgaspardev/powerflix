@@ -18,22 +18,22 @@
           {
             "order": 1,
             "name": "Agachamento com peso corporal",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-bodyweight-squat-front.mp4"
           },
           {
             "order": 2,
             "name": "Cadeira abdutora",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-abduction-front.mp4"
           },
           {
             "order": 3,
             "name": "Elevação pélvica em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-glute-bridge-front.mp4"
           },
           {
             "order": 4,
             "name": "Glúteo máquina",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-glute-kickback-front.mp4"
           }
         ]
       },
@@ -50,7 +50,7 @@
           {
             "order": 1,
             "name": "Agachamento no smith + agachamento unilateral no smith",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Smithmachine-squat-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -60,18 +60,16 @@
           },
           {
             "order": 2,
-            "name": "Glúteo em 4 apoios com caneleira",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Glúteo em 4 apoios com caneleira"
           },
           {
             "order": 3,
-            "name": "Agachamento em polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Agachamento em polia"
           },
           {
             "order": 4,
             "name": "Elevação pélvica na máquina 4x até a falha",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-thrust-front.mp4"
           }
         ]
       },
@@ -88,7 +86,7 @@
           {
             "order": 1,
             "name": "Agachamento no smith + agachamento sumô com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Smithmachine-squat-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + falha",
@@ -98,13 +96,11 @@
           },
           {
             "order": 2,
-            "name": "Glúteo em apoios com caneleira",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Glúteo em apoios com caneleira"
           },
           {
             "order": 3,
             "name": "Abdução de quadril em pé com caneleira na polia + glúteo na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -115,7 +111,7 @@
           {
             "order": 4,
             "name": "Agachamento búlgaro 4x até a falha",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-bulgarian-split-squat-front.mp4"
           }
         ]
       }
@@ -130,52 +126,118 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos e concentrados para aprender o padrão de ativação dos isquiotibiais e seus resultados",
-        "volume": { "sets": 3, "reps": 12, "restSeconds": 75 },
+        "volume": {
+          "sets": 3,
+          "reps": 12,
+          "restSeconds": 75
+        },
         "warmupNote": "Realize 7 minutos de bicicleta ergométrica com cadência leve. Faça 10 alongamentos dinâmicos de isquiotibial em pé (perna estendida, tronco à frente) por lado. Isquiotibial é o músculo mais lesionado do corpo — ative-o conscientemente antes de qualquer carga.",
         "exercises": [
-          { "order": 1, "name": "Leg curl deitado na máquina" },
-          { "order": 2, "name": "Stiff com halteres" },
-          { "order": 3, "name": "Cadeira flexora em pé com caneleira" },
-          { "order": 4, "name": "Ponte glútea unilateral no colchonete" }
+          {
+            "order": 1,
+            "name": "Leg curl deitado na máquina",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-hamstring-curl-front.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Stiff com halteres",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-romanian-deadlift-front.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Cadeira flexora em pé com caneleira"
+          },
+          {
+            "order": 4,
+            "name": "Ponte glútea unilateral no colchonete",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-single-leg-glute-bridge-front.mp4"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada com foco na fase excêntrica para fortalecer o isquiotibial em toda a amplitude",
-        "volume": { "sets": 4, "reps": 10, "restSeconds": 90 },
+        "volume": {
+          "sets": 4,
+          "reps": 10,
+          "restSeconds": 90
+        },
         "warmupNote": "Realize 7 minutos de bicicleta. Execute 1 série leve de stiff e 1 série leve de leg curl antes de iniciar. Fase excêntrica (descida lenta) deve durar 3 segundos — é onde o isquiotibial mais se fortalece e mais se lesiona sem preparo.",
         "exercises": [
           {
             "order": 1,
             "name": "Stiff com barra + leg curl deitado",
-            "techniques": [{ "title": "BI-SET 4x10 + 10", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x10 + 10",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-romanian-deadlift-front.mp4"
           },
-          { "order": 2, "name": "Mesa flexora" },
-          { "order": 3, "name": "Levantamento terra romeno com halteres" },
-          { "order": 4, "name": "Agachamento sumô com ênfase na descida lenta" }
+          {
+            "order": 2,
+            "name": "Mesa flexora",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-hamstring-curl-front.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Levantamento terra romeno com halteres",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-romanian-deadlift-front.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Agachamento sumô com ênfase na descida lenta",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-sumo-squat-front.mp4"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Cargas máximas e técnicas avançadas para isquiotibiais blindados contra lesões e com máxima hipertrofia",
-        "volume": { "sets": 4, "reps": 6, "restSeconds": 150 },
+        "volume": {
+          "sets": 4,
+          "reps": 6,
+          "restSeconds": 150
+        },
         "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute 2 séries progressivas de stiff com barra (50% e 70% da carga). Nordic hamstring curl sem aquecimento é a forma mais rápida de romper isquiotibial — não negocie esta etapa.",
         "exercises": [
           {
             "order": 1,
             "name": "Levantamento terra romeno com barra + leg curl deitado",
-            "techniques": [{ "title": "BI-SET 4x6 + falha", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x6 + falha",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-romanian-deadlift-front.mp4"
           },
           {
             "order": 2,
             "name": "Mesa flexora rest pause",
-            "techniques": [{ "title": "4x6 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-hamstring-curl-front.mp4"
           },
-          { "order": 3, "name": "Nordic hamstring curl 4x até a falha" },
+          {
+            "order": 3,
+            "name": "Nordic hamstring curl 4x até a falha",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-nordic-hamstring-curl-front.mp4"
+          },
           {
             "order": 4,
             "name": "Stiff unilateral com halter drop set",
-            "techniques": [{ "title": "4x6 + falha", "description": "Drop set: reduza a carga e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x6 + falha",
+                "description": "Drop set: reduza a carga e continue até a falha"
+              }
+            ]
           }
         ]
       }
@@ -190,52 +252,116 @@
       {
         "difficulty": "LIGHT",
         "description": "Ativação dos romboides e trapézio médio para reverter o arredondamento de ombros",
-        "volume": { "sets": 3, "reps": 15, "restSeconds": 60 },
+        "volume": {
+          "sets": 3,
+          "reps": 15,
+          "restSeconds": 60
+        },
         "warmupNote": "Realize 10 retrações escapulares lentas sem carga (junte as escápulas e segure 3 segundos). Faça 10 rotações de ombro para frente e para trás. Músculos posturais são principalmente fibras de resistência — eles respondem melhor ao volume e à consciência corporal do que à carga.",
         "exercises": [
-          { "order": 1, "name": "Retração escapular com elástico" },
-          { "order": 2, "name": "Face pull com elástico" },
-          { "order": 3, "name": "Remada curvada com halteres pegada pronada" },
-          { "order": 4, "name": "Elevação posterior com halteres sentado" }
+          {
+            "order": 1,
+            "name": "Retração escapular com elástico",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Band-band-pull-apart-front.mp4"
+          },
+          {
+            "order": 2,
+            "name": "Face pull com elástico",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Band-band-face-pull-front.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Remada curvada com halteres pegada pronada"
+          },
+          {
+            "order": 4,
+            "name": "Elevação posterior com halteres sentado"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada para fortalecer trapézio médio, romboides e deltóide posterior com volume adequado",
-        "volume": { "sets": 4, "reps": 12, "restSeconds": 75 },
+        "volume": {
+          "sets": 4,
+          "reps": 12,
+          "restSeconds": 75
+        },
         "warmupNote": "Realize 7 minutos de aquecimento aeróbico leve. Execute 15 retrações escapulares e 15 face pulls com elástico antes de iniciar. Ative conscientemente os romboides durante cada repetição — sem ativação consciente o trapézio superior compensa e a postura piora.",
         "exercises": [
           {
             "order": 1,
             "name": "Remada pronada na polia + face pull",
-            "techniques": [{ "title": "BI-SET 4x12 + 12", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x12 + 12",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
           },
-          { "order": 2, "name": "Remada serrote com halter" },
-          { "order": 3, "name": "Encolhimento com halteres" },
-          { "order": 4, "name": "Band pull-apart com elástico" }
+          {
+            "order": 2,
+            "name": "Remada serrote com halter",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-single-arm-row-front.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Encolhimento com halteres",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-shrug-front.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Band pull-apart com elástico",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Band-band-pull-apart-front.mp4"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Volume e carga elevados para trapézio, romboides e deltóide posterior com técnicas avançadas",
-        "volume": { "sets": 4, "reps": 8, "restSeconds": 120 },
+        "volume": {
+          "sets": 4,
+          "reps": 8,
+          "restSeconds": 120
+        },
         "warmupNote": "Realize 7 minutos de aquecimento aeróbico. Execute ativação escapular completa: retrações, face pull e band pull-apart antes de iniciar. Faça 1 série leve de remada pronada pesada antes de iniciar — romboides sob carga pesada sem ativação prévia causam tensão no trapézio superior e piora postural.",
         "exercises": [
           {
             "order": 1,
             "name": "Remada pronada pesada + face pull drop set",
-            "techniques": [{ "title": "BI-SET 4x8 + falha", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x8 + falha",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-bent-over-row-front.mp4"
           },
           {
             "order": 2,
             "name": "Power shrug com barra rest pause",
-            "techniques": [{ "title": "4x8 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x8 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-shrug-front.mp4"
           },
-          { "order": 3, "name": "Remada cavaleiro (t-bar) 4x até a falha" },
+          {
+            "order": 3,
+            "name": "Remada cavaleiro (t-bar) 4x até a falha"
+          },
           {
             "order": 4,
             "name": "Encolhimento com barra rest pause",
-            "techniques": [{ "title": "4x8 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x8 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-shrug-front.mp4"
           }
         ]
       }
@@ -259,18 +385,15 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Puxada frente aberta",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Puxada frente aberta"
           },
           {
             "order": 2,
-            "name": "Remada baixa",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Remada baixa"
           },
           {
             "order": 3,
-            "name": "Puxada fechada com triângulo",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Puxada fechada com triângulo"
           }
         ]
       },
@@ -286,13 +409,11 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Remada baixa pegada neutra",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Remada baixa pegada neutra"
           },
           {
             "order": 2,
             "name": "Puxada frente aberta + puxada frente supinada",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 3x9 + 9",
@@ -302,8 +423,7 @@
           },
           {
             "order": 3,
-            "name": "Remada curvada p/ supinada na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Remada curvada p/ supinada na polia"
           }
         ]
       },
@@ -320,7 +440,7 @@
           {
             "order": 1,
             "name": "Remada cavalo + remada serrote",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-single-arm-row-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -331,7 +451,6 @@
           {
             "order": 2,
             "name": "Pulldown c/ corda rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -342,7 +461,6 @@
           {
             "order": 3,
             "name": "Puxada frente aberta drop set",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -353,7 +471,7 @@
           {
             "order": 4,
             "name": "Barra fixa p/ neutra 4x até a falha",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-pullup-front.mp4"
           }
         ]
       }
@@ -378,27 +496,27 @@
           {
             "order": 1,
             "name": "Agachamento hack",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hack-squat-front.mp4"
           },
           {
             "order": 2,
             "name": "Cadeira adutora",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-front.mp4"
           },
           {
             "order": 3,
             "name": "Cadeira extensora",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-leg-extension-front.mp4"
           },
           {
             "order": 4,
             "name": "Agachamento com peso corporal",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-bodyweight-squat-front.mp4"
           },
           {
             "order": 5,
             "name": "Leg press 45°",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-leg-press-front.mp4"
           }
         ]
       },
@@ -415,27 +533,26 @@
           {
             "order": 1,
             "name": "Agachamento hack",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hack-squat-front.mp4"
           },
           {
             "order": 2,
-            "name": "Afundo com barra livre",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Afundo com barra livre"
           },
           {
             "order": 3,
             "name": "Cadeira extensora - pico de contração",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-leg-extension-front.mp4"
           },
           {
             "order": 4,
             "name": "Leg 45",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-leg-press-front.mp4"
           },
           {
             "order": 5,
             "name": "Agachamento smith + agachamento sumô no smith",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Smithmachine-squat-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -458,12 +575,12 @@
           {
             "order": 1,
             "name": "Agachamento livre",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-squat-front.mp4"
           },
           {
             "order": 2,
             "name": "Cadeira extensora drop set",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-machine-leg-extension-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -474,7 +591,7 @@
           {
             "order": 3,
             "name": "Leg 45 rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-leg-press-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -485,7 +602,7 @@
           {
             "order": 4,
             "name": "Adutora rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Machine-machine-hip-adduction-front.mp4",
             "techniques": [
               {
                 "title": "4x11 + falha",
@@ -496,7 +613,7 @@
           {
             "order": 5,
             "name": "Agachamento sumô com halteres + passada com barra",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-sumo-squat-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -526,23 +643,21 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Desenvolvimento com halteres sentado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Desenvolvimento com halteres sentado"
           },
           {
             "order": 2,
             "name": "Elevação lateral com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-lateral-raise-front.mp4"
           },
           {
             "order": 3,
             "name": "Elevação frontal alternada com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-front-raise-front.mp4"
           },
           {
             "order": 4,
-            "name": "Crucifixo invertido",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Crucifixo invertido"
           }
         ]
       },
@@ -559,12 +674,12 @@
           {
             "order": 1,
             "name": "Desenvolvimento Arnold",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-arnold-press-front.mp4"
           },
           {
             "order": 2,
             "name": "Elevação lateral na polia baixa + elevação frontal com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-front-raise-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -574,13 +689,11 @@
           },
           {
             "order": 3,
-            "name": "Face pull na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Face pull na polia"
           },
           {
             "order": 4,
-            "name": "Desenvolvimento na máquina",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Desenvolvimento na máquina"
           }
         ]
       },
@@ -597,12 +710,12 @@
           {
             "order": 1,
             "name": "Desenvolvimento com barra",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-overhead-press-front.mp4"
           },
           {
             "order": 2,
             "name": "Elevação lateral rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-lateral-raise-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -613,7 +726,6 @@
           {
             "order": 3,
             "name": "Face pull na polia drop set",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -624,7 +736,6 @@
           {
             "order": 4,
             "name": "Crucifixo invertido + elevação lateral",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -655,22 +766,20 @@
           {
             "order": 1,
             "name": "Tríceps na polia com corda",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-push-down-front.mp4"
           },
           {
             "order": 2,
-            "name": "Tríceps francês com halteres deitado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Tríceps francês com halteres deitado"
           },
           {
             "order": 3,
             "name": "Tríceps coice com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-tricep-kickback-front.mp4"
           },
           {
             "order": 4,
-            "name": "Tríceps testa com barra w",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Tríceps testa com barra w"
           }
         ]
       },
@@ -687,7 +796,7 @@
           {
             "order": 1,
             "name": "Tríceps na polia com corda + tríceps na polia supinado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-push-down-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -697,13 +806,11 @@
           },
           {
             "order": 2,
-            "name": "Tríceps francês com barra w",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Tríceps francês com barra w"
           },
           {
             "order": 3,
-            "name": "Mergulho entre bancos com peso",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Mergulho entre bancos com peso"
           }
         ]
       },
@@ -720,7 +827,6 @@
           {
             "order": 1,
             "name": "Tríceps testa com barra reta + supino fechado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -731,7 +837,7 @@
           {
             "order": 2,
             "name": "Tríceps na polia corda rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Cables-cable-push-down-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -741,13 +847,12 @@
           },
           {
             "order": 3,
-            "name": "Mergulho nas paralelas 4x até a falha",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Mergulho nas paralelas 4x até a falha"
           },
           {
             "order": 4,
             "name": "Tríceps coice drop set",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-tricep-kickback-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -768,49 +873,108 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos de ativação e controle motor para construir a base de uma lombar saudável",
-        "volume": { "sets": 3, "reps": 12, "restSeconds": 60 },
+        "volume": {
+          "sets": 3,
+          "reps": 12,
+          "restSeconds": 60
+        },
         "warmupNote": "Realize mobilidade de coluna: gato-vaca por 2 minutos (15 repetições lentas). Faça rotação de tronco deitado 10x por lado. Nunca inicie treino de lombar com coluna fria — a maioria das hérnias de disco acontece justamente neste momento.",
         "exercises": [
-          { "order": 1, "name": "Extensão lombar no banco romano" },
-          { "order": 2, "name": "Superman no colchonete" },
-          { "order": 3, "name": "Bird dog no colchonete" },
-          { "order": 4, "name": "Ponte glútea com ênfase na contração lombar" }
+          {
+            "order": 1,
+            "name": "Extensão lombar no banco romano"
+          },
+          {
+            "order": 2,
+            "name": "Superman no colchonete"
+          },
+          {
+            "order": 3,
+            "name": "Bird dog no colchonete",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-bird-dog-front.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Ponte glútea com ênfase na contração lombar",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-glute-bridge-front.mp4"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga progressiva para fortalecer os eretores da espinha e o multífido em toda a amplitude",
-        "volume": { "sets": 4, "reps": 10, "restSeconds": 90 },
+        "volume": {
+          "sets": 4,
+          "reps": 10,
+          "restSeconds": 90
+        },
         "warmupNote": "Realize mobilidade completa de coluna: gato-vaca, rotação de tronco e extensão de quadril deitado. Execute 1 série leve de extensão lombar no banco romano antes de iniciar. Good morning sem aquecimento adequado é causa frequente de distensão lombar.",
         "exercises": [
           {
             "order": 1,
             "name": "Extensão lombar no banco romano + hiperextensão reversa",
-            "techniques": [{ "title": "BI-SET 4x10 + 10", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x10 + 10",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
           },
-          { "order": 2, "name": "Good morning com barra leve" },
-          { "order": 3, "name": "Remada curvada com halteres" },
-          { "order": 4, "name": "Dead bug no colchonete" }
+          {
+            "order": 2,
+            "name": "Good morning com barra leve"
+          },
+          {
+            "order": 3,
+            "name": "Remada curvada com halteres",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-row-unilateral-front.mp4"
+          },
+          {
+            "order": 4,
+            "name": "Dead bug no colchonete",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-dead-bug-front.mp4"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Levantamento terra e técnicas avançadas para uma lombar verdadeiramente inabalável",
-        "volume": { "sets": 4, "reps": 5, "restSeconds": 180 },
+        "volume": {
+          "sets": 4,
+          "reps": 5,
+          "restSeconds": 180
+        },
         "warmupNote": "Realize 10 minutos de aquecimento aeróbico progressivo. Execute mobilidade completa de coluna e quadril. Faça 3 séries progressivas de levantamento terra (40%, 60%, 80% da carga) antes de iniciar. Levantamento terra pesado sem aquecimento é a lesão mais grave que existe na musculação — trate com absoluto respeito.",
         "exercises": [
-          { "order": 1, "name": "Levantamento terra convencional com barra" },
+          {
+            "order": 1,
+            "name": "Levantamento terra convencional com barra",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-deadlift-front.mp4"
+          },
           {
             "order": 2,
             "name": "Extensão lombar com carga + good morning",
-            "techniques": [{ "title": "BI-SET 4x5 + 5", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x5 + 5",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ]
           },
           {
             "order": 3,
             "name": "Levantamento terra unilateral rest pause",
-            "techniques": [{ "title": "4x5 + falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x5 + falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ]
           },
-          { "order": 4, "name": "Hiperextensão com carga 4x até a falha" }
+          {
+            "order": 4,
+            "name": "Hiperextensão com carga 4x até a falha"
+          }
         ]
       }
     ]
@@ -824,51 +988,104 @@
       {
         "difficulty": "LIGHT",
         "description": "Movimentos lentos com amplitude total para ativar gastrocnêmio e sóleo corretamente",
-        "volume": { "sets": 3, "reps": 15, "restSeconds": 45 },
+        "volume": {
+          "sets": 3,
+          "reps": 15,
+          "restSeconds": 45
+        },
         "warmupNote": "Faça 10 rotações de tornozelo por lado e 20 elevações de ponta de pé no chão sem carga. Desça lentamente na fase excêntrica de cada repetição — é onde a panturrilha mais cresce e o tendão de Aquiles mais se fortalece.",
         "exercises": [
-          { "order": 1, "name": "Elevação de panturrilha em pé no leg press" },
-          { "order": 2, "name": "Elevação de panturrilha sentado na máquina" },
-          { "order": 3, "name": "Elevação de panturrilha unilateral com halter" }
+          {
+            "order": 1,
+            "name": "Elevação de panturrilha em pé no leg press"
+          },
+          {
+            "order": 2,
+            "name": "Elevação de panturrilha sentado na máquina",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-seated-calf-raise-front.mp4"
+          },
+          {
+            "order": 3,
+            "name": "Elevação de panturrilha unilateral com halter"
+          }
         ]
       },
       {
         "difficulty": "SOFT",
         "description": "Carga moderada alternando estímulo do gastrocnêmio e sóleo para hipertrofia completa da panturrilha",
-        "volume": { "sets": 4, "reps": 12, "restSeconds": 60 },
+        "volume": {
+          "sets": 4,
+          "reps": 12,
+          "restSeconds": 60
+        },
         "warmupNote": "Realize 20 elevações de ponta de pé sem carga e rotações de tornozelo. Execute 1 série leve de elevação em pé antes de iniciar os bi-sets. A panturrilha tem alta densidade de fibras de resistência — responde muito bem ao volume progressivo.",
         "exercises": [
           {
             "order": 1,
             "name": "Elevação de panturrilha em pé com barra + elevação sentado",
-            "techniques": [{ "title": "BI-SET 4x12 + 12", "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x12 + 12",
+                "description": "Significa realizar dois movimentos seguidos sem intervalos á cada repetição"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-standing-calf-raise-front.mp4"
           },
-          { "order": 2, "name": "Elevação de panturrilha no leg press com carga" },
-          { "order": 3, "name": "Elevação de panturrilha em degrau unilateral" }
+          {
+            "order": 2,
+            "name": "Elevação de panturrilha no leg press com carga"
+          },
+          {
+            "order": 3,
+            "name": "Elevação de panturrilha em degrau unilateral"
+          }
         ]
       },
       {
         "difficulty": "HARD",
         "description": "Técnicas de intensidade máxima para panturrilha, explorando drop set e rest pause até a falha completa",
-        "volume": { "sets": 4, "restSeconds": 90 },
+        "volume": {
+          "sets": 4,
+          "restSeconds": 90
+        },
         "warmupNote": "Realize 30 elevações de ponta de pé sem carga, rotações de tornozelo e 1 série leve de cada exercício antes de iniciar. Panturrilha suporta bem o treino até a falha por ser um músculo de alta resistência — mas tendão de Aquiles frio sob carga máxima é risco de ruptura.",
         "exercises": [
           {
             "order": 1,
             "name": "Elevação de panturrilha em pé drop set",
-            "techniques": [{ "title": "4x até a falha", "description": "Drop set: reduza a carga e continue até a falha completa" }]
+            "techniques": [
+              {
+                "title": "4x até a falha",
+                "description": "Drop set: reduza a carga e continue até a falha completa"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-standing-calf-raise-front.mp4"
           },
           {
             "order": 2,
             "name": "Elevação sentado rest pause",
-            "techniques": [{ "title": "4x até a falha", "description": "Rest pause: descanse brevemente e continue até a falha" }]
+            "techniques": [
+              {
+                "title": "4x até a falha",
+                "description": "Rest pause: descanse brevemente e continue até a falha"
+              }
+            ],
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-seated-calf-raise-front.mp4"
           },
           {
             "order": 3,
             "name": "Elevação unilateral em degrau + isometria no topo",
-            "techniques": [{ "title": "BI-SET 4x até a falha", "description": "Segure 3 segundos no topo antes de descer" }]
+            "techniques": [
+              {
+                "title": "BI-SET 4x até a falha",
+                "description": "Segure 3 segundos no topo antes de descer"
+              }
+            ]
           },
-          { "order": 4, "name": "Donkey calf raise 4x até a falha" }
+          {
+            "order": 4,
+            "name": "Donkey calf raise 4x até a falha"
+          }
         ]
       }
     ]
@@ -892,22 +1109,19 @@
           {
             "order": 1,
             "name": "Supino reto com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-bench-press-front_9Asgczg.mp4"
           },
           {
             "order": 2,
-            "name": "Crucifixo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Crucifixo com halteres"
           },
           {
             "order": 3,
-            "name": "Supino inclinado com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Supino inclinado com halteres"
           },
           {
             "order": 4,
-            "name": "Peck deck",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Peck deck"
           }
         ]
       },
@@ -924,7 +1138,7 @@
           {
             "order": 1,
             "name": "Supino reto com halteres + crucifixo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-dumbbell-bench-press-front_9Asgczg.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -934,18 +1148,16 @@
           },
           {
             "order": 2,
-            "name": "Supino inclinado na máquina",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Supino inclinado na máquina"
           },
           {
             "order": 3,
-            "name": "Crossover na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Crossover na polia"
           },
           {
             "order": 4,
             "name": "Flexão de braço",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-push-up-front.mp4"
           }
         ]
       },
@@ -962,7 +1174,7 @@
           {
             "order": 1,
             "name": "Supino reto com barra rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-barbell-bench-press-front.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -973,7 +1185,7 @@
           {
             "order": 2,
             "name": "Supino inclinado com barra + crucifixo inclinado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-incline-bench-press-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + 6",
@@ -984,7 +1196,6 @@
           {
             "order": 3,
             "name": "Crossover na polia drop set",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "4x6 + falha",
@@ -994,8 +1205,7 @@
           },
           {
             "order": 4,
-            "name": "Mergulho nas paralelas 4x até a falha",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Mergulho nas paralelas 4x até a falha"
           }
         ]
       }
@@ -1019,23 +1229,21 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps com barra na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Bíceps com barra na polia"
           },
           {
             "order": 2,
-            "name": "Bíceps direto com halteres sentado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Bíceps direto com halteres sentado"
           },
           {
             "order": 3,
             "name": "Bíceps martelo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-hammer-curl-front.mp4"
           },
           {
             "order": 4,
             "name": "Bíceps scott",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-ez-bar-preacher-curl-front.mp4"
           }
         ]
       },
@@ -1052,7 +1260,6 @@
           {
             "order": 1,
             "name": "Bíceps com barra na polia + bíceps martelo com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x9 + 9",
@@ -1062,13 +1269,11 @@
           },
           {
             "order": 2,
-            "name": "Bíceps alternado com halteres sentado",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Bíceps alternado com halteres sentado"
           },
           {
             "order": 3,
-            "name": "Bíceps concentrado com halteres",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Bíceps concentrado com halteres"
           }
         ]
       },
@@ -1084,18 +1289,17 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Bíceps martelo com corda na polia",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Bíceps martelo com corda na polia"
           },
           {
             "order": 2,
             "name": "Bíceps alternado com isometria",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Dumbbells-dumbbell-curl-front.mp4"
           },
           {
             "order": 3,
             "name": "Bíceps com barra reta rest pause",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-barbell-curl-front.mp4",
             "techniques": [
               {
                 "title": "BI-SET 4x6 + falha",
@@ -1106,7 +1310,7 @@
           {
             "order": 4,
             "name": "Bíceps 21 com barra w",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Barbell-ez-bar-curl-front.mp4"
           }
         ]
       }
@@ -1131,22 +1335,21 @@
           {
             "order": 1,
             "name": "Abd supra",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-crunch-front.mp4"
           },
           {
             "order": 2,
             "name": "Abd infra no chão",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-reverse-crunch-front.mp4"
           },
           {
             "order": 3,
             "name": "Abd supra com pé alto",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Vitruvian-crunch-front.mp4"
           },
           {
             "order": 4,
-            "name": "Abd tesoura em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Abd tesoura em colchonete"
           }
         ]
       },
@@ -1163,12 +1366,12 @@
           {
             "order": 1,
             "name": "Abd bicicleta em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-bicycle-crunch-front.mp4"
           },
           {
             "order": 2,
             "name": "Abd escalador em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-bodyweight-mountain-climber-front.mp4",
             "techniques": [
               {
                 "title": "3x15",
@@ -1178,13 +1381,11 @@
           },
           {
             "order": 3,
-            "name": "Abd canivete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Abd canivete"
           },
           {
             "order": 4,
             "name": "Abd canoa isométrica",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4",
             "techniques": [
               {
                 "title": "3x15",
@@ -1195,7 +1396,7 @@
           {
             "order": 5,
             "name": "Abd infra + quadril em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Bodyweight-reverse-crunch-front.mp4"
           }
         ]
       },
@@ -1210,23 +1411,20 @@
         "exercises": [
           {
             "order": 1,
-            "name": "Abd prancha lateral em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Abd prancha lateral em colchonete"
           },
           {
             "order": 2,
             "name": "Abd prancha ventral isométrica",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "videoUrl": "https://media.musclewiki.com/media/uploads/videos/branded/female-Medicine-Ball-plank-front.mp4"
           },
           {
             "order": 3,
-            "name": "Abd tapa calcanhar",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Abd tapa calcanhar"
           },
           {
             "order": 4,
-            "name": "Abd remador em colchonete",
-            "videoUrl": "https://api-files.sproutvideo.com/file/799dd8b41e17e2cdf0/d2fed9bfa257f954/480.mp4"
+            "name": "Abd remador em colchonete"
           }
         ]
       }
