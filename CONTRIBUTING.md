@@ -21,7 +21,7 @@ The codebase is split into four top-level zones inside `lib/`. Each zone has a s
 graph TD
     subgraph lib/
         F["📦 features/\nOne folder per product capability"]
-        C["🧱 core/\nShared domain models"]
+        C["🧱 core/\nShared domain models & infrastructure"]
         S["🎨 shared/\nReusable UI primitives & theming"]
         A["⚙️ app/\nInfrastructure: DB init, helpers"]
     end
@@ -39,7 +39,10 @@ assets/
 └── image/       ← images and SVGs
 ```
 
-**Dependency rule:** `features` may import from `core` and `shared`. No other cross-zone imports are allowed.
+**Dependency rules:**
+- `features` may import from `core` and `shared`.
+- A feature may import another feature **only through its public module** (`_module.dart` and `_routes.dart`). Never import internal widgets, ViewModels, or datasources across feature boundaries.
+- `core` holds only truly cross-cutting concerns: user identity, infrastructure adapters, and models consumed by 3+ features. Domain entities with a clear single owner live in that feature.
 
 ---
 
@@ -51,13 +54,16 @@ Every product capability lives in its own self-contained folder under `lib/featu
 
 ```mermaid
 flowchart TD
-    W["🖼 Widget\npresentation/<name>_widget.dart"]
-    VM["🧠 ViewModel\npresentation/<name>_viewmodel.dart"]
+    M["🚪 Module\n<feature>_module.dart"]
+    W["🖼 Widget\npresentation/list | detail / <name>_widget.dart"]
+    VM["🧠 ViewModel\npresentation/list | detail / <name>_viewmodel.dart"]
     RI["📋 Repository Interface\ndomain/repositories/<name>_repository.dart"]
     IMPL["🔧 Repository Impl\ndata/repositories/<name>_repository_impl.dart"]
     DS["💾 Datasource\ndata/datasources/<entity>_local_datasource.dart"]
 
-    W -->|"creates & observes"| VM
+    M -->|"instantiates"| W
+    M -->|"instantiates"| VM
+    W -->|"observes"| VM
     VM -->|"depends on"| RI
     IMPL -->|"implements"| RI
     IMPL -->|"delegates to"| DS
@@ -67,6 +73,8 @@ flowchart TD
 
 ```
 lib/features/<feature>/
+├── <feature>_module.dart        # public API: register(), routes, buildComponent()
+├── <feature>_routes.dart        # route name constants
 ├── data/
 │   ├── datasources/
 │   │   ├── <entity>_datasource.dart          # abstract contract
@@ -76,11 +84,46 @@ lib/features/<feature>/
 ├── domain/
 │   └── repositories/
 │       └── <feature>_repository.dart         # abstract interface
-├── model/                                    # feature-local models, if any
 └── presentation/
-    ├── <feature>_viewmodel.dart
-    ├── <feature>_widget.dart                 # screen entry point
-    └── widget/                               # sub-widgets local to this feature
+    ├── model/                                # feature-local presentation models
+    ├── list/                                 # one sub-folder per screen
+    │   ├── <feature>_list_viewmodel.dart
+    │   ├── <feature>_list_widget.dart
+    │   └── widget/
+    └── detail/
+        ├── <feature>_detail_viewmodel.dart
+        ├── <feature>_detail_widget.dart
+        └── widget/
+```
+
+> Features with a single screen omit the `list/detail` split and keep a flat `presentation/` structure.
+
+### Feature Module
+
+Each feature exposes a **module** — the single public entry point. Nothing outside the feature imports its internal widgets, ViewModels, or datasources directly.
+
+```dart
+class WorkoutModule {
+  // Registers dependencies in the ServiceLocator.
+  static void register() { ... }
+
+  // Full-screen routes wired with DI — consumed by main.dart.
+  static Map<String, WidgetBuilder> get routes => { ... };
+
+  // Embedded component for use inside another feature's screen.
+  static Widget buildComponent({required Map<String, dynamic> args}) => ...;
+}
+```
+
+**Cross-feature navigation** — import the route constant, never the widget:
+
+```dart
+// ✅ imports only the public route constant
+import 'package:moveflix/features/workout/workout_routes.dart';
+Navigator.pushNamed(context, WorkoutRoutes.detail, arguments: plan);
+
+// ❌ crosses the feature boundary
+import 'package:moveflix/features/workout/presentation/detail/workout_detail_widget.dart';
 ```
 
 ### Import rules
@@ -88,24 +131,24 @@ lib/features/<feature>/
 ```mermaid
 graph LR
     subgraph features
-        home
+        workout
         video
-        workout_detail
+        profile
+        muscle_map
     end
 
     core["🧱 core/"]
     shared["🎨 shared/"]
 
-    home -->|"✅"| core
-    home -->|"✅"| shared
+    workout -->|"✅"| core
+    workout -->|"✅"| shared
     video -->|"✅"| core
     video -->|"✅"| shared
-    workout_detail -->|"✅"| core
-    workout_detail -->|"✅"| shared
+    profile -->|"✅"| core
+    profile -->|"✅ routes only"| workout
 
-    home -. "❌ never" .-> video
-    home -. "❌ never" .-> workout_detail
-    video -. "❌ never" .-> workout_detail
+    profile -. "❌ internals" .-> workout
+    workout -. "❌ never" .-> video
 ```
 
 ---
@@ -190,15 +233,14 @@ Rules:
 A `StatefulWidget` that owns a ViewModel and rebuilds in response to it. It **renders** state; it never **computes** it.
 
 ```dart
-// lib/features/home/presentation/home_widget.dart
-class _HomeWidgetState extends State<HomeWidget> {
-  late final HomeViewModel _viewModel;
+// lib/features/workout/presentation/list/workout_list_widget.dart
+class _WorkoutListWidgetState extends State<WorkoutListWidget> {
+  late final WorkoutListViewModel _viewModel;
 
   @override
   void initState() {
     super.initState();
-    // Concrete wiring in one place — the View is the composition root
-    _viewModel = HomeViewModel(WorkoutRepositoryImpl(WorkoutLocalDatasource()));
+    _viewModel = widget.viewModel;   // ← injected by the module, not instantiated here
     _viewModel.init();
   }
 
@@ -312,12 +354,13 @@ flowchart TD
     B["2. Define domain interface\ndomain/repositories/<name>_repository.dart"]
     C["3. Write datasource\ndata/datasources/<name>_local_datasource.dart"]
     D["4. Write repository impl\ndata/repositories/<name>_repository_impl.dart"]
-    E["5. Write ViewModel\npresentation/<name>_viewmodel.dart"]
-    F["6. Write View\npresentation/<name>_widget.dart"]
-    G["7. Register route\nlib/main.dart → onGenerateRoute"]
-    H["8. Write tests\ntest/features/<name>/<name>_viewmodel_test.dart"]
+    E["5. Write ViewModel\npresentation/.../<name>_viewmodel.dart"]
+    F["6. Write View\npresentation/.../<name>_widget.dart"]
+    G["7. Create module\n<name>_module.dart + <name>_routes.dart"]
+    H["8. Register module\nlib/main.dart → Module.register() + Module.routes"]
+    I["9. Write tests\ntest/features/<name>/<name>_viewmodel_test.dart"]
 
-    A --> B --> C --> D --> E --> F --> G --> H
+    A --> B --> C --> D --> E --> F --> G --> H --> I
 ```
 
 ### Checklist
@@ -326,55 +369,64 @@ flowchart TD
 
 ```
 lib/features/<name>/
+├── <name>_module.dart
+├── <name>_routes.dart
 ├── data/datasources/
 ├── data/repositories/
 ├── domain/repositories/
-└── presentation/widget/
+└── presentation/
+    └── <screen>/
+        ├── <name>_viewmodel.dart
+        ├── <name>_widget.dart
+        └── widget/
 ```
 
-**Domain interface**
+**Route constants**
 
 ```dart
-abstract class <Name>Repository {
-  Future<SomeModel> getSomething();
+class <Name>Routes {
+  static const list   = '/<name>/list';
+  static const detail = '/<name>/detail';
 }
 ```
 
-**Datasource**
+**Module**
 
 ```dart
-class <Name>LocalDatasource implements <Name>Datasource {
-  @override
-  Future<SomeModel> fetchSomething() async { /* ... */ }
+class <Name>Module {
+  static void register() {
+    ServiceLocator.register<<Name>Repository>(
+      <Name>RepositoryImpl(<Name>LocalDatasource()),
+    );
+  }
+
+  static Map<String, WidgetBuilder> get routes => {
+    <Name>Routes.list: (_) => <Name>ListWidget(
+      viewModel: <Name>ListViewModel(
+        repository: ServiceLocator.get<<Name>Repository>(),
+      ),
+    ),
+  };
+
+  // Optional: expose an embedded component
+  static Widget buildComponent({required SomeArgs args}) => ...;
 }
 ```
 
-**Repository impl**
+**Register in main.dart**
 
 ```dart
-class <Name>RepositoryImpl implements <Name>Repository {
-  final <Name>Datasource _datasource;
-  <Name>RepositoryImpl(this._datasource);
-
-  @override
-  Future<SomeModel> getSomething() => _datasource.fetchSomething();
+void _registerDependencies() {
+  <Name>Module.register();
 }
-```
 
-**ViewModel**
-
-```dart
-class <Name>ViewModel extends ChangeNotifier {
-  final <Name>Repository _repository;
-  <Name>ViewModel(this._repository);
-  // state + methods
+onGenerateRoute: (settings) {
+  // ... other features ...
+  default:
+    final builder = <Name>Module.routes[settings.name];
+    if (builder == null) return null;
+    return MaterialPageRoute(settings: settings, builder: builder);
 }
-```
-
-**View — wire in `initState`**
-
-```dart
-_viewModel = <Name>ViewModel(<Name>RepositoryImpl(<Name>LocalDatasource()));
 ```
 
 **Tests — inject a fake repository**

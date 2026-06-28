@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
-import 'package:moveflix/features/home/data/datasources/workout_cache_datasource.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/data/datasources/workout_cache_datasource.dart';
 
 class WorkoutHiveDatasource implements WorkoutCacheDatasource {
   static const _boxName = 'workout_plans';

@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
-import 'package:moveflix/features/home/data/datasources/workout_cache_datasource.dart';
-import 'package:moveflix/features/home/data/datasources/workout_datasource.dart';
-import 'package:moveflix/features/home/data/repositories/workout_repository_impl.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/data/datasources/workout_cache_datasource.dart';
+import 'package:moveflix/features/workout/data/datasources/workout_datasource.dart';
+import 'package:moveflix/features/workout/data/repositories/workout_repository_impl.dart';
 
 // ── fakes ──────────────────────────────────────────────────────────────────
 
@@ -55,11 +55,11 @@ WorkoutPlan _plan(String id) => WorkoutPlan(
 // ── tests ──────────────────────────────────────────────────────────────────
 
 void main() {
-  group('WorkoutRepositoryImpl — cache-aside', () {
+  group('WorkoutPlanRepositoryImpl — cache-aside', () {
     test('cold start: reads from source, writes to cache, returns plans', () async {
       final source = _FakeSource([_plan('p1'), _plan('p2')]);
       final cache = _FakeCache();
-      final repo = WorkoutRepositoryImpl(source, cache);
+      final repo = WorkoutPlanRepositoryImpl(source, cache);
 
       final result = await repo.getWorkouts();
 
@@ -72,7 +72,7 @@ void main() {
     test('warm cache: returns from cache without touching source', () async {
       final source = _FakeSource([_plan('p1')]);
       final cache = _FakeCache()..seed([_plan('p1'), _plan('p2')]);
-      final repo = WorkoutRepositoryImpl(source, cache);
+      final repo = WorkoutPlanRepositoryImpl(source, cache);
 
       final result = await repo.getWorkouts();
 
@@ -83,7 +83,7 @@ void main() {
     test('second call hits cache populated on first call', () async {
       final source = _FakeSource([_plan('p1')]);
       final cache = _FakeCache();
-      final repo = WorkoutRepositoryImpl(source, cache);
+      final repo = WorkoutPlanRepositoryImpl(source, cache);
 
       await repo.getWorkouts();
       await repo.getWorkouts();
@@ -94,7 +94,7 @@ void main() {
     test('returns correct plan data from source on cold start', () async {
       final source = _FakeSource([_plan('abc')]);
       final cache = _FakeCache();
-      final repo = WorkoutRepositoryImpl(source, cache);
+      final repo = WorkoutPlanRepositoryImpl(source, cache);
 
       final result = await repo.getWorkouts();
 
@@ -104,7 +104,7 @@ void main() {
     test('returns correct plan data from warm cache', () async {
       final source = _FakeSource([]);
       final cache = _FakeCache()..seed([_plan('xyz')]);
-      final repo = WorkoutRepositoryImpl(source, cache);
+      final repo = WorkoutPlanRepositoryImpl(source, cache);
 
       final result = await repo.getWorkouts();
 

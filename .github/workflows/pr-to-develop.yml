@@ -12,10 +12,11 @@ jobs:
       - name: Check source branch name pattern
         run: |
           SOURCE="${{ github.head_ref }}"
-          if [[ ! "$SOURCE" =~ ^(feature|fix|refactor|chore|doc)/.+ ]]; then
+          if [[ ! "$SOURCE" =~ ^(feature|feat|fix|refactor|chore|doc)/.+ ]]; then
             echo "❌ Branch '$SOURCE' is not allowed to open a PR to develop."
             echo "   Allowed patterns:"
             echo "   - feature/xxx"
+            echo "   - feat/xxx"
             echo "   - fix/xxx"
             echo "   - refactor/xxx"
             echo "   - chore/xxx"

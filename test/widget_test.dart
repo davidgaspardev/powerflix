@@ -7,8 +7,8 @@ import 'package:moveflix/app/locator.dart';
 import 'package:moveflix/core/domain/models/user.dart';
 import 'package:moveflix/core/domain/models/user_preferences.dart';
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
-import 'package:moveflix/features/home/domain/repositories/workout_repository.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/main.dart';
 
 class _FakeUserRepository implements UserRepository {
@@ -18,8 +18,9 @@ class _FakeUserRepository implements UserRepository {
   @override Future<void> savePreferences(UserPreferences prefs) async {}
 }
 
-class _FakeWorkoutRepository implements WorkoutRepository {
+class _FakeWorkoutPlanRepository implements WorkoutPlanRepository {
   @override Future<List<WorkoutPlan>> getWorkouts() async => [];
+  @override Future<WorkoutPlan> getById(String id) async => throw UnimplementedError();
 }
 
 void main() {
@@ -30,7 +31,7 @@ void main() {
     Hive.init(tempDir.path);
     loadTypeAdapters();
     ServiceLocator.register<UserRepository>(_FakeUserRepository());
-    ServiceLocator.register<WorkoutRepository>(_FakeWorkoutRepository());
+    ServiceLocator.register<WorkoutPlanRepository>(_FakeWorkoutPlanRepository());
   });
 
   tearDownAll(() async {

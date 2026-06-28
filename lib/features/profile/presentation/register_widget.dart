@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:moveflix/core/domain/models/body_sex.dart';
 import 'package:moveflix/core/domain/models/user.dart';
-import 'package:moveflix/features/home/presentation/home_widget.dart';
 import 'package:moveflix/features/profile/presentation/register_viewmodel.dart';
+import 'package:moveflix/features/workout/workout_routes.dart';
 import 'package:moveflix/features/profile/presentation/widget/fieldtext.dart';
 
 class RegisterWidget extends StatefulWidget {
@@ -55,7 +55,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
     ));
 
     if (mounted) {
-      Navigator.of(context).pushReplacementNamed(HomeWidget.routeName);
+      Navigator.of(context).pushReplacementNamed(WorkoutRoutes.list);
     }
   }
 

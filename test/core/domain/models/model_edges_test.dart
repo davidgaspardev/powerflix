@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moveflix/core/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 
 void main() {
   group('Difficulty', () {
