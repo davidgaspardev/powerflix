@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
     android:width="108dp"
     android:height="108dp"
-    android:viewportWidth="612"
-    android:viewportHeight="612">
+    android:viewportWidth="712"
+    android:viewportHeight="712"
+    tools:targetApi="21">
 
     <path
-        android:pathData="M166 256C211 216 261 216 306 256C351 296 401 296 446 256"
+        android:pathData="M216 306C261 266 311 266 356 306C401 346 451 346 496 306"
         android:strokeWidth="38"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
@@ -26,7 +29,7 @@
     </path>
 
     <path
-        android:pathData="M166 356C211 316 261 316 306 356C351 396 401 396 446 356"
+        android:pathData="M216 406C261 366 311 366 356 406C401 446 451 446 496 406"
         android:strokeWidth="38"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
