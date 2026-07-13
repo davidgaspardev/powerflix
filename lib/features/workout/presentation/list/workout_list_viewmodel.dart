@@ -1,30 +1,30 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
+import 'package:moveflix/features/workout/domain/models/workout_summary.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
+import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 
 class WorkoutListViewModel extends ChangeNotifier {
-  final GetWorkoutCoverListUseCase _getWorkoutCoverListUseCase;
-  final GetWorkoutPlanByIdUseCase _getWorkoutPlanByIdUseCase;
+  final BrowseWorkoutsUseCase _browseWorkoutsUseCase;
+  final WorkoutPlanRepository _workoutPlanRepository;
   final ToggleFavoriteWorkoutUseCase _toggleFavoriteWorkoutUseCase;
   final _navigationController = StreamController<String>.broadcast();
 
   Stream<String> get navigationEvents => _navigationController.stream;
 
   WorkoutListViewModel({
-    required GetWorkoutCoverListUseCase getWorkoutCoverListUseCase,
-    required GetWorkoutPlanByIdUseCase getWorkoutPlanByIdUseCase,
+    required BrowseWorkoutsUseCase browseWorkoutsUseCase,
+    required WorkoutPlanRepository workoutPlanRepository,
     required ToggleFavoriteWorkoutUseCase toggleFavoriteWorkoutUseCase,
-  })  : _getWorkoutCoverListUseCase = getWorkoutCoverListUseCase,
-        _getWorkoutPlanByIdUseCase = getWorkoutPlanByIdUseCase,
+  })  : _browseWorkoutsUseCase = browseWorkoutsUseCase,
+        _workoutPlanRepository = workoutPlanRepository,
         _toggleFavoriteWorkoutUseCase = toggleFavoriteWorkoutUseCase;
 
-  List<WorkoutCover> _workoutCoverList = [];
+  List<WorkoutSummary> _workoutSummaryList = [];
 
-  List<WorkoutCover> get workoutCoverList => _workoutCoverList;
+  List<WorkoutSummary> get workoutCoverList => _workoutSummaryList;
 
   bool _isLoading = true;
 
@@ -40,7 +40,7 @@ class WorkoutListViewModel extends ChangeNotifier {
     _isLoading = true;
     notifyListeners();
     try {
-      _workoutCoverList = await _getWorkoutCoverListUseCase();
+      _workoutSummaryList = await _browseWorkoutsUseCase();
       _error = null;
     } catch (e) {
       _error = e.toString();
@@ -57,23 +57,23 @@ class WorkoutListViewModel extends ChangeNotifier {
   }
 
   Future<void> openWorkoutCover(String id) async {
-    final workoutPlan = await _getWorkoutPlanByIdUseCase(id);
+    final workoutPlan = await _workoutPlanRepository.getById(id);
     _navigationController.add(workoutPlan.toJson());
   }
 
   Future<void> toggleFavorite(String workoutId) async {
-    final index = _workoutCoverList.indexWhere((c) => c.id == workoutId);
+    final index = _workoutSummaryList.indexWhere((c) => c.id == workoutId);
     if (index == -1) return;
 
-    final current = _workoutCoverList[index];
-    _workoutCoverList = List.of(_workoutCoverList)
+    final current = _workoutSummaryList[index];
+    _workoutSummaryList = List.of(_workoutSummaryList)
       ..[index] = current.copyWith(isFavorite: !current.isFavorite);
     notifyListeners();
 
     try {
       await _toggleFavoriteWorkoutUseCase(workoutId);
     } catch (_) {
-      _workoutCoverList = List.of(_workoutCoverList)
+      _workoutSummaryList = List.of(_workoutSummaryList)
         ..[index] = current;
       notifyListeners();
     }

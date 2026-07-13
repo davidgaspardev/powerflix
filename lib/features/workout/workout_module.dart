@@ -6,8 +6,7 @@ import 'package:moveflix/features/workout/data/datasources/workout_hive_datasour
 import 'package:moveflix/features/workout/data/datasources/workout_local_datasource.dart';
 import 'package:moveflix/features/workout/data/repositories/workout_repository_impl.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
+import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 import 'package:moveflix/features/workout/presentation/detail/workout_detail_viewmodel.dart';
 import 'package:moveflix/features/workout/presentation/detail/workout_detail_widget.dart';
@@ -24,15 +23,14 @@ class WorkoutModule {
 
   static Map<String, WidgetBuilder> get routes => {
         WorkoutRoutes.list: (_) {
+          final workoutRepo = ServiceLocator.get<WorkoutPlanRepository>();
           return WorkoutListWidget(
             viewModel: WorkoutListViewModel(
-              getWorkoutCoverListUseCase: GetWorkoutCoverListUseCase(
-                workoutPlanRepository: ServiceLocator.get<WorkoutPlanRepository>(),
+              browseWorkoutsUseCase: BrowseWorkoutsUseCase(
+                workoutPlanRepository: workoutRepo,
                 userRepository: ServiceLocator.get<UserRepository>(),
               ),
-              getWorkoutPlanByIdUseCase: GetWorkoutPlanByIdUseCase(
-                workoutPlanRepository: ServiceLocator.get<WorkoutPlanRepository>(),
-              ),
+              workoutPlanRepository: workoutRepo,
               toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(
                 userRepository: ServiceLocator.get<UserRepository>(),
               ),

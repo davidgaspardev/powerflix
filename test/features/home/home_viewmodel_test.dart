@@ -4,8 +4,7 @@ import 'package:moveflix/core/domain/models/user_preferences.dart';
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_cover_list_use_case.dart';
-import 'package:moveflix/features/workout/domain/usecases/get_workout_plan_by_id.dart';
+import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
 
@@ -49,13 +48,11 @@ WorkoutListViewModel _vm({List<WorkoutPlan> plans = const [], Object? error}) {
   final workoutRepo = _FakeWorkoutPlanRepository(plans: plans, error: error);
   final userRepo = _FakeUserRepository();
   return WorkoutListViewModel(
-    getWorkoutCoverListUseCase: GetWorkoutCoverListUseCase(
+    browseWorkoutsUseCase: BrowseWorkoutsUseCase(
       workoutPlanRepository: workoutRepo,
       userRepository: userRepo,
     ),
-    getWorkoutPlanByIdUseCase: GetWorkoutPlanByIdUseCase(
-      workoutPlanRepository: workoutRepo,
-    ),
+    workoutPlanRepository: workoutRepo,
     toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(
       userRepository: userRepo,
     ),
