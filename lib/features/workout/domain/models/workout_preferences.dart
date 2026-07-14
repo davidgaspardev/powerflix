@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:moveflix/core/domain/model.dart';
 
-class UserPreferences extends Model {
+class WorkoutPreferences extends Model {
   final List<String> favoriteWorkoutIds;
 
-  const UserPreferences({this.favoriteWorkoutIds = const []});
+  const WorkoutPreferences({this.favoriteWorkoutIds = const []});
 
-  UserPreferences copyWith({List<String>? favoriteWorkoutIds}) =>
-      UserPreferences(
+  WorkoutPreferences copyWith({List<String>? favoriteWorkoutIds}) =>
+      WorkoutPreferences(
         favoriteWorkoutIds: favoriteWorkoutIds ?? this.favoriteWorkoutIds,
       );
 
-  static UserPreferences fromMap(Map<String, dynamic> map) {
-    return UserPreferences(
+  static WorkoutPreferences fromMap(Map<String, dynamic> map) {
+    return WorkoutPreferences(
       favoriteWorkoutIds:
           List<String>.from(map['favoriteWorkoutIds'] as List? ?? []),
     );

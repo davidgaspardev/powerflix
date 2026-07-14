@@ -2,22 +2,22 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:moveflix/core/domain/models/user.dart';
-import 'package:moveflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/features/profile/domain/usecases/save_user_use_case.dart';
 
 class RegisterViewModel extends ChangeNotifier {
-  final UserRepository _repository;
+  final SaveUserUseCase _saveUser;
 
   bool _isSaving = false;
   bool get isSaving => _isSaving;
 
-  RegisterViewModel(this._repository);
+  RegisterViewModel(this._saveUser);
 
   Future<void> save(UserModel user) async {
     try {
       _isSaving = true;
       notifyListeners();
-      await _repository.saveUser(user);
-    } catch(e) {
+      await _saveUser(user);
+    } catch (e) {
       log(e.toString());
     } finally {
       _isSaving = false;

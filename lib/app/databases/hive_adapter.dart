@@ -1,12 +1,12 @@
 import 'package:hive/hive.dart';
 import 'package:moveflix/core/domain/models/user.dart';
-import 'package:moveflix/core/domain/models/user_preferences.dart';
+import 'package:moveflix/features/workout/domain/models/workout_preferences.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 
 void loadTypeAdapters() {
   _WorkoutPlanTypeAdapter.registerTypeAdapter();
   _UserModelTypeAdapter.registerTypeAdapter();
-  _UserPreferencesTypeAdapter.registerTypeAdapter();
+  _WorkoutPreferencesTypeAdapter.registerTypeAdapter();
 }
 
 class _WorkoutPlanTypeAdapter extends TypeAdapter<WorkoutPlan> {
@@ -51,10 +51,10 @@ class _UserModelTypeAdapter extends TypeAdapter<UserModel> {
   }
 }
 
-class _UserPreferencesTypeAdapter extends TypeAdapter<UserPreferences> {
+class _WorkoutPreferencesTypeAdapter extends TypeAdapter<WorkoutPreferences> {
   static void registerTypeAdapter() {
     if (!Hive.isAdapterRegistered(2)) {
-      Hive.registerAdapter(_UserPreferencesTypeAdapter());
+      Hive.registerAdapter(_WorkoutPreferencesTypeAdapter());
     }
   }
 
@@ -62,12 +62,12 @@ class _UserPreferencesTypeAdapter extends TypeAdapter<UserPreferences> {
   int get typeId => 2;
 
   @override
-  UserPreferences read(BinaryReader reader) {
-    return UserPreferences.fromMap(Map<String, dynamic>.from(reader.readMap()));
+  WorkoutPreferences read(BinaryReader reader) {
+    return WorkoutPreferences.fromMap(Map<String, dynamic>.from(reader.readMap()));
   }
 
   @override
-  void write(BinaryWriter writer, UserPreferences data) {
+  void write(BinaryWriter writer, WorkoutPreferences data) {
     writer.writeMap(data.toMap());
   }
 }

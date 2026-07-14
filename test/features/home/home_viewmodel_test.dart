@@ -1,9 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:moveflix/core/domain/models/user.dart';
-import 'package:moveflix/core/domain/models/user_preferences.dart';
-import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
+import 'package:moveflix/features/workout/domain/models/workout_preferences.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_preferences_repository.dart';
 import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_case.dart';
 import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
@@ -25,15 +24,13 @@ class _FakeWorkoutPlanRepository implements WorkoutPlanRepository {
       plans.firstWhere((p) => p.id == id);
 }
 
-class _FakeUserRepository implements UserRepository {
+class _FakeWorkoutPreferencesRepository implements WorkoutPreferencesRepository {
   @override
-  Future<UserModel?> getUser() async => null;
+  Future<WorkoutPreferences> getPreferences() async =>
+      const WorkoutPreferences();
+
   @override
-  Future<void> saveUser(UserModel user) async {}
-  @override
-  Future<UserPreferences> getPreferences() async => const UserPreferences();
-  @override
-  Future<void> savePreferences(UserPreferences prefs) async {}
+  Future<void> savePreferences(WorkoutPreferences prefs) async {}
 }
 
 WorkoutPlan _plan(String id, String name) => WorkoutPlan(
@@ -46,16 +43,14 @@ WorkoutPlan _plan(String id, String name) => WorkoutPlan(
 
 WorkoutListViewModel _vm({List<WorkoutPlan> plans = const [], Object? error}) {
   final workoutRepo = _FakeWorkoutPlanRepository(plans: plans, error: error);
-  final userRepo = _FakeUserRepository();
+  final prefsRepo = _FakeWorkoutPreferencesRepository();
   return WorkoutListViewModel(
     browseWorkoutsUseCase: BrowseWorkoutsUseCase(
       workoutPlanRepository: workoutRepo,
-      userRepository: userRepo,
+      preferencesRepository: prefsRepo,
     ),
     workoutPlanRepository: workoutRepo,
-    toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(
-      userRepository: userRepo,
-    ),
+    toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(prefsRepo),
   );
 }
 
@@ -103,7 +98,7 @@ void main() {
       var notifyCount = 0;
       vm.addListener(() => notifyCount++);
       await vm.loadWorkouts();
-      expect(notifyCount, 2); // once for isLoading=true, once for isLoading=false
+      expect(notifyCount, 2);
     });
 
     test('loadWorkouts notifies listeners on error', () async {
@@ -111,7 +106,7 @@ void main() {
       var notifyCount = 0;
       vm.addListener(() => notifyCount++);
       await vm.loadWorkouts();
-      expect(notifyCount, 2); // once for isLoading=true, once for isLoading=false
+      expect(notifyCount, 2);
     });
 
     test('loadWorkouts runs asynchronously and updates state', () async {

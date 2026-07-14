@@ -1,13 +1,12 @@
-import 'package:moveflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_preferences_repository.dart';
 
 class ToggleFavoriteWorkoutUseCase {
-  final UserRepository _userRepository;
+  final WorkoutPreferencesRepository _repository;
 
-  ToggleFavoriteWorkoutUseCase({required UserRepository userRepository})
-      : _userRepository = userRepository;
+  ToggleFavoriteWorkoutUseCase(this._repository);
 
   Future<bool> call(String workoutId) async {
-    final prefs = await _userRepository.getPreferences();
+    final prefs = await _repository.getPreferences();
     final ids = List<String>.from(prefs.favoriteWorkoutIds);
     final isFavorite = ids.contains(workoutId);
 
@@ -17,7 +16,7 @@ class ToggleFavoriteWorkoutUseCase {
       ids.add(workoutId);
     }
 
-    await _userRepository.savePreferences(prefs.copyWith(favoriteWorkoutIds: ids));
+    await _repository.savePreferences(prefs.copyWith(favoriteWorkoutIds: ids));
     return !isFavorite;
   }
 }

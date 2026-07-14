@@ -9,6 +9,7 @@ import 'package:moveflix/features/muscle_map/data/repositories/body_map_reposito
 import 'package:moveflix/features/muscle_map/domain/repositories/body_map_repository.dart';
 import 'package:moveflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
 import 'package:moveflix/features/muscle_map/presentation/muscle_map_widget.dart';
+import 'package:moveflix/features/profile/domain/usecases/save_user_use_case.dart';
 import 'package:moveflix/features/profile/presentation/register_viewmodel.dart';
 import 'package:moveflix/features/profile/presentation/register_widget.dart';
 import 'package:moveflix/features/video/data/datasources/video_network_datasource.dart';
@@ -74,7 +75,7 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
               builder: (_) => RegisterWidget(
                 viewModel: RegisterViewModel(
-                  ServiceLocator.get<UserRepository>(),
+                  SaveUserUseCase(ServiceLocator.get<UserRepository>()),
                 ),
               ),
             );

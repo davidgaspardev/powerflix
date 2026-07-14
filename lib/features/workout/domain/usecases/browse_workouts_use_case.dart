@@ -1,22 +1,23 @@
-import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_summary.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
+import 'package:moveflix/features/workout/domain/repositories/workout_preferences_repository.dart';
 
 class BrowseWorkoutsUseCase {
   final WorkoutPlanRepository _workoutPlanRepository;
-  final UserRepository _userRepository;
+  final WorkoutPreferencesRepository _preferencesRepository;
 
   BrowseWorkoutsUseCase({
     required WorkoutPlanRepository workoutPlanRepository,
-    required UserRepository userRepository,
+    required WorkoutPreferencesRepository preferencesRepository,
   })  : _workoutPlanRepository = workoutPlanRepository,
-        _userRepository = userRepository;
+        _preferencesRepository = preferencesRepository;
 
   Future<List<WorkoutSummary>> call() async {
-    final preference = await _userRepository.getPreferences();
-    final workoutPlanList = await _workoutPlanRepository.getWorkouts();
-    return workoutPlanList.map((workout) {
-      final isFavorite = preference.favoriteWorkoutIds.contains(workout.id);
+    final prefs = await _preferencesRepository.getPreferences();
+    final workouts = await _workoutPlanRepository.getWorkouts();
+
+    return workouts.map((workout) {
+      final isFavorite = prefs.favoriteWorkoutIds.contains(workout.id);
       return WorkoutSummary.fromWorkoutPlan(workout, isFavorite: isFavorite);
     }).toList();
   }
