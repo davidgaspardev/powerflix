@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/domain/models/workout_summary.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
 import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_case.dart';
@@ -10,9 +11,9 @@ class WorkoutListViewModel extends ChangeNotifier {
   final BrowseWorkoutsUseCase _browseWorkoutsUseCase;
   final WorkoutPlanRepository _workoutPlanRepository;
   final ToggleFavoriteWorkoutUseCase _toggleFavoriteWorkoutUseCase;
-  final _navigationController = StreamController<String>.broadcast();
+  final _navigationController = StreamController<WorkoutPlan>.broadcast();
 
-  Stream<String> get navigationEvents => _navigationController.stream;
+  Stream<WorkoutPlan> get navigationEvents => _navigationController.stream;
 
   WorkoutListViewModel({
     required BrowseWorkoutsUseCase browseWorkoutsUseCase,
@@ -58,7 +59,7 @@ class WorkoutListViewModel extends ChangeNotifier {
 
   Future<void> openWorkoutCover(String id) async {
     final workoutPlan = await _workoutPlanRepository.getById(id);
-    _navigationController.add(workoutPlan.toJson());
+    _navigationController.add(workoutPlan);
   }
 
   Future<void> toggleFavorite(String workoutId) async {

@@ -44,9 +44,7 @@ class WorkoutModule {
         },
         WorkoutRoutes.detail: (ctx) {
           final prefsRepo = ServiceLocator.get<WorkoutPreferencesRepository>();
-          final plan = WorkoutPlan.fromJson(
-            ModalRoute.of(ctx)!.settings.arguments as String,
-          );
+          final plan = ModalRoute.of(ctx)!.settings.arguments as WorkoutPlan;
           return WorkoutDetailWidget(
             plan: plan,
             viewModel: WorkoutDetailViewModel(
