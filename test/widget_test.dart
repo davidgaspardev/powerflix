@@ -14,7 +14,9 @@ import 'package:moveflix/main.dart';
 
 class _FakeUserRepository implements UserRepository {
   @override
-  Future<UserModel?> getUser() async => null;
+  Future<UserModel> getUser() => throw Exception('no user');
+  @override
+  Future<bool> hasUser() async => false;
   @override
   Future<void> saveUser(UserModel user) async {}
 }

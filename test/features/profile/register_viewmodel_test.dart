@@ -10,7 +10,13 @@ class _FakeUserRepository implements UserRepository {
   bool shouldThrow = false;
 
   @override
-  Future<UserModel?> getUser() async => saved;
+  Future<UserModel> getUser() async {
+    if (saved == null) throw Exception('no user');
+    return saved!;
+  }
+
+  @override
+  Future<bool> hasUser() async => saved != null;
 
   @override
   Future<void> saveUser(UserModel user) async {

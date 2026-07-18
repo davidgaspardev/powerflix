@@ -14,48 +14,51 @@ class _FakeUserLocalDatasource implements UserLocalDatasource {
   Future<void> saveUser(UserModel user) async => _user = user;
 }
 
+UserModel _user({String name = 'David'}) => UserModel(
+      name: name,
+      sex: BodySex.male,
+      birthday: DateTime(1999, 2, 16),
+      weight: 80.0,
+      height: 175.0,
+    );
+
 void main() {
   group('UserRepositoryImpl', () {
-    test('getUser returns null when no user saved', () async {
-      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
-      expect(await repo.getUser(), isNull);
+    group('getUser', () {
+      test('throws when no user saved', () async {
+        final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+        expect(() => repo.getUser(), throwsException);
+      });
+
+      test('returns user after save', () async {
+        final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+        await repo.saveUser(_user());
+        final retrieved = await repo.getUser();
+        expect(retrieved.name, 'David');
+        expect(retrieved.weight, 80.0);
+        expect(retrieved.height, 175.0);
+      });
+
+      test('returns latest user after overwrite', () async {
+        final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+        await repo.saveUser(_user(name: 'First'));
+        await repo.saveUser(_user(name: 'Second'));
+        final user = await repo.getUser();
+        expect(user.name, 'Second');
+      });
     });
 
-    test('saveUser persists and getUser retrieves the same user', () async {
-      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
-      final user = UserModel(
-        name: 'David',
-        sex: BodySex.male,
-        birthday: DateTime(1999, 2, 16),
-        weight: 80.0,
-        height: 175.0,
-      );
-      await repo.saveUser(user);
-      final retrieved = await repo.getUser();
-      expect(retrieved, isNotNull);
-      expect(retrieved!.name, 'David');
-      expect(retrieved.weight, 80.0);
-      expect(retrieved.height, 175.0);
-    });
+    group('hasUser', () {
+      test('returns false when no user saved', () async {
+        final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+        expect(await repo.hasUser(), isFalse);
+      });
 
-    test('saveUser overwrites previous user', () async {
-      final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
-      await repo.saveUser(UserModel(
-        name: 'First',
-        sex: BodySex.female,
-        birthday: DateTime(2000),
-        weight: 60.0,
-        height: 165.0,
-      ));
-      await repo.saveUser(UserModel(
-        name: 'Second',
-        sex: BodySex.male,
-        birthday: DateTime(1995),
-        weight: 75.0,
-        height: 180.0,
-      ));
-      final user = await repo.getUser();
-      expect(user!.name, 'Second');
+      test('returns true after save', () async {
+        final repo = UserRepositoryImpl(_FakeUserLocalDatasource());
+        await repo.saveUser(_user());
+        expect(await repo.hasUser(), isTrue);
+      });
     });
   });
 }
