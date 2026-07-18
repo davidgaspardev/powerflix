@@ -29,7 +29,7 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
   @override
   void initState() {
     super.initState();
-    viewModel.loadWorkouts();
+    viewModel.init();
 
     navigationEvent = viewModel.navigationEvents.listen((plan) {
       Navigator.of(context).pushNamed(
@@ -98,7 +98,14 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
         menuHeight: _menuHeight,
         footerHeight: Header.height,
         menuBuilder: (_) => Container(),
-        footerBuilder: (_, toggle) => Header(onTap: toggle),
+        footerBuilder: (_, toggle, isOpen) => ValueListenableBuilder(
+          valueListenable: viewModel.user,
+          builder: (context, user, _) => Header(
+            onMenuTap: toggle,
+            username: user?.name ?? '',
+            isOpen: isOpen,
+          ),
+        ),
         panelColor: Theme.of(context).colorScheme.surface,
         child: ListenableBuilder(
           listenable: viewModel,
@@ -116,6 +123,6 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
 
   @override
   void didPopNext() {
-    viewModel.loadWorkouts();
+    viewModel.init();
   }
 }

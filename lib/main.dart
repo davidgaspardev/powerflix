@@ -32,8 +32,8 @@ void main() async {
 
   _registerDependencies();
 
-  final user = await ServiceLocator.get<UserRepository>().getUser();
-  final initialRoute = user == null ? RegisterWidget.routeName : WorkoutRoutes.list;
+  final hasUser = await ServiceLocator.get<UserRepository>().hasUser();
+  final initialRoute = hasUser ? WorkoutRoutes.list : RegisterWidget.routeName;
 
   runApp(MyApp(initialRoute: initialRoute));
 }

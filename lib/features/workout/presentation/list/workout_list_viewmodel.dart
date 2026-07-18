@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:moveflix/core/domain/models/user.dart';
+import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/domain/models/workout_summary.dart';
 import 'package:moveflix/features/workout/domain/repositories/workout_plan_repository.dart';
@@ -8,19 +10,25 @@ import 'package:moveflix/features/workout/domain/usecases/browse_workouts_use_ca
 import 'package:moveflix/features/workout/domain/usecases/toggle_favorite_workout_use_case.dart';
 
 class WorkoutListViewModel extends ChangeNotifier {
+  final UserRepository _userRepository;
   final BrowseWorkoutsUseCase _browseWorkoutsUseCase;
   final WorkoutPlanRepository _workoutPlanRepository;
   final ToggleFavoriteWorkoutUseCase _toggleFavoriteWorkoutUseCase;
+
   final _navigationController = StreamController<WorkoutPlan>.broadcast();
 
   Stream<WorkoutPlan> get navigationEvents => _navigationController.stream;
 
+  final user = ValueNotifier<UserModel?>(null);
+
   WorkoutListViewModel({
-    required BrowseWorkoutsUseCase browseWorkoutsUseCase,
+    required UserRepository userRepository,
     required WorkoutPlanRepository workoutPlanRepository,
+    required BrowseWorkoutsUseCase browseWorkoutsUseCase,
     required ToggleFavoriteWorkoutUseCase toggleFavoriteWorkoutUseCase,
-  })  : _browseWorkoutsUseCase = browseWorkoutsUseCase,
+  })  : _userRepository = userRepository,
         _workoutPlanRepository = workoutPlanRepository,
+        _browseWorkoutsUseCase = browseWorkoutsUseCase,
         _toggleFavoriteWorkoutUseCase = toggleFavoriteWorkoutUseCase;
 
   List<WorkoutSummary> _workoutSummaryList = [];
@@ -37,7 +45,8 @@ class WorkoutListViewModel extends ChangeNotifier {
 
   String? get error => _error;
 
-  Future<void> loadWorkouts() async {
+  Future<void> init() async {
+    _userRepository.getUser().then((user) => this.user.value = user);
     _isLoading = true;
     notifyListeners();
     try {
@@ -74,8 +83,7 @@ class WorkoutListViewModel extends ChangeNotifier {
     try {
       await _toggleFavoriteWorkoutUseCase(workoutId);
     } catch (_) {
-      _workoutSummaryList = List.of(_workoutSummaryList)
-        ..[index] = current;
+      _workoutSummaryList = List.of(_workoutSummaryList)..[index] = current;
       notifyListeners();
     }
   }

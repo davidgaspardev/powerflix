@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moveflix/app/locator.dart';
+import 'package:moveflix/core/data/datasources/user_local_datasource.dart';
+import 'package:moveflix/core/data/repositories/user_repository_impl.dart';
+import 'package:moveflix/core/domain/repositories/user_repository.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/data/datasources/workout_hive_datasource.dart';
 import 'package:moveflix/features/workout/data/datasources/workout_local_datasource.dart';
@@ -19,6 +22,9 @@ import 'package:moveflix/features/workout/workout_routes.dart';
 
 class WorkoutModule {
   static void register() {
+    ServiceLocator.register<UserRepository>(
+      UserRepositoryImpl(UserLocalDatasource()),
+    );
     ServiceLocator.register<WorkoutPlanRepository>(
       WorkoutPlanRepositoryImpl(WorkoutLocalDatasource(), WorkoutHiveDatasource()),
     );
@@ -29,15 +35,18 @@ class WorkoutModule {
 
   static Map<String, WidgetBuilder> get routes => {
         WorkoutRoutes.list: (_) {
+          final userRepository = ServiceLocator.get<UserRepository>();
           final workoutRepo = ServiceLocator.get<WorkoutPlanRepository>();
           final prefsRepo = ServiceLocator.get<WorkoutPreferencesRepository>();
+
           return WorkoutListWidget(
             viewModel: WorkoutListViewModel(
+              userRepository: userRepository,
+              workoutPlanRepository: workoutRepo,
               browseWorkoutsUseCase: BrowseWorkoutsUseCase(
                 workoutPlanRepository: workoutRepo,
                 preferencesRepository: prefsRepo,
               ),
-              workoutPlanRepository: workoutRepo,
               toggleFavoriteWorkoutUseCase: ToggleFavoriteWorkoutUseCase(prefsRepo),
             ),
           );
@@ -45,6 +54,7 @@ class WorkoutModule {
         WorkoutRoutes.detail: (ctx) {
           final prefsRepo = ServiceLocator.get<WorkoutPreferencesRepository>();
           final plan = ModalRoute.of(ctx)!.settings.arguments as WorkoutPlan;
+
           return WorkoutDetailWidget(
             plan: plan,
             viewModel: WorkoutDetailViewModel(
