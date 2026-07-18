@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:moveflix/core/domain/models/body_sex.dart';
 import 'package:moveflix/core/domain/models/user.dart';
-import 'package:moveflix/core/domain/models/user_preferences.dart';
 import 'package:moveflix/core/domain/repositories/user_repository.dart';
+import 'package:moveflix/features/profile/domain/usecases/save_user_use_case.dart';
 import 'package:moveflix/features/profile/presentation/register_viewmodel.dart';
 
 class _FakeUserRepository implements UserRepository {
@@ -10,19 +10,19 @@ class _FakeUserRepository implements UserRepository {
   bool shouldThrow = false;
 
   @override
-  Future<UserModel?> getUser() async => saved;
+  Future<UserModel> getUser() async {
+    if (saved == null) throw Exception('no user');
+    return saved!;
+  }
+
+  @override
+  Future<bool> hasUser() async => saved != null;
 
   @override
   Future<void> saveUser(UserModel user) async {
     if (shouldThrow) throw Exception('storage failure');
     saved = user;
   }
-
-  @override
-  Future<UserPreferences> getPreferences() async => const UserPreferences();
-
-  @override
-  Future<void> savePreferences(UserPreferences prefs) async {}
 }
 
 UserModel _user() => UserModel(
@@ -36,13 +36,13 @@ UserModel _user() => UserModel(
 void main() {
   group('RegisterViewModel', () {
     test('isSaving starts as false', () {
-      final vm = RegisterViewModel(_FakeUserRepository());
+      final vm = RegisterViewModel(SaveUserUseCase(_FakeUserRepository()));
       expect(vm.isSaving, isFalse);
     });
 
     test('save calls repository saveUser with the given user', () async {
       final repo = _FakeUserRepository();
-      final vm = RegisterViewModel(repo);
+      final vm = RegisterViewModel(SaveUserUseCase(repo));
       final user = _user();
 
       await vm.save(user);
@@ -53,14 +53,14 @@ void main() {
     });
 
     test('isSaving is false after successful save', () async {
-      final vm = RegisterViewModel(_FakeUserRepository());
+      final vm = RegisterViewModel(SaveUserUseCase(_FakeUserRepository()));
       await vm.save(_user());
       expect(vm.isSaving, isFalse);
     });
 
     test('isSaving is false after save throws (finally resets state)', () async {
       final repo = _FakeUserRepository()..shouldThrow = true;
-      final vm = RegisterViewModel(repo);
+      final vm = RegisterViewModel(SaveUserUseCase(repo));
 
       await vm.save(_user());
 
@@ -68,7 +68,7 @@ void main() {
     });
 
     test('notifyListeners called at start and end of save', () async {
-      final vm = RegisterViewModel(_FakeUserRepository());
+      final vm = RegisterViewModel(SaveUserUseCase(_FakeUserRepository()));
       final notifyLog = <bool>[];
       vm.addListener(() => notifyLog.add(vm.isSaving));
 
@@ -79,7 +79,7 @@ void main() {
 
     test('notifyListeners called at start and end even when save throws', () async {
       final repo = _FakeUserRepository()..shouldThrow = true;
-      final vm = RegisterViewModel(repo);
+      final vm = RegisterViewModel(SaveUserUseCase(repo));
       final notifyLog = <bool>[];
       vm.addListener(() => notifyLog.add(vm.isSaving));
 

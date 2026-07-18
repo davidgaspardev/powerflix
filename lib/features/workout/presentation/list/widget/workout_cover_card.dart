@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:moveflix/features/workout/domain/models/workout_cover.dart';
+import 'package:moveflix/features/workout/domain/models/workout_summary.dart';
 import 'package:moveflix/shared/widgets/loading.dart';
 
 class WorkoutCoverCard extends StatelessWidget {
-  final WorkoutCover data;
+  final WorkoutSummary data;
   final VoidCallback? onTap;
   final VoidCallback? onFavorite;
 

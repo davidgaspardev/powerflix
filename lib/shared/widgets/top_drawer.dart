@@ -9,7 +9,7 @@ class TopDrawer extends StatefulWidget {
   final double menuHeight;
   final double footerHeight;
   final WidgetBuilder menuBuilder;
-  final Widget Function(BuildContext context, VoidCallback toggle) footerBuilder;
+  final Widget Function(BuildContext context, VoidCallback toggle, bool isOpen) footerBuilder;
   final Widget child;
   final Duration duration;
   final Curve curve;
@@ -79,7 +79,7 @@ class _TopDrawerState extends State<TopDrawer> {
                   height: widget.footerHeight,
                   width: double.infinity,
                   child: Builder(
-                    builder: (ctx) => widget.footerBuilder(ctx, _toggle),
+                    builder: (ctx) => widget.footerBuilder(ctx, _toggle, _isOpen),
                   ),
                 ),
               ],
