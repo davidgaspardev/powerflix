@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:moveflix/features/muscle_map/domain/models/body_side.dart';
-import 'package:moveflix/features/muscle_map/presentation/muscle_map_viewmodel.dart';
-import 'package:moveflix/features/muscle_map/presentation/widget/muscle_painter.dart';
-import 'package:moveflix/features/muscle_map/presentation/widget/muscle_side_toggle.dart';
-import 'package:moveflix/features/muscle_map/presentation/widget/stress_legend.dart';
+import 'package:moveflix/features/body_map/body_map_routes.dart';
+import 'package:moveflix/features/body_map/domain/models/body_side.dart';
+import 'package:moveflix/features/body_map/presentation/body_map_viewmodel.dart';
+import 'package:moveflix/features/body_map/presentation/widget/body_side_toggle.dart';
+import 'package:moveflix/features/body_map/presentation/widget/muscle_painter.dart';
+import 'package:moveflix/features/body_map/presentation/widget/stress_legend.dart';
 import 'package:moveflix/shared/widgets/loading.dart';
 
-class MuscleMapWidget extends StatefulWidget {
-  static const routeName = '/muscle_map';
+class BodyMapWidget extends StatefulWidget {
+  static const routeName = BodyMapRoutes.map;
 
-  final MuscleMapViewModel viewModel;
+  final BodyMapViewModel viewModel;
 
-  const MuscleMapWidget({super.key, required this.viewModel});
+  const BodyMapWidget({super.key, required this.viewModel});
 
   @override
-  State<MuscleMapWidget> createState() => _MuscleMapWidgetState();
+  State<BodyMapWidget> createState() => _BodyMapWidgetState();
 }
 
-class _MuscleMapWidgetState extends State<MuscleMapWidget> {
-  late final MuscleMapViewModel _viewModel;
-
-  MusclePainter? _painter;
+class _BodyMapWidgetState extends State<BodyMapWidget> {
+  late final BodyMapViewModel _viewModel;
 
   @override
   void initState() {
@@ -33,11 +32,6 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
   void dispose() {
     _viewModel.dispose();
     super.dispose();
-  }
-
-  void _onTapUp(TapUpDetails details, Size canvasSize) {
-    final muscleId = _painter?.findMuscleAt(details.localPosition, canvasSize);
-    if (muscleId != null) _viewModel.onMuscleTap(muscleId);
   }
 
   @override
@@ -61,7 +55,7 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
     return Column(
       children: [
         const SizedBox(height: 16),
-        MuscleSideToggle(
+        BodySideToggle(
           isFront: _viewModel.side == BodySide.front,
           onToggle: _viewModel.toggleSide,
         ),
@@ -77,17 +71,13 @@ class _MuscleMapWidgetState extends State<MuscleMapWidget> {
                     constraints.maxWidth,
                     constraints.maxHeight,
                   );
-                  _painter = MusclePainter(
-                    regions: _viewModel.regions,
-                    outline: _viewModel.outline,
-                    stress: _viewModel.stress,
-                  );
-                  return GestureDetector(
-                    onTapUp: (d) => _onTapUp(d, canvasSize),
-                    child: CustomPaint(
-                      painter: _painter,
-                      size: canvasSize,
+                  return CustomPaint(
+                    painter: MusclePainter(
+                      regions: _viewModel.regions,
+                      outline: _viewModel.outline,
+                      stressByGroup: _viewModel.stressByGroup,
                     ),
+                    size: canvasSize,
                   );
                 },
               ),

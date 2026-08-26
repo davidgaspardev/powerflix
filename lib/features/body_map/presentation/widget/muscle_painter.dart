@@ -1,9 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart' show Color, CustomPainter, StrokeCap, StrokeJoin;
+import 'package:moveflix/core/domain/models/muscle_group.dart';
 import 'package:moveflix/core/domain/models/muscle_stress.dart';
-import 'package:moveflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
-import 'package:moveflix/features/muscle_map/domain/models/muscle_region_data.dart';
+import 'package:moveflix/features/body_map/domain/models/figure_outline_path_data.dart';
+import 'package:moveflix/features/body_map/domain/models/muscle_region_data.dart';
 
 // SVG viewBox dimensions — both maps share the same canvas size.
 const double kMuscleMapWidth = 661.0;
@@ -13,12 +14,12 @@ const double kMuscleMapAspectRatio = kMuscleMapWidth / kMuscleMapHeight;
 class MusclePainter extends CustomPainter {
   final List<MuscleRegionData> regions;
   final FigureOutlinePathData? outline;
-  final Map<String, MuscleStress> stress;
+  final Map<MuscleGroup, int> stressByGroup;
 
   const MusclePainter({
     required this.regions,
     required this.outline,
-    required this.stress,
+    required this.stressByGroup,
   });
 
   @override
@@ -41,7 +42,7 @@ class MusclePainter extends CustomPainter {
     }
 
     for (final region in regions) {
-      final level = stress[region.id] ?? MuscleStress.none;
+      final level = MuscleStress.fromLevel(stressByGroup[region.muscleGroup] ?? 0);
 
       canvas.drawPath(
         region.path,
@@ -62,16 +63,6 @@ class MusclePainter extends CustomPainter {
     canvas.restore();
   }
 
-  String? findMuscleAt(Offset tapPosition, Size canvasSize) {
-    final scale = canvasSize.width / kMuscleMapWidth;
-    final svgPoint = tapPosition / scale;
-
-    for (final region in regions.reversed) {
-      if (region.path.contains(svgPoint)) return region.id;
-    }
-    return null;
-  }
-
   static Color _fillColor(MuscleStress level) {
     switch (level) {
       case MuscleStress.none:   return const Color(0xFFBDBDBD);
@@ -85,5 +76,5 @@ class MusclePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(MusclePainter old) =>
-      old.regions != regions || old.outline != outline || old.stress != stress;
+      old.regions != regions || old.outline != outline || old.stressByGroup != stressByGroup;
 }

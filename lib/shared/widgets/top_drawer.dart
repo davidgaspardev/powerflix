@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class TopDrawer extends StatefulWidget {
   final double menuHeight;
   final double footerHeight;
-  final WidgetBuilder menuBuilder;
+  final Widget Function(BuildContext context, VoidCallback toggle) menuBuilder;
   final Widget Function(BuildContext context, VoidCallback toggle, bool isOpen) footerBuilder;
   final Widget child;
   final Duration duration;
@@ -73,7 +73,9 @@ class _TopDrawerState extends State<TopDrawer> {
                 SizedBox(
                   height: widget.menuHeight,
                   width: double.infinity,
-                  child: Builder(builder: widget.menuBuilder),
+                  child: Builder(
+                    builder: (ctx) => widget.menuBuilder(ctx, _toggle),
+                  ),
                 ),
                 SizedBox(
                   height: widget.footerHeight,

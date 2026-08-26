@@ -1,15 +1,15 @@
 import 'package:flutter/foundation.dart';
-import 'package:moveflix/core/domain/models/muscle_stress.dart';
 import 'package:moveflix/core/domain/models/body_sex.dart';
-import 'package:moveflix/features/muscle_map/domain/models/body_side.dart';
-import 'package:moveflix/features/muscle_map/domain/models/figure_outline_path_data.dart';
-import 'package:moveflix/features/muscle_map/domain/models/muscle_region_data.dart';
-import 'package:moveflix/features/muscle_map/domain/repositories/body_map_repository.dart';
+import 'package:moveflix/core/domain/models/muscle_group.dart';
+import 'package:moveflix/features/body_map/domain/models/body_side.dart';
+import 'package:moveflix/features/body_map/domain/models/figure_outline_path_data.dart';
+import 'package:moveflix/features/body_map/domain/models/muscle_region_data.dart';
+import 'package:moveflix/features/body_map/domain/repositories/body_map_repository.dart';
 
-class MuscleMapViewModel extends ChangeNotifier {
+class BodyMapViewModel extends ChangeNotifier {
   final BodyMapRepository _repository;
 
-  MuscleMapViewModel(this._repository);
+  BodyMapViewModel(this._repository);
 
   List<MuscleRegionData> _regions = [];
   List<MuscleRegionData> get regions => List.unmodifiable(_regions);
@@ -17,8 +17,8 @@ class MuscleMapViewModel extends ChangeNotifier {
   FigureOutlinePathData? _outline;
   FigureOutlinePathData? get outline => _outline;
 
-  final Map<String, MuscleStress> _stress = {};
-  Map<String, MuscleStress> get stress => Map.unmodifiable(_stress);
+  Map<MuscleGroup, int> _stressByGroup = {};
+  Map<MuscleGroup, int> get stressByGroup => Map.unmodifiable(_stressByGroup);
 
   BodySide _side = BodySide.front;
   BodySide get side => _side;
@@ -36,9 +36,11 @@ class MuscleMapViewModel extends ChangeNotifier {
     await _load();
   }
 
-  void onMuscleTap(String muscleId) {
-    final current = _stress[muscleId] ?? MuscleStress.none;
-    _stress[muscleId] = current.next;
+  /// Applies a `workout`-computed stress map (1-10 per [MuscleGroup]) to the
+  /// rendered regions. Bilateral muscles are keyed once and apply to both
+  /// left/right regions; central muscles apply directly.
+  void applyStress(Map<MuscleGroup, int> stressByGroup) {
+    _stressByGroup = stressByGroup;
     notifyListeners();
   }
 
