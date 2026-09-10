@@ -4,6 +4,11 @@
     "name": "Bumbum na lua",
     "description": "Para voçê que busca massa muscular no bumbum.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbumbum_na_lua.jpg?alt=media&token=49eb1a02-4554-450a-9c9e-24357a6135ff",
+    "primaryMuscles": [
+      "gluteusMaximus",
+      "quadriceps",
+      "hamstring"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -122,6 +127,10 @@
     "name": "Posterior de Coxa Blindada",
     "description": "Para você que busca isquiotibiais fortes, joelhos protegidos e equilíbrio muscular real nas pernas.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fposterior_de_coxa_blindada.png?alt=media&token=ec214bcb-3fc1-4a03-bb24-546bcb326e04",
+    "primaryMuscles": [
+      "hamstring",
+      "gluteusMaximus"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -248,6 +257,12 @@
     "name": "Postura de Guerreiro",
     "description": "Para você que busca ombros abertos, escápulas retraídas e a postura de quem domina o ambiente.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpostura_de_guerreiro.png?alt=media&token=9511eb0c-2e09-4300-bd41-61b7955374cb",
+    "primaryMuscles": [
+      "trapeziusMid",
+      "trapeziusUpper",
+      "rhomboids",
+      "posteriorDeltoid"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -372,6 +387,10 @@
     "name": "Costas Asas de Morcego",
     "description": "Para você que busca costas largas e definidas.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2FCostas%20Asas%20de%20Morcego.jpg?alt=media&token=63cc8ba7-7114-4065-aa3d-f05dd25b003e",
+    "primaryMuscles": [
+      "latissimusDorsi",
+      "rhomboids"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -482,6 +501,10 @@
     "name": "Coxa dos Sonhos",
     "description": "Para você que busca coxas torneadas e fortes.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2FCoxa%20dos%20Sonhos.jpg?alt=media&token=4c4f83c0-9490-4b72-accc-0158cd6bb595",
+    "primaryMuscles": [
+      "quadriceps",
+      "gluteusMaximus"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -630,6 +653,11 @@
     "name": "Ombros de Guerreiro",
     "description": "Para você que busca ombros largos e definidos nas três cabeças do deltóide.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fombros_de_guerreiro.png?alt=media&token=ec629232-b123-4490-835c-ad7f8a15e5c9",
+    "primaryMuscles": [
+      "anteriorDeltoid",
+      "posteriorDeltoid",
+      "trapeziusUpper"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -752,6 +780,9 @@
     "name": "Tríceps Ferradura",
     "description": "Para você que busca tríceps em forma de ferradura com as três cabeças trabalhadas.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Ftriceps_ferradura.png?alt=media&token=169c0fe5-09f9-4b8e-907a-0d157cef8c93",
+    "primaryMuscles": [
+      "tricep"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -869,6 +900,11 @@
     "name": "Lombar Inabalável",
     "description": "Para você que busca uma lombar forte, estável e livre de dores para sempre.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Flombar_inabalavel.png?alt=media&token=cce3b312-3a11-4b8b-b84f-3af00e5b3440",
+    "primaryMuscles": [
+      "gluteusMaximus",
+      "hamstring",
+      "latissimusDorsi"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -984,6 +1020,10 @@
     "name": "Panturrilha de Pedra",
     "description": "Para você que busca panturrilhas torneadas, circulação ativa e performance atlética completa.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpanturilha_de_pedra.png?alt=media&token=f9f99004-45b9-4644-8c43-8d8f7088f06a",
+    "primaryMuscles": [
+      "gastrocnemius",
+      "lowerLeg"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -1095,6 +1135,9 @@
     "name": "Peito de Aço",
     "description": "Para você que busca peitoral forte e definido em toda sua extensão.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fpeito_de_aco.png?alt=media&token=51ddd717-fbe1-4789-8615-56c4350c285b",
+    "primaryMuscles": [
+      "pectoralis"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -1216,6 +1259,10 @@
     "name": "Bíceps de pedra",
     "description": "Para voçê que busca bíceps tão duro quanto uma pedra.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fbiceps_de_pedra.jpg?alt=media&token=d1989712-5e43-4970-8191-d506d165b8b8",
+    "primaryMuscles": [
+      "bicep",
+      "forearm"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",
@@ -1321,6 +1368,10 @@
     "name": "Abdômen Chapado",
     "description": "Para voçê que busca abdômen top.",
     "coverUrl": "https://firebasestorage.googleapis.com/v0/b/myself-dg.appspot.com/o/powerflix%2Fabd_chapado.jpg?alt=media&token=b0fb9970-d6d7-4b34-ba92-df7f55059984",
+    "primaryMuscles": [
+      "rectusAbdominis",
+      "obliques"
+    ],
     "levels": [
       {
         "difficulty": "LIGHT",

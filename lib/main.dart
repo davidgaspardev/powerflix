@@ -90,12 +90,12 @@ class MyApp extends StatelessWidget {
             );
 
           case BodyMapWidget.routeName:
+            final bodyMapViewModel = BodyMapViewModel(
+              ServiceLocator.get<BodyMapRepository>(),
+            );
+            WorkoutModule.computeMuscleStress().then(bodyMapViewModel.applyStress);
             return MaterialPageRoute(
-              builder: (_) => BodyMapWidget(
-                viewModel: BodyMapViewModel(
-                  ServiceLocator.get<BodyMapRepository>(),
-                ),
-              ),
+              builder: (_) => BodyMapWidget(viewModel: bodyMapViewModel),
             );
 
           default:

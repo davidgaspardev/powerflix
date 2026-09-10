@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:moveflix/core/domain/model.dart';
+import 'package:moveflix/core/domain/models/muscle_group.dart';
 
 // ── enums ──────────────────────────────────────────────────────────────────
 
@@ -190,6 +191,10 @@ class WorkoutPlan extends Model {
   final String name;
   final String description;
   final String coverUrl;
+
+  /// Muscle groups this plan targets, used to render stress on the body map
+  /// for favorited workouts. See [MuscleGroup].
+  final List<MuscleGroup> primaryMuscles;
   final List<DifficultyTier> levels;
 
   const WorkoutPlan({
@@ -197,6 +202,7 @@ class WorkoutPlan extends Model {
     required this.name,
     required this.description,
     required this.coverUrl,
+    this.primaryMuscles = const [],
     required this.levels,
   });
 
@@ -207,6 +213,9 @@ class WorkoutPlan extends Model {
         name: map['name'] as String,
         description: map['description'] as String,
         coverUrl: map['coverUrl'] as String,
+        primaryMuscles: (map['primaryMuscles'] as List? ?? [])
+            .map<MuscleGroup>((m) => MuscleGroup.values.byName(m as String))
+            .toList(),
         levels: (map['levels'] as List)
             .map<DifficultyTier>(
               (l) => DifficultyTier.fromMap(Map<String, dynamic>.from(l)),
@@ -229,6 +238,7 @@ class WorkoutPlan extends Model {
         'name': name,
         'description': description,
         'coverUrl': coverUrl,
+        'primaryMuscles': primaryMuscles.map((m) => m.name).toList(),
         'levels': levels.map<Map<String, dynamic>>((l) => l.toMap()).toList(),
       };
 
