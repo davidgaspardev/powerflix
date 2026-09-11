@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
             final bodyMapViewModel = BodyMapViewModel(
               ServiceLocator.get<BodyMapRepository>(),
             );
-            WorkoutModule.computeMuscleStress().then(bodyMapViewModel.applyStress);
+            WorkoutModule.computeRegionStress().then(bodyMapViewModel.applyStress);
             return MaterialPageRoute(
               builder: (_) => BodyMapWidget(viewModel: bodyMapViewModel),
             );
