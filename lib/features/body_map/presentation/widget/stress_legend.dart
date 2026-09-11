@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moveflix/core/domain/models/muscle_stress.dart';
-import 'package:moveflix/features/muscle_map/presentation/widget/muscle_painter.dart';
+import 'package:moveflix/core/domain/models/stress_level.dart';
+import 'package:moveflix/features/body_map/presentation/widget/body_map_painter.dart';
 
 class StressLegend extends StatelessWidget {
   const StressLegend({super.key});
@@ -9,8 +9,8 @@ class StressLegend extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: MuscleStress.values
-          .where((s) => s != MuscleStress.none)
+      children: StressLevel.values
+          .where((s) => s != StressLevel.none)
           .map((s) => _LegendItem(level: s))
           .toList(),
     );
@@ -18,7 +18,7 @@ class StressLegend extends StatelessWidget {
 }
 
 class _LegendItem extends StatelessWidget {
-  final MuscleStress level;
+  final StressLevel level;
 
   const _LegendItem({required this.level});
 
@@ -33,7 +33,7 @@ class _LegendItem extends StatelessWidget {
             width: 12,
             height: 12,
             decoration: BoxDecoration(
-              color: MusclePainter.stressColor(level),
+              color: BodyMapPainter.stressColor(level),
               shape: BoxShape.circle,
             ),
           ),

@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:moveflix/app/router/route_observer.dart';
+import 'package:moveflix/features/body_map/body_map_routes.dart';
 import 'package:moveflix/features/workout/domain/models/workout_plan.dart';
 import 'package:moveflix/features/workout/presentation/list/widget/header.dart';
+import 'package:moveflix/features/workout/presentation/list/widget/menu.dart';
 import 'package:moveflix/features/workout/presentation/list/widget/workout_cover_card.dart';
 import 'package:moveflix/features/workout/presentation/list/workout_list_viewmodel.dart';
 import 'package:moveflix/features/workout/workout_routes.dart';
@@ -97,7 +99,12 @@ class _WorkoutListWidgetState extends State<WorkoutListWidget> with RouteAware {
       body: TopDrawer(
         menuHeight: _menuHeight,
         footerHeight: Header.height,
-        menuBuilder: (_) => Container(),
+        menuBuilder: (_, toggle) => Menu(
+          onBodyMapTap: () {
+            toggle();
+            Navigator.of(context).pushNamed(BodyMapRoutes.map);
+          },
+        ),
         footerBuilder: (_, toggle, isOpen) => ValueListenableBuilder(
           valueListenable: viewModel.user,
           builder: (context, user, _) => Header(

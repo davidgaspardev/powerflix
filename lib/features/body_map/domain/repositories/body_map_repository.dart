@@ -1,0 +1,9 @@
+import 'package:moveflix/core/domain/models/body_sex.dart';
+import 'package:moveflix/features/body_map/domain/models/body_region_data.dart';
+import 'package:moveflix/features/body_map/domain/models/body_side.dart';
+import 'package:moveflix/features/body_map/domain/models/figure_outline_path_data.dart';
+
+abstract class BodyMapRepository {
+  Future<List<BodyRegionData>> getRegions({required BodySide side, required BodySex sex});
+  Future<FigureOutlinePathData> getFigureOutline({required BodySide side, required BodySex sex});
+}

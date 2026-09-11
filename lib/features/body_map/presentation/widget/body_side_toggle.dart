@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MuscleSideToggle extends StatelessWidget {
+class BodySideToggle extends StatelessWidget {
   final bool isFront;
   final VoidCallback onToggle;
 
-  const MuscleSideToggle({
+  const BodySideToggle({
     required this.isFront,
     required this.onToggle,
     super.key,
